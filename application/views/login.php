@@ -3,18 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Garuda Indonesia</title>
+	<title>GIA Academy | Login</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="<?php echo base_url()?>assets/gi.ico">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/util.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>login-bootstrap/css/main.css">
 </head>
 <body>
 	<div class="limiter">
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</button>
 					</div>
 					<div class="text-center w-full p-t-25 p-b-230">
-						<a class="txt1">
+						<a style="color: white" class="txt1">
 							<?php echo $err_message;?>
 						</a>
 					</div>
@@ -62,9 +62,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 </body>
-<script src="<?php echo base_url()?>vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="<?php echo base_url()?>vendor/bootstrap/js/popper.js"></script>
-<script src="<?php echo base_url()?>vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url()?>vendor/select2/select2.min.js"></script>
-<script src="<?php echo base_url()?>js/main.js"></script>
+<script src="<?php echo base_url()?>login-bootstrap/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="<?php echo base_url()?>login-bootstrap/vendor/bootstrap/js/popper.js"></script>
+<script src="<?php echo base_url()?>login-bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>login-bootstrap/vendor/select2/select2.min.js"></script>
+<script src="<?php echo base_url()?>login-bootstrap/js/main.js"></script>
 </html>

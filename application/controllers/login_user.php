@@ -21,7 +21,7 @@ class Login_user extends CI_Controller {
 			$this->home();
 		}
 		else{
-			$data['err_message'] = "gagal login";
+			$data['err_message'] = "Username atau Password Salah";
 			$this->load->view('login', $data);
 		}
 	}
