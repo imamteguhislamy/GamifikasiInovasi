@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title></title>
 </head>
 <body>
-	<?<?php 
+	<?php 
 	echo "halo";
 	 ?>
 </body>
