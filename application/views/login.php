@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-	<form method="post" action="<?php echo base_url().'login_user/login'?>">
+	<form method="post" action="<?php echo base_url().'login_user/login' ?>">
 		<table>
 			<tr>
 			<td>Username</td>

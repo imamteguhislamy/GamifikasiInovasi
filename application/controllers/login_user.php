@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login_user extends CI_Controller {
-	public function __construct() {
-		parent::__construct();
-		$this->load->model('model_user');
-	}
+class Login_user extends CI_Controller {
+	// public function __construct() {
+	// 	parent::__construct();
+	// 	$this->load->model('model_user');
+	// }
 	
 	public function index()
 	{
@@ -27,7 +27,7 @@ class login_user extends CI_Controller {
 	}
 
 	public function home() {
-		$this->load->view('home', $data);
+		$this->load->view('home');
 	}
 }
 
