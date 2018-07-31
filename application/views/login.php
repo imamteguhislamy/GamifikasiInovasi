@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="wrap-login100 p-t-150 p-b-30">
 				<form class="login100-form validate-form" method="post" action="<?php echo base_url().'user/login'?>">
 					<div>
-						<img src="<?php echo base_url()?>assets/logo.png" alt="AVATAR" height="250px" weight="250px">
+						<img src="<?php echo base_url()?>assets/logo.png" alt="AVATAR" height="234px" widht="395px">
 					</div>
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Nomor Pegawai is required">
 						<input class="input100" type="text" name="nopeg" placeholder="Nomor Pegawai">
