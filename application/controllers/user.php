@@ -43,7 +43,8 @@ user extends CI_Controller {
 	}
 
 	public function home() {
-		$this->load->view('home');
+		$this->load->view('header');
+		$this->load->view('sidebar');
 	}
 }
 
