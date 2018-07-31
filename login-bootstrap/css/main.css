@@ -520,9 +520,17 @@ iframe {
 [ responsive ]*/
 
 @media (max-width: 576px) {
-  .wrap-login100 {
+  .wrap-login100, .container-login100::before {
     padding-top: 80px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  @media (max-width: 480px) {
+  .wrap-login100, .container-login100::before {
+    size: auto;
+    padding-top: auto;
+    padding-left: auto;
+    padding-right: auto;
   }
 }
