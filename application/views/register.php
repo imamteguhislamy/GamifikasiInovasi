@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<input class="input100" type="text" name="unit" placeholder="Unit">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock"></i>
+							<i class="fa fa-user"></i>
 						</span>
 					</div>
 
@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<input class="input100" type="text" name="nama" placeholder="Nama">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock"></i>
+							<i class="fa fa-user"></i>
 						</span>
 					</div>
 

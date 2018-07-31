@@ -18,6 +18,11 @@ class user extends CI_Controller {
 		$password = $this->input->post('password');
 		$isLogin = $this->model_user->login_authen($nopeg, $password);
 		if ($isLogin == true) {
+			$data_session = array(
+ 				'nama' => $nopeg,
+ 				'status' => 'login'
+ 				);
+ 			$this->session->set_userdata($data_session);
 			$this->home();
 		}
 		else{
@@ -45,6 +50,34 @@ class user extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('home');
+	}
+
+	function admin() {
+		$data['err_message'] = "";
+		$this->load->view('loginadmin', $data);
+	}
+
+	public function loginadmin() {
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$isLogin = $this->model_user->login_authenadmin($username, $password);
+		if ($isLogin == true) {
+			$data_session = array(
+ 				'nama' => $username,
+ 				'status' => 'login'
+ 				);
+ 			$this->session->set_userdata($data_session);
+			$this->homeadmin();
+		}
+		else{
+			$data['err_message'] = "Username atau Password Salah";
+			$this->load->view('loginadmin', $data);
+		}
+	}
+
+	public function homeadmin() {
+		$this->load->view('headeradmin');
+		$this->load->view('sidebaradmin');
 	}
 }
 
