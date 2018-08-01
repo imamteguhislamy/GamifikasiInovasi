@@ -74,6 +74,13 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div>
+                                            <input type="checkbox" onclick="myFunction()"> Show Password
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="form-actions form-group">
                                                 <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                             </div>
@@ -86,7 +93,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>GIA Sincerity</p>
                                 </div>
                             </div>
                         </div>
@@ -118,6 +125,17 @@
 
     <!-- Main JS-->
     <script src="<?php echo base_url()?>js/main.js"></script>
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+        x.type = "password";
+        }
+    }
+</script>
 
 </body>
 
