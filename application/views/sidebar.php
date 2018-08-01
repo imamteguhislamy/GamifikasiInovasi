@@ -48,7 +48,7 @@
                                 <i class="fas fa-home"></i>Home</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url().'materi/index'?>">
+                            <a href="<?php echo base_url().'course/index'?>">
                                 <i class="fas fa-book"></i>Materi</a>
                         </li>
                         <li>

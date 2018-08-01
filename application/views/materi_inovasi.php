@@ -5,7 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>GIAcademy | Home</title>
+    <title>GIA Sincerity | Courses</title>
     
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/font-face.css" rel="stylesheet" media="all">
@@ -31,26 +31,151 @@
 </head>
 
 <body class="animsition">
-    <div class="main-content">
-        <div class="section__content section__content--p30">
-            <div class="container-fluid">
-                <div class="map-data m-b-60">
-                    <h3 class="title-3 m-b-30">
-                        <i class="zmdi zmdi-map"></i>Inovation Award Campaign</h3>
-                    <div class="map-wrap m-t-45 m-b-20" align="center">
-                        <video width="90%" height="90%" controls>
-                            <source src="<?php echo base_url()?>videos/materi-inovasi.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="copyright">
-                            <p>Copyright © 2018 Corporate Cultural Management, PT.Garuda Indonesia Persero(Tbk).</p>
+    <div class="page-wrapper">
+        <div class="page-content--bgf7"> 
+            
+            <!-- HEADER MOBILE-->
+            <header class="header-mobile header-mobile-2 d-block d-lg-none">
+                <div class="header-mobile__bar">
+                    <div class="container-fluid">
+                        <div class="header-mobile-inner">
+                            
+                            <button class="hamburger hamburger--slider" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                            <a class="logo" href="index.html">
+                                <img src="<?php echo base_url()?>assets/logo-white.png">
+                            </a>
+                            <div class="header__tool">
+                                <div class="account-wrap">
+                                    <div class="account-item account-item--style2 clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn"></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">Narendra</a>
+                                                    </h5>
+                                                    <span class="email">JKTDIC</span>
+                                                    <span class="email">123456</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <nav class="navbar-mobile">
+                    <div class="container-fluid">
+                        <ul class="navbar-mobile__list list-unstyled">
+                            <li class="has-sub">
+                                <a class="js-arrow" href="<?php echo base_url()?>user/home">
+                                    <i class="fas fa-home"></i>Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url()?>course/index">
+                                    <i class="fas fa-book"></i>Courses
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- END HEADER MOBILE-->
+
+            <!-- TITLE-->
+            <section class="welcome p-t-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title-4">Innovation Award Campaign
+                            </h1>
+                            <hr class="line-seprate">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END TITLE-->
+           
+            <!-- COURSE-->
+            <section class="statistic-chart">
+                <div class="container">
+                    <!-- Innovation Award-->
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="statistic-chart-1">
+                                <h3 class="title-3 m-b-20">
+                                    <i class="fa fa-video-camera"></i>Video
+                                </h3>
+                                <div class="chart-wrap">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="<?php echo base_url()?>videos/materi-inovasi.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            <!--<div class="statistic-chart-1-note">
+                                    <span class="big">10,368</span>
+                                    <span>/ 16220 items sold</span>
+                                </div> -->
+                                <div align="right">
+                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'course/quiz_inovasi'?>'">
+                                        <i class="fa fa-play"></i>&nbsp; Start Quiz
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Innovation Award-->
+                </div>
+            </section>
+            <!-- END COURSE-->
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Corporate Cultural Management, PT.Garuda Indonesia Persero (Tbk).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
         </div>
     </div>
 
