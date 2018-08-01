@@ -7,6 +7,10 @@ class model_user extends CI_Model {
 		$this->db->insert('user', $data);
 	}
 
+	function tampil_data() {
+		return $this->db->get('user');
+	}
+
 	public function getData() {
 		$data = $this->db->get('user');
 		return $data->result_array();
@@ -35,7 +39,7 @@ class model_user extends CI_Model {
 		$this->db->from('admin');
 
 		$query = $this->db->get();
-		
+
 		if ($query->num_rows() == 1) {
 			return true;
 		}

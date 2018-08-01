@@ -9,6 +9,8 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
+    <title>GIA Academy | Admin Panel</title>
+
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/font-face.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url()?>main-bootstrap/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -164,7 +166,7 @@
                                             <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">Administrator</a>
+                                            <a class="js-acc-btn" href="#"><?php echo $this->session->userdata('nama'); ?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -175,7 +177,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Administrator</a>
+                                                        <a href="#"><?php echo $this->session->userdata('nama'); ?></a>
                                                     </h5>
                                                     <span class="email">GIA Academy</span>
                                                 </div>
