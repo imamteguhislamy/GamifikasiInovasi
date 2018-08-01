@@ -40,10 +40,18 @@
                     <img src="<?php echo base_url()?>main-bootstrap/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
-            <div class="menu-sidebar__content js-scrollbar1">
+            <div class="menu-sidebar__content js-scrollbar1"">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-home"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url().'materi/index'?>">
+                                <i class="fas fa-book"></i>Materi</a>
+                        </li>
+                        <li>
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">

@@ -34,15 +34,13 @@
     <div class="main-content">
         <div class="section__content section__content--p30">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="au-card">
-                            <a href="<?php echo base_url().'materi/inovasi'?>"><img class="card-img-top" src="<?php echo base_url()?>images/materi-inovasi.png"></a>
-                            <h4 class="card-title m-t-25 m-b-25">Innovation Award Campaign</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
+                <div class="map-data m-b-60">
+                    <h3 class="title-3 m-b-30">
+                        <i class="zmdi zmdi-map"></i>Inovation Award Campaign</h3>
+                    <div class="map-wrap m-t-45 m-b-20" align="center">
+                        <video width="90%" height="90%" controls>
+                            <source src="<?php echo base_url()?>videos/materi-inovasi.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
                 <div class="row">

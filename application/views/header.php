@@ -5,9 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets/gi.ico">
 
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/font-face.css" rel="stylesheet" media="all">
@@ -175,7 +173,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Narendra Puspa</a>
+                                                        <a href="#">Narendra</a>
                                                     </h5>
                                                     <span class="email">JKTDIC</span>
                                                     <span class="email">123456</span>
