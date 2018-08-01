@@ -56,14 +56,20 @@
                                                 <td><?php echo $a->unit; ?></td>
                                                 <td class="process">Processed</td>
                                                 <td class="text-right">
+                                                <div class="table-data-feature">
+                                                    <a href="<?php echo base_url()."admin/edit/".$a->nopeg; ?>">
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                     <i class="zmdi zmdi-edit"></i>
-                                                    </button>
+                                                    </button></a>
+                                                </div>
                                                 </td>
                                                 <td class="text-right">
+                                                <div class="table-data-feature">
+                                                    <a href="<?php echo base_url()."admin/delete/".$a->nopeg; ?>"
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                     <i class="zmdi zmdi-delete"></i>
-                                                    </button>
+                                                    </button></a>
+                                                </div>
                                                 </td>
                                             </tr>
                                         <?php }?>

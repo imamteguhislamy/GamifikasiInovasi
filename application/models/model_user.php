@@ -15,7 +15,12 @@ class model_user extends CI_Model {
 		return $this->db->get('user');
 	}
 
-	public function getData() {
+	public function GetKrywn($where="") {
+		$data = $this->db->query('select * from user '. $where);
+		return $data->result_array();
+	}
+
+	public function getData($nopeg) {
 		$data = $this->db->get('user');
 		return $data->result_array();
 	}
@@ -51,4 +56,15 @@ class model_user extends CI_Model {
 			return false;
 		}
 	}
+
+	public function edit_data($table,$data,$where){		
+		$upd = $this->db->update($table,$data,$where);
+		return $upd;
+	}	
+
+	public function delete($table, $where) {
+		$del = $this->db->delete($table, $where);
+		return $del;
+	}
+
 }
