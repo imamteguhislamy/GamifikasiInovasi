@@ -11,7 +11,16 @@ class model_user extends CI_Model {
 		$this->db->insert('user', $data);
 	}
 
-	public function getData() {
+	function tampil_data() {
+		return $this->db->get('user');
+	}
+
+	public function GetKrywn($where="") {
+		$data = $this->db->query('select * from user '. $where);
+		return $data->result_array();
+	}
+
+	public function getData($nopeg) {
 		$data = $this->db->get('user');
 		return $data->result_array();
 	}
@@ -39,7 +48,7 @@ class model_user extends CI_Model {
 		$this->db->from('admin');
 
 		$query = $this->db->get();
-		
+
 		if ($query->num_rows() == 1) {
 			return true;
 		}
@@ -47,4 +56,15 @@ class model_user extends CI_Model {
 			return false;
 		}
 	}
+
+	public function edit_data($table,$data,$where){		
+		$upd = $this->db->update($table,$data,$where);
+		return $upd;
+	}	
+
+	public function delete($table, $where) {
+		$del = $this->db->delete($table, $where);
+		return $del;
+	}
+
 }

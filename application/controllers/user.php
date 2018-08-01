@@ -76,8 +76,10 @@ class user extends CI_Controller {
 	}
 
 	public function homeadmin() {
+		$data['user'] = $this->model_user->tampil_data()->result();
 		$this->load->view('headeradmin');
 		$this->load->view('sidebaradmin');
+		$this->load->view('tables', $data);
 	}
 }
 
