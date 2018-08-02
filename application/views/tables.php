@@ -65,25 +65,18 @@
                                                     </button></a>
                                                     &nbsp;
                                                     <a href="<?php echo base_url()."admin/delete/".$a->nopeg; ?>"
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                    <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                     <i class="zmdi zmdi-delete"></i>
                                                     </button></a>
                                                 </div>
                                                 </td>
-                                                <!-- <td>
-                                                <div class="table-data-feature">
-                                                    <a href="<?php echo base_url()."admin/delete/".$a->nopeg; ?>"
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                    <i class="zmdi zmdi-delete"></i>
-                                                    </button></a>
-                                                </div>
-                                                </td> -->
                                             </tr>
                                         <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE-->
+
                             </div>
                         </div>
                     </div>
@@ -92,6 +85,13 @@
         </div>
 
     </div>
+
+    <script>
+        function myFunction() {
+            alert("Deleted!");
+        }
+    </script>
+    
 
     <!-- Jquery JS-->
     <script src="<?php echo base_url()?>vendor/jquery-3.2.1.min.js"></script>
