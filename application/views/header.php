@@ -45,7 +45,7 @@
                     <div class="header__navbar">
                         <ul class="list-unstyled">
                             <li class="has-sub">
-                                <a href="<?php echo base_url()?>home/index">
+                                <a href="<?php echo base_url()?>home/user">
                                     <i class="fas fa-home"></i>Home
                                     <span class="bot-line"></span>
                                 </a>
@@ -62,24 +62,22 @@
                         <div class="account-wrap">
                             <div class="account-item account-item--style2 clearfix js-item-menu">
                                 <div class="image">
-                                    <img src="<?php echo base_url()?>images/profile-picture.png">
+                                    <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                 </div>
-                                <?php 
-                                     foreach($user as $u){ 
-                                    ?>
+                                <?php foreach($user as $u){ ?>
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#"><?php echo $u->nama ?></a>
+                                    <a class="js-acc-btn" href="#"><?php echo $u->nama_panggilan ?></a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="info clearfix">
                                         <div class="image">
                                             <a href="#">
-                                                <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                             </a>
                                         </div>
                                         <div class="content">
                                             <h5 class="name">
-                                                <a href="#"><?php echo $u->nama ?></a>
+                                                <a href="#"><?php echo $u->nama_lengkap ?></a>
                                             </h5>
                                             <span class="email"><?php echo $u->unit ?></span>
                                             <span class="email"><?php echo $u->nopeg ?></span>

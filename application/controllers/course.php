@@ -9,17 +9,34 @@ class course extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('header');
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$this->load->view('header', $data);
 		$this->load->view('course');
 	}
 
 	public function materi_inovasi() {
-		$this->load->view('header');
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$this->load->view('header', $data);
 		$this->load->view('materi_inovasi');
 	}
 
 	public function quiz_inovasi() {
-		$this->load->view('header');
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$this->load->view('header', $data);
 		$this->load->view('quiz_inovasi');
 	}
+
+	
 }

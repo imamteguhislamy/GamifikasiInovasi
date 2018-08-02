@@ -2,17 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class home extends CI_Controller {
-	// public function __construct() {
-	// 	parent::__construct();
-	// 	$this->load->model('model_user');
-	// }
-	
-	public function index()
-	{
-		$data['user'] = $this->model_user->tampil_data()->result();
-		$this->load->view('header', $data);
-		$this->load->view('home');
+	public function __construct() {
+		parent::__construct();
+		$this->load->model('model_user');
 	}
-
-
+	
+	public function user(){
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$data['leaderboard'] = $this->model_user->tampil_data_leaderboard()->result();
+		$data['rank'] = $this->model_user->rank()->result();				
+		$this->load->view('header', $data);
+		$this->load->view('home',  $data);
+	}
 }

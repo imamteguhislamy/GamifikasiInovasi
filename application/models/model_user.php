@@ -11,11 +11,15 @@ class model_user extends CI_Model {
 		$this->db->insert('user', $data);
 	}
 
-	function tampil_data() {
-		return $this->db->get('user');
+	public function tampil_data_leaderboard() {
+		return $this->db->query('select nama_lengkap, unit, skor from user order by skor desc');
 	}
 
-	function tampil_data2($table, $where) {
+	public function rank() {
+		return $this->db->query('select rank from user');
+	}
+
+	public function tampil_data2($table, $where) {
 		return $this->db->get_where($table,$where);
 	}
 

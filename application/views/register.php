@@ -40,13 +40,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-10" data-validate = "Name is required">
-						<input class="input100" type="text" name="nama" placeholder="Nama">
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Nama Lengkap is required">
+						<input class="input100" type="text" name="nama_lengkap" placeholder="Nama Lengkap">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user"></i>
 						</span>
 					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate = "Nama Panggilan is required">
+						<input class="input100" type="text" name="nama_panggilan" placeholder="Nama Panggilan">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+
+<!-- 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Foto Profil is required">
+						<input class="input100" type="file" name="picture" placeholder="Foto Profil" align="center">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div> -->
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">
 						<input class="input100" type="password" name="password" placeholder="Password">
@@ -56,6 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</span>
 					</div>
 
+					<input type="hidden" name="is_submit" value="1">
 					<div class="container-login100-form-btn p-t-10">
 						<button class="login100-form-btn">
 							Register

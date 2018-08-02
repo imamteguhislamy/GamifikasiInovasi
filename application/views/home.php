@@ -121,8 +121,9 @@
             <section class="welcome">
                 <div class="container">
                     <div class="row">
+                        <?php foreach($user as $u){ ?>                        
                         <div class="col-md-12 m-t-30">
-                            <h1 class="title-4">Welcome back <span>John!</span></h1>
+                            <h1 class="title-4">Welcome back <span><?php echo $u->nama_panggilan ?>!</span></h1>
                             <hr class="line-seprate">
                         </div>
                     </div>
@@ -140,10 +141,11 @@
                                 <div class="chart-wrap">
                                     <!-- PANEL -->
                                     <div class="row">
+
                                         <!-- SKOR -->
                                         <div class="col-md-6 col-lg-6">
                                             <div class="statistic__item statistic__item--blue">
-                                                <h2 class="number" style="color: white">1,086</h2>
+                                                <h2 class="number" style="color: white"><?php echo $u->skor ?></h2>
                                                 <span class="desc" style="color: white">Skor</span>
                                                 <div class="icon">
                                                     <i class="zmdi zmdi-calendar-note"></i>
@@ -155,7 +157,17 @@
                                         <!-- RANK -->
                                         <div class="col-md-6 col-lg-6">
                                             <div class="statistic__item statistic__item--red">
-                                                <h2 class="number" style="color: white">Rookie</h2>
+                                                <h2 class="number" style="color: white">
+                                                    <?php 
+                                                        if($u->rank == 1){
+                                                            echo "Rookie";
+                                                        } else if($u->rank == 2){
+                                                            echo "Master";
+                                                        } else if($u->rank == 3){
+                                                            echo "Legend";
+                                                        }
+                                                    ?>         
+                                                </h2>
                                                 <span class="desc" style="color: white">Rank</span>
                                                 <div class="icon">
                                                     <i class="zmdi zmdi-star"></i>
@@ -171,16 +183,17 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6">
                                         <div class="image">
-                                            <img style="border: 1px solid black" src="<?php echo base_url()?>images/profile-picture.png">
+                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                         </div>
                                     </div>
-                                     <?php 
-                                     foreach($user as $u){ 
-                                    ?>
                                     <div class="col-md-12 col-lg-6">
                                         <div class="statistic-chart-1-note">
-                                            <p class="big">Nama</p>
-                                            <p><?php echo $u->nama ?></p>
+                                            <p class="big">Nama Lengkap</p>
+                                            <p><?php echo $u->nama_lengkap ?></p>
+                                        </div>
+                                        <div class="statistic-chart-1-note">
+                                            <p class="big">Nama Panggilan</p>
+                                            <p><?php echo $u->nama_panggilan ?></p>
                                         </div>
                                         <div class="statistic-chart-1-note">
                                             <p class="big">Nomor Pegawai</p>
@@ -192,9 +205,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php 
-                                     }
-                                    ?>
+                                <?php } ?>
                                 <!-- END DATA PEGAWAI -->                              
                             
                             </div>
@@ -209,46 +220,12 @@
                                 <div class="table-responsive">
                                     <table class="table table-top-campaign">
                                         <tbody>
+                                            <?php foreach($leaderboard as $l){ ?>
                                             <tr>
-                                                <td>1. Imam Teguh Islamy (JKTDIC)</td>
-                                                <td>100</td>
+                                                <td><?php echo $l->nama_lengkap ?> (<?php echo $l->unit ?>)</td>
+                                                <td><?php echo $l->skor ?></td>
                                             </tr>
-                                            <tr>
-                                                <td>2. 520102 (JKTDIC)</td>
-                                                <td>100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3. Imam (520102-JKTDIC)</td>
-                                                <td>100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4. Imam (520102)</td>
-                                                <td>100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5. Imam (JKTDIC)</td>
-                                                <td>100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6. Australia</td>
-                                                <td>$70,261.65</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7. United Kingdom</td>
-                                                <td>$46,399.22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8. Turkey</td>
-                                                <td>$35,364.90</td>
-                                            </tr>
-                                            <tr>
-                                                <td>9. Germany</td>
-                                                <td>$20,366.96</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10. France</td>
-                                                <td>$10,366.96</td>
-                                            </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

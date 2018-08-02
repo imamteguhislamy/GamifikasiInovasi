@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 
 					<div class="text-center w-full">
-						<a class="txt1" href="<?php echo base_url().'user/regis_user'?>">
+						<a class="txt1" href="<?php echo base_url().'user/new_user'?>">
 							Create new account
 							<i class="fa fa-long-arrow-right"></i>						
 						</a>

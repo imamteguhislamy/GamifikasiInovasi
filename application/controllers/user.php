@@ -5,6 +5,7 @@ class user extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('model_user');
+		$this->load->library('upload');
 	}
 	
 	//VIEW LOGIN USER
@@ -33,7 +34,7 @@ class user extends CI_Controller {
 				);
  
 			$this->session->set_userdata($data_session);
- 			$this->home();
+ 			redirect('home/user');
  
 		}else{
 			$data['err_message'] = "Nomor Pegawai atau Password Salah";
@@ -42,30 +43,49 @@ class user extends CI_Controller {
 	}
 
 	//REGIS USER
-	public function regis_user() {
+	public function new_user() {
 		$this->load->view('register');
 	}
 
+	//PAKE UPLOAD
+	// public function register() {
+ //        $fileUpload = array();
+ //        $isUpload = FALSE;
+ //        $config = array (
+ //                'upload_path' => './images/',
+ //                'allowed_types' => 'gif|jpg|png',
+ //                'max_size' => 100000
+ //        );
+ //        $this->upload->initialize($config);
+ //        if($this->upload->do_upload('picture')) {
+ //            $fileUpload = $this->upload->data();
+ //            $isUpload = TRUE;
+ //    	} if($isUpload) {
+	// 		$data = array(
+	// 			'nopeg' => $this->input->post('nopeg'),
+	// 			'unit' => $this->input->post('unit'),
+	// 			'nama_lengkap' => $this->input->post('nama_lengkap'),
+	// 			'nama_panggilan' => $this->input->post('nama_panggilan'),
+	// 			'password' => $this->input->post('password')
+	// 			'file_faktur' => $fileUpload['file_name']
+	// 			);
+	// 		$this->model_user->addData($data);
+	// 		$this->index();
+	// 	}
+		
+	// }
+
+	//TIDAK PAKE UPLOAD
 	public function register() {
 		$data = array(
 			'nopeg' => $this->input->post('nopeg'),
 			'unit' => $this->input->post('unit'),
-			'nama' => $this->input->post('nama'),
+			'nama_lengkap' => $this->input->post('nama_lengkap'),
+			'nama_panggilan' => $this->input->post('nama_panggilan'),
 			'password' => $this->input->post('password')
 			);
 		$this->model_user->addData($data);
 		$this->index();
-	}
-
-	//HOME USER
-	public function home(){
-		$nopeg = $this->session->userdata('nopeg');
-		$where = array(
-                'nopeg' => $nopeg
-                );
-		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();		
-		$this->load->view('header', $data);
-		$this->load->view('home',  $data);
 	}
 
 	//VIEW LOGIN ADMIN
@@ -85,20 +105,12 @@ class user extends CI_Controller {
  				'status' => 'login'
  				);
  			$this->session->set_userdata($data_session);
-			$this->homeadmin();
+			redirect('admin/index');
 		}
 		else{
 			$data['err_message'] = "Username atau Password Salah";
 			$this->load->view('loginadmin', $data);
 		}
-	}
-
-	//HOME ADMIN
-	public function homeadmin() {
-		$data['user'] = $this->model_user->tampil_data()->result();
-		$this->load->view('headeradmin');
-		$this->load->view('sidebaradmin');
-		$this->load->view('tables', $data);
 	}
 
 	public function logout() {
