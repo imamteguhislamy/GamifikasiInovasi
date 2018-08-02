@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -37,16 +36,16 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="<?php echo base_url()?>main-bootstrap/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="<?php echo base_url()?>assets/logo-white.png">
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <a class="js-arrow" href="<?php echo base_url()?>user/homeadmin">
+                                <i class="fas fa-table"></i>Data Pegawai</a>
+                            <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="index.html">Dashboard 1</a>
                                 </li>
@@ -59,9 +58,13 @@
                                 <li>
                                     <a href="index4.html">Dashboard 4</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms Quiz</a>
+                        </li>
+                        <!-- <li>
                             <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
@@ -95,8 +98,8 @@
                                     <a href="forget-pass.html">Forget Password</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="has-sub">
+                        </li> -->
+                        <!-- <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -134,7 +137,7 @@
                                     <a href="typo.html">Typography</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

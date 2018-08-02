@@ -54,4 +54,9 @@ class admin extends CI_Controller {
     	}
     }
 
+    public function logout() {
+    	session_destroy();
+    	redirect("admin");
+    }
+
 }

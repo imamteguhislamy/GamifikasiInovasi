@@ -43,7 +43,8 @@
                                                 <th>NOPEG</th>
                                                 <th>Nama</th>
                                                 <th>Unit</th>
-                                                <th>status</th>
+                                                <th>Skor</th>
+                                                <th>Rank</th>
                                                 <th>Edit/Delete</th>
                                                 <!-- <th class="text-right">Delete</th> -->
                                             </tr>
@@ -54,7 +55,8 @@
                                                 <td><?php echo $a->nopeg; ?></td>
                                                 <td><?php echo $a->nama; ?></td>
                                                 <td><?php echo $a->unit; ?></td>
-                                                <td class="process">Processed</td>
+                                                <td><?php echo $a->skor; ?></td>
+                                                <td class="process"><?php echo $a->rank; ?></td>
                                                 <td>
                                                 <div class="table-data-feature">
                                                     <a href="<?php echo base_url()."admin/edit/".$a->nopeg; ?>">

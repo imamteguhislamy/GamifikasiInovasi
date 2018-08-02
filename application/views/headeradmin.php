@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -9,7 +8,8 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
-    <title>GIA Academy | Admin Panel</title>
+    <title>GIA Sincerity | Admin Panel</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url()?>assets/gi.ico">
 
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/font-face.css" rel="stylesheet" media="all">
@@ -33,7 +33,6 @@
     <link href="<?php echo base_url()?>main-bootstrap/css/theme.css" rel="stylesheet" media="all">
 
 </head>
-
 <body class="animsition">
   <div class="page-container">
             <!-- HEADER DESKTOP-->
@@ -66,7 +65,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="<?php echo base_url()?>assets/gi.ico">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php echo $this->session->userdata('nama'); ?></a>
@@ -75,17 +74,17 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="<?php echo base_url()?>assets/gi.ico" width=65 length=65>
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#"><?php echo $this->session->userdata('nama'); ?></a>
                                                     </h5>
-                                                    <span class="email">GIA Academy</span>
+                                                    <span class="email">GIA Admin</span>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__body">
+<!--                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
@@ -98,9 +97,9 @@
                                                     <a href="#">
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="<?php echo base_url()?>admin/logout">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
