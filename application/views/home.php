@@ -129,107 +129,133 @@
                 </div>
             </section>
             <!-- TITLE-->
-
-            <!-- STATISTIC-->
-            <section class="statistic statistic2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green">
-                                <h2 class="number">1</h2>
-                                <span class="desc">Peringkat</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-pin-account"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--orange">
-                                <h2 class="number">7500</h2>
-                                <span class="desc">Jumlah Pemain</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-accounts"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--blue">
-                                <h2 class="number">1,086</h2>
-                                <span class="desc">Skor</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-calendar-note"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red">
-                                <h2 class="number">Rookie</h2>
-                                <span class="desc">Rank</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END STATISTIC-->
-
             <section class="statistic-chart">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">Overview</h3>
-                        </div>
-                    </div>
-                    <div class="row">
+                        <!-- PROFILE -->
                         <div class="col-md-12 col-lg-8">
                             <!-- CHART-->
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-30">Profile</h3>
                                 <div class="chart-wrap">
-                                    <canvas id="widgetChart5"></canvas>
+                                    <!-- PANEL -->
+                                    <div class="row">
+                                        <!-- SKOR -->
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="statistic__item statistic__item--blue">
+                                                <h2 class="number" style="color: white">1,086</h2>
+                                                <span class="desc" style="color: white">Skor</span>
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-calendar-note"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END SKOR -->
+
+                                        <!-- RANK -->
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="statistic__item statistic__item--red">
+                                                <h2 class="number" style="color: white">Rookie</h2>
+                                                <span class="desc" style="color: white">Rank</span>
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END RANK -->
+                                    </div>
+                                    <!-- END PANEL -->
                                 </div>
-                                <div class="statistic-chart-1-note">
-                                    <span class="big">10,368</span>
-                                    <span>/ 16220 items sold</span>
+                                
+                                <!-- DATA PEGAWAI -->                                
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="image">
+                                            <img style="border: 1px solid black" src="<?php echo base_url()?>images/profile-picture.png">
+                                        </div>
+                                    </div>
+                                     <?php 
+                                     foreach($user as $u){ 
+                                    ?>
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="statistic-chart-1-note">
+                                            <p class="big">Nama</p>
+                                            <p><?php echo $u->nama ?></p>
+                                        </div>
+                                        <div class="statistic-chart-1-note">
+                                            <p class="big">Nomor Pegawai</p>
+                                            <p><?php echo $u->nopeg ?></p>
+                                        </div>                                
+                                        <div class="statistic-chart-1-note">
+                                            <p class="big">Unit Kerja</p>
+                                            <p><?php echo $u->unit ?></p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <?php 
+                                     }
+                                    ?>
+                                <!-- END DATA PEGAWAI -->                              
+                            
                             </div>
                             <!-- END CHART-->
                         </div>
+                        <!-- END PROFILE -->
+
+                        <!-- LEADERBOARD -->
                         <div class="col-md-12 col-lg-4">
-                            <!-- TOP CAMPAIGN-->
                             <div class="top-campaign">
                                 <h3 class="title-3 m-b-30">Leaderboard</h3>
                                 <div class="table-responsive">
                                     <table class="table table-top-campaign">
                                         <tbody>
                                             <tr>
-                                                <td>1. Australia</td>
+                                                <td>1. Imam Teguh Islamy (JKTDIC)</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2. 520102 (JKTDIC)</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3. Imam (520102-JKTDIC)</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4. Imam (520102)</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5. Imam (JKTDIC)</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6. Australia</td>
                                                 <td>$70,261.65</td>
                                             </tr>
                                             <tr>
-                                                <td>2. United Kingdom</td>
+                                                <td>7. United Kingdom</td>
                                                 <td>$46,399.22</td>
                                             </tr>
                                             <tr>
-                                                <td>3. Turkey</td>
+                                                <td>8. Turkey</td>
                                                 <td>$35,364.90</td>
                                             </tr>
                                             <tr>
-                                                <td>4. Germany</td>
+                                                <td>9. Germany</td>
                                                 <td>$20,366.96</td>
                                             </tr>
                                             <tr>
-                                                <td>5. France</td>
+                                                <td>10. France</td>
                                                 <td>$10,366.96</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <!-- END TOP CAMPAIGN-->
                         </div>
+                        <!-- END LEADERBOARD -->
+
                     </div>
                 </div>
             </section>
