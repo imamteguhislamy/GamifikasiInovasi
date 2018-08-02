@@ -5,7 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>GIA Academy | Courses</title>
+    <title>GIA Sincerity | Courses</title>
     
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/font-face.css" rel="stylesheet" media="all">

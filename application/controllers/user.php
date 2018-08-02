@@ -2,35 +2,46 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class user extends CI_Controller {
-	// public function __construct() {
-	// 	parent::__construct();
-	// 	$this->load->model('model_user');
-	// }
+	public function __construct() {
+		parent::__construct();
+		$this->load->model('model_user');
+	}
 	
+	//VIEW LOGIN USER
 	public function index()
 	{
 		$data['err_message'] = "";
 		$this->load->view('login', $data);
 	}
 
-	public function login() {
+	// LOGIN USER
+	public function login_user() {
 		$nopeg = $this->input->post('nopeg');
 		$password = $this->input->post('password');
-		$isLogin = $this->model_user->login_authen($nopeg, $password);
-		if ($isLogin == true) {
+
+		$where = array(
+			'nopeg' => $nopeg,
+			'password' => $password
+			);
+
+		$cek = $this->model_user->tampil_data2('user',$where)->num_rows();
+        if($cek > 0){
+ 
 			$data_session = array(
- 				'nama' => $nopeg,
- 				'status' => 'login'
- 				);
- 			$this->session->set_userdata($data_session);
-			$this->home();
-		}
-		else{
+				'nopeg' => $nopeg,
+				'status' => "login"
+				);
+ 
+			$this->session->set_userdata($data_session);
+ 			$this->home();
+ 
+		}else{
 			$data['err_message'] = "Nomor Pegawai atau Password Salah";
 			$this->load->view('login', $data);
 		}
 	}
 
+	//REGIS USER
 	public function regis_user() {
 		$this->load->view('register');
 	}
@@ -46,17 +57,24 @@ class user extends CI_Controller {
 		$this->index();
 	}
 
-	public function home() {
-		$this->load->view('header');
-		//$this->load->view('sidebar');
-		$this->load->view('home');
+	//HOME USER
+	public function home(){
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();		
+		$this->load->view('header', $data);
+		$this->load->view('home',  $data);
 	}
 
-	function admin() {
+	//VIEW LOGIN ADMIN
+	public function admin() {
 		$data['err_message'] = "";
 		$this->load->view('loginadmin', $data);
 	}
 
+	//LOGIN ADMIN
 	public function loginadmin() {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -75,11 +93,17 @@ class user extends CI_Controller {
 		}
 	}
 
+	//HOME ADMIN
 	public function homeadmin() {
 		$data['user'] = $this->model_user->tampil_data()->result();
 		$this->load->view('headeradmin');
 		$this->load->view('sidebaradmin');
 		$this->load->view('tables', $data);
+	}
+
+	public function logout() {
+		session_destroy();
+		redirect("user/index");
 	}
 }
 

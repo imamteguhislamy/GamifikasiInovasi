@@ -15,6 +15,11 @@ class model_user extends CI_Model {
 		return $this->db->get('user');
 	}
 
+	function tampil_data2($table, $where) {
+		return $this->db->get_where($table,$where);
+	}
+
+
 	public function GetKrywn($where="") {
 		$data = $this->db->query('select * from user '. $where);
 		return $data->result_array();

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>GIAcademy | Login</title>
+	<title>GIA Sincerity | Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="<?php echo base_url()?>assets/gi.ico">
@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="limiter" align="center">
 		<div class="container-login100" style="background-image: url('<?php echo base_url()?>assets/bg2.jpg');">
 			<div class="wrap-login100 p-t-150 p-b-30">
-				<form class="login100-form validate-form" method="post" action="<?php echo base_url().'user/login'?>">
+				<form class="login100-form validate-form" method="post" action="<?php echo base_url().'user/login_user'?>">
 					<div>
 						<img src="<?php echo base_url()?>assets/logo.png" alt="AVATAR" height="234px" widht="395px">
 					</div>
