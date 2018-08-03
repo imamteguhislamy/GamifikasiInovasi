@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('<?php echo base_url()?>assets/bg2.jpg');">
 			<div class="wrap-login100 p-b-30">
-				<form class="login100-form validate-form" method="post" action="<?php echo base_url().'user/register'?>">
+				<form class="login100-form validate-form" method="post"  enctype="multipart/form-data" action="<?php echo base_url().'user/register'?>">
 					<div align="center">
 						<img src="<?php echo base_url()?>assets/logo.png" alt="AVATAR" height="250px" weight="250px">
 					</div>
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 
 <!-- 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Foto Profil is required">
-						<input class="input100" type="file" name="picture" placeholder="Foto Profil" align="center">
+						<input class="form-control-file" type="file" name="foto" id="foto" placeholder="Foto Profil">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user"></i>

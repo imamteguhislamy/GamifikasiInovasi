@@ -58,13 +58,14 @@
                             </li>
                         </ul>
                     </div>
+                     <?php foreach($user as $u){ ?>
                     <div class="header__tool">
                         <div class="account-wrap">
                             <div class="account-item account-item--style2 clearfix js-item-menu">
                                 <div class="image">
                                     <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                 </div>
-                                <?php foreach($user as $u){ ?>
+                               
                                 <div class="content">
                                     <a class="js-acc-btn" href="#"><?php echo $u->nama_panggilan ?></a>
                                 </div>

@@ -9,7 +9,7 @@ class admin extends CI_Controller {
 	
 	public function index()
 	{
-		$data['user'] = $this->model_user->tampil_data()->result();
+		$data['user'] = $this->model_user->tampil_data();
 		$this->load->view('headeradmin');
 		$this->load->view('sidebaradmin');
 		$this->load->view('tables', $data);

@@ -53,7 +53,7 @@
                                         <tbody>
                                             <tr>
                                                 <td><?php echo $a->nopeg; ?></td>
-                                                <td><?php echo $a->nama; ?></td>
+                                                <td><?php echo $a->nama_lengkap; ?></td>
                                                 <td><?php echo $a->unit; ?></td>
                                                 <td><?php echo $a->skor; ?></td>
                                                 <td class="process"><?php echo $a->rank; ?></td>

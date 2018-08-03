@@ -4,8 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class user extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
+		 $this->load->helper(array('form'));
 		$this->load->model('model_user');
 		$this->load->library('upload');
+        $this->load->helper("file");		
 	}
 	
 	//VIEW LOGIN USER
@@ -77,15 +79,31 @@ class user extends CI_Controller {
 
 	//TIDAK PAKE UPLOAD
 	public function register() {
+
+		$picture =  basename($_FILES["foto"]["name"]);
+
 		$data = array(
 			'nopeg' => $this->input->post('nopeg'),
 			'unit' => $this->input->post('unit'),
 			'nama_lengkap' => $this->input->post('nama_lengkap'),
 			'nama_panggilan' => $this->input->post('nama_panggilan'),
+			'picture' => $picture,
 			'password' => $this->input->post('password')
 			);
 		$this->model_user->addData($data);
-		$this->index();
+		$config['upload_path']          = './images/';
+		$config['allowed_types']        = 'jpg|png';
+		$config['max_size']             = 100000;
+ 
+		// load library upload
+		$this->upload->initialize($config);
+        if (!$this->upload->do_upload('foto')) {
+            $error = $this->upload->display_errors();
+            // menampilkan pesan error
+            print_r($error);
+        } else {
+           		$this->index();
+        }
 	}
 
 	//VIEW LOGIN ADMIN
