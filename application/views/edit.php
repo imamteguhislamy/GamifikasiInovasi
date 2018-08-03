@@ -48,8 +48,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <div class="input-group-addon">Nama</div>
-                                                    <input type="text" id="nama" name="nama" value="<?php echo $nama ?>" class="form-control">
+                                                    <div class="input-group-addon">Nama Lengkap</div>
+                                                    <input type="text" id="nama_lengkap" name="nama_lengkap" value="<?php echo $nama_lengkap?>" class="form-control">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-user"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">Nama Panggilan</div>
+                                                    <input type="text" id="nama_panggilan" name="nama_panggilan" value="<?php echo $nama_panggilan?>" class="form-control">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>

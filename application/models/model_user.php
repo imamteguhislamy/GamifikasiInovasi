@@ -34,6 +34,11 @@ class model_user extends CI_Model {
 		return $data->result_array();
 	}
 
+	public function tampil_data() {
+		$data = $this->db->get('user');
+		return $data->result();
+	}
+
 	public function login_authen($nopeg, $password) {
 		$this->db->select('*');
 		$this->db->where('nopeg', $nopeg);
