@@ -11,7 +11,7 @@ class admin extends CI_Controller {
 	{
 		$data['user'] = $this->model_user->tampil_data();
 		$this->load->view('headeradmin');
-		$this->load->view('sidebaradmin');
+		$this->load->view('sideadmin/sidebaradmindata');
 		$this->load->view('tables', $data);
 	}
 
@@ -26,7 +26,7 @@ class admin extends CI_Controller {
 		);
 		
 		$this->load->view('headeradmin');
-		$this->load->view('sidebaradmin');
+		$this->load->view('sideadmin/sidebaradmindata');
 		$this->load->view('edit',$data);
 	}
 
@@ -55,6 +55,12 @@ class admin extends CI_Controller {
     	if ($del>=1) {
     		redirect("admin/index"); 	
     	}
+    }
+
+    public function quiz() {
+    	$this->load->view('headeradmin');
+		$this->load->view('sideadmin/sidebaradminadd');
+		$this->load->view('formquiz');
     }
 
     public function logout() {

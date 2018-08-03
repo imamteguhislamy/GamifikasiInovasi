@@ -27,7 +27,25 @@
 
     <!-- Main CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/theme.css" rel="stylesheet" media="all">
+<style>
+#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
 
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+
+}
+</script>
 </head>
 <body class="animsition">
     <?php foreach ($user as $u){ ?>
@@ -133,7 +151,15 @@
                                     <i class="fa fa-video-camera"></i>Quiz
                                 </h3>
                                 <div class="chart-wrap">
-                                    
+                                    <p>Drag the W3Schools image into the rectangle:</p>
+
+                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    <br>
+                                    <div id="drag1" draggable="true" ondragstart="drag(event)">abc</div>
+                                    <br>
+
+
+
                                 </div>
 
                                 <!-- <div align="right">
