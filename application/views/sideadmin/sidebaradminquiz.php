@@ -42,27 +42,17 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li class="has-sub">
                             <a class="js-arrow" href="<?php echo base_url()?>admin/index">
-                                <i class="fas fa-table"></i>Data Pegawai</a>
-                            <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                            </ul> -->
+                                <i class="fas fa-table"></i>Data Pegawai</a>                            
                         </li>
-                        <li>
-                            <a href=#>
-                                <i class="far fa-check-square"></i>Forms Quiz</a>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>Quiz</a>
+                        </li>
+                        <li class="has-sub">
+                            <a href="<?php echo base_url()?>admin/quiz">
+                                <i class="far fa-check-square"></i>Add Quiz</a>
                         </li>
                         <!-- <li>
                             <a href="chart.html">
