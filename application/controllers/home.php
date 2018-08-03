@@ -18,4 +18,14 @@ class home extends CI_Controller {
 		$this->load->view('header', $data);
 		$this->load->view('home',  $data);
 	}
+
+	public function personalize() {
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$this->load->view('header', $data);
+		$this->load->view('form',  $data);
+	}
 }

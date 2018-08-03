@@ -49,33 +49,41 @@ class user extends CI_Controller {
 		$this->load->view('register');
 	}
 
-	//PAKE UPLOAD
-	// public function register() {
- //        $fileUpload = array();
- //        $isUpload = FALSE;
- //        $config = array (
- //                'upload_path' => './images/',
- //                'allowed_types' => 'gif|jpg|png',
- //                'max_size' => 100000
- //        );
- //        $this->upload->initialize($config);
- //        if($this->upload->do_upload('picture')) {
- //            $fileUpload = $this->upload->data();
- //            $isUpload = TRUE;
- //    	} if($isUpload) {
-	// 		$data = array(
-	// 			'nopeg' => $this->input->post('nopeg'),
-	// 			'unit' => $this->input->post('unit'),
-	// 			'nama_lengkap' => $this->input->post('nama_lengkap'),
-	// 			'nama_panggilan' => $this->input->post('nama_panggilan'),
-	// 			'password' => $this->input->post('password')
-	// 			'file_faktur' => $fileUpload['file_name']
-	// 			);
-	// 		$this->model_user->addData($data);
-	// 		$this->index();
-	// 	}
-		
-	// }
+	public function update_profile() {
+		$pict =  basename($_FILES['foto']["name"]);
+
+		$nopeg = $_POST['nopeg'];
+        $nama_panggilan = $_POST['nama_panggilan'];
+        $nama_lengkap = $_POST['nama_lengkap'];
+        $unit = $_POST['unit'];
+        $picture = $pict;
+        $password = $_POST['password'];
+        $data_update = array(
+            'nama_lengkap' => $nama_lengkap,
+            'nama_panggilan' => $nama_panggilan,
+			'unit' => $unit,
+			'picture' => $picture,
+            'password' => $password
+        );
+
+		$config['upload_path']          = './images/';
+		$config['allowed_types']        = 'jpg|png';
+		$config['max_size']             = 100000;
+
+		$this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload('foto')) {
+            $error = $this->upload->display_errors();
+            // menampilkan pesan error
+            print_r($error);
+        } else {
+			$where = array('nopeg'=>$nopeg);
+        	$upd = $this->model_user->edit_data('user', $data_update, $where);
+	        if($upd>=1) {
+	            redirect("home/user");
+	        }
+        }       
+	}
 
 	//TIDAK PAKE UPLOAD
 	public function register() {

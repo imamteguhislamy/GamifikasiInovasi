@@ -31,6 +31,7 @@
 </head>
 
 <body class="animsition">
+    <?php foreach($user as $u){ ?> 
     <div class="page-wrapper">
         <div class="page-content--bgf7"> 
             
@@ -38,8 +39,7 @@
             <header class="header-mobile header-mobile-2 d-block d-lg-none">
                 <div class="header-mobile__bar">
                     <div class="container-fluid">
-                        <div class="header-mobile-inner">
-                            
+                        <div class="header-mobile-inner">                            
                             <button class="hamburger hamburger--slider" type="button">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
@@ -52,7 +52,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item account-item--style2 clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn"></a>
@@ -60,34 +60,26 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="#">
-                                                        <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    <a>
+                                                        <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Narendra</a>
+                                                        <a><?php echo $u->nama_lengkap ?></a>
                                                     </h5>
-                                                    <span class="email">JKTDIC</span>
-                                                    <span class="email">123456</span>
+                                                    <span class="email"><?php echo $u->unit ?></span>
+                                                    <span class="email"><?php echo $u->nopeg ?></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                    <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                                        <i class="zmdi zmdi-account"></i>Personalize</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="<?php echo base_url()?>user/logout">
                                                     <i class="zmdi zmdi-power"></i>Logout
                                                 </a>
                                             </div>
@@ -116,7 +108,7 @@
                 </nav>
             </header>
             <!-- END HEADER MOBILE-->
-
+            
             <!-- TITLE-->
             <section class="welcome p-t-30">
                 <div class="container">
@@ -178,6 +170,7 @@
             <!-- END COPYRIGHT-->
         </div>
     </div>
+    <?php } ?>
 
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->

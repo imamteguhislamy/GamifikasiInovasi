@@ -77,7 +77,7 @@
                                         </div>
                                         <div class="content">
                                             <h5 class="name">
-                                                <a href="#"><?php echo $u->nama_lengkap ?></a>
+                                                <a><?php echo $u->nama_lengkap ?></a>
                                             </h5>
                                             <span class="email"><?php echo $u->unit ?></span>
                                             <span class="email"><?php echo $u->nopeg ?></span>
@@ -85,16 +85,8 @@
                                     </div>
                                     <div class="account-dropdown__body">
                                         <div class="account-dropdown__item">
-                                            <a href="<?php echo base_url()."edit/index/".$u->nopeg; ?>">
-                                                <i class="zmdi zmdi-account"></i>Account</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                                <i class="zmdi zmdi-account"></i>Personalize</a>
                                         </div>
                                     </div>
                                     <div class="account-dropdown__footer">

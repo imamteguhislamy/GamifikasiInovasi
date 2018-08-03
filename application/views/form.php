@@ -30,86 +30,194 @@
     <link href="<?php echo base_url()?>css/theme.css" rel="stylesheet" media="all">
 
 </head>
+<?php foreach ($user as $u){ ?>
+<body class="animsition">
+    <div class="page-wrapper">
+        <div class="page-content--bgf7">
 
-
-
-            <!-- MAIN CONTENT-->
-            <div class="main-content">
-                <div class="section__content section__content--p30">
+            <!-- HEADER MOBILE-->
+            <header class="header-mobile header-mobile-2 d-block d-lg-none">
+                <div class="header-mobile__bar">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Edit</strong> Profile
+                        <div class="header-mobile-inner">                            
+                            <button class="hamburger hamburger--slider" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                            <a class="logo" href="index.html">
+                                <img src="<?php echo base_url()?>assets/logo-white.png">
+                            </a>
+                            <div class="header__tool">
+                                <div class="account-wrap">
+                                    <div class="account-item account-item--style2 clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn"></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a>
+                                                        <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a><?php echo $u->nama_lengkap ?></a>
+                                                    </h5>
+                                                    <span class="email"><?php echo $u->unit ?></span>
+                                                    <span class="email"><?php echo $u->nopeg ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                                        <i class="zmdi zmdi-account"></i>Personalize</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="<?php echo base_url()?>user/logout">
+                                                    <i class="zmdi zmdi-power"></i>Logout
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <?php foreach ($user as $u){ ?>
-                                    <div class="card-body card-block">
-                                        <form action="" method="post" class="form-horizontal">
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="hf-email" class=" form-control-label">Nomor Pegawai</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="hf-email" name="hf-email" placeholder="NOPEG" class="form-control" value="<?php echo $u->nopeg ?>">
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="hf-email" class=" form-control-label">Nama Lengkap</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="hf-email" name="hf-email" placeholder="Full Name..." class="form-control" value="<?php echo $u->nama_lengkap ?>">                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="hf-email" class=" form-control-label">Nama Panggilan</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="hf-email" name="hf-email" placeholder="Nick Name" class="form-control" value="<?php echo $u->nama_panggilan ?>">
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="hf-email" class=" form-control-label">Unit</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="hf-email" name="hf-email" placeholder="Unit" class="form-control" value="<?php echo $u->unit ?>">                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="hf-password" class=" form-control-label">Password</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="password" id="hf-password" name="hf-password" placeholder="Change Password" class="form-control" value="<?php echo $u->password ?>">                                                
-                                                </div>
-                                            </div>
-                                        </form><?php }?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar-mobile">
+                    <div class="container-fluid">
+                        <ul class="navbar-mobile__list list-unstyled">
+                            <li class="has-sub">
+                                <a class="js-arrow" href="<?php echo base_url()?>user/home">
+                                    <i class="fas fa-home"></i>Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url()?>course/index">
+                                    <i class="fas fa-book"></i>Courses
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- END HEADER MOBILE-->
+
+            <!-- TITLE-->
+            <section class="welcome">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 m-t-30">
+                            <h1 class="title-4">Personalize</h1>
+                            <hr class="line-seprate">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- TITLE-->
+
+            <!-- EDIT PROFILE -->
+            <section class="statistic-chart">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <!-- FORM-->
+                            <div class="statistic-chart-1">
+                                <h3 class="title-3 m-b-30">Edit Profile</h3>
+                                <form action="<?php echo base_url().'user/update_profile'?>" method="post" class="form-horizontal"  enctype="multipart/form-data">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-email" class=" form-control-label">Nomor Pegawai</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input readonly type="text" id="hf-email" name="nopeg" placeholder="NOPEG" class="form-control" value="<?php echo $u->nopeg ?>">
+                                            
+                                        </div>
                                     </div>
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
+                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-email" class=" form-control-label">Nama Lengkap</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="hf-email" name="nama_lengkap" placeholder="Full Name..." class="form-control" value="<?php echo $u->nama_lengkap ?>">                                                    
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-email" class=" form-control-label">Nama Panggilan</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="hf-email" name="nama_panggilan" placeholder="Nick Name" class="form-control" value="<?php echo $u->nama_panggilan ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-email" class=" form-control-label">Unit</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="hf-email" name="unit" placeholder="Unit" class="form-control" value="<?php echo $u->unit ?>">                                                    
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-email" class=" form-control-label">Foto Profil</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" id="hf-email" name="foto" placeholder="Foto Profil" class="form-control" value="<?php echo $u->picture ?>">
+                                            <span>*Nama File Tanpa Spasi</span>                                                    
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-password" class=" form-control-label">Password</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="password" id="hf-password" name="password" placeholder="Change Password" class="form-control" value="<?php echo $u->password ?>">                                                
+                                        </div>
+                                    </div>
+                                    <?php }?>
+                                    <div class="m-t-25" align="right">
+                                        <button type="submit" class="btn btn-primary btn-sm m-r-5">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-ban"></i> Reset
                                         </button>
                                     </div>
-                                </div>                                
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
+                                </form>
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END EDIT PROFILE -->
+                                
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Corporate Cultural Management, PT.Garuda Indonesia Persero (Tbk).</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <!-- END COPYRIGHT-->
         </div>
-
     </div>
 
     <!-- Jquery JS-->
