@@ -43,7 +43,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="<?php echo base_url()?>user/homeadmin">
+                            <a class="js-arrow" href="<?php echo base_url()?>admin/index">
                                 <i class="fas fa-table"></i>Data Pegawai</a>
                             <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
@@ -61,7 +61,7 @@
                             </ul> -->
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href=#>
                                 <i class="far fa-check-square"></i>Forms Quiz</a>
                         </li>
                         <!-- <li>

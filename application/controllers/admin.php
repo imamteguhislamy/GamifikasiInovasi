@@ -19,7 +19,8 @@ class admin extends CI_Controller {
 		$krywn = $this->model_user->GetKrywn("where nopeg = '$nopeg'");
 		$data = array(
 			"nopeg"=>$krywn[0]['nopeg'],
-			"nama"=>$krywn[0]['nama'],
+			"nama_lengkap"=>$krywn[0]['nama_lengkap'],
+			"nama_panggilan"=>$krywn[0]['nama_panggilan'],
 			"unit"=>$krywn[0]['unit'],
 			"password"=>$krywn[0]['password']
 		);
@@ -31,11 +32,13 @@ class admin extends CI_Controller {
 
 	public function update() {
         $nopeg = $_POST['nopeg'];
-        $nama = $_POST['nama'];
+        $nama = $_POST['nama_panggilan'];
+        $nama_lengkap = $_POST['nama_lengkap'];
         $unit = $_POST['unit'];
         $password = $_POST['password'];
         $data_update = array(
-            'nama' => $nama,
+            'nama_lengkap' => $nama_lengkap,
+            'nama_panggilan' => $nama_panggilan,
 			'unit' => $unit,
             'password' => $password
         );
