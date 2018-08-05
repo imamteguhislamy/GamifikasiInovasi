@@ -44,7 +44,6 @@
                     <ul class="list-unstyled navbar__list">
                         <li>
                             <a href="<?php echo base_url()?>admin/home">
-
                             <i class="fas fa-table"></i>Data Pegawai</a>                            
                         </li>
                         <li>
