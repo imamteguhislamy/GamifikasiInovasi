@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin extends CI_Controller {
+class home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('model_user');
@@ -60,7 +60,13 @@ class admin extends CI_Controller {
     public function quiz() {
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/formquiz');
+		$this->load->view('admin/materi');
+    }
+
+    public function addquiz() {
+    	$this->load->view('admin/header');
+    	$this->load->view('admin/sidebar');
+    	$this->load->view('admin/formquiz');
     }
 
     public function logout() {

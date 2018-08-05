@@ -117,7 +117,7 @@ class login extends CI_Controller {
 	//VIEW LOGIN ADMIN
 	public function admin() {
 		$data['err_message'] = "";
-		$this->load->view('loginadmin', $data);
+		$this->load->view('admin/login', $data);
 	}
 
 	//LOGIN ADMIN
@@ -135,7 +135,7 @@ class login extends CI_Controller {
 		}
 		else{
 			$data['err_message'] = "Username atau Password Salah";
-			$this->load->view('loginadmin', $data);
+			$this->load->view('admin/login', $data);
 		}
 	}
 

@@ -49,50 +49,50 @@
                                         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label class=" form-control-label">Static</label>
+                                                    <label class=" form-control-label">Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <p class="form-control-static">Username</p>
+                                                    <p class="form-control-static">Innovation</p>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Text Input</label>
+                                                    <label for="text-input" class=" form-control-label">Id Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control">
-                                                    <small class="form-text text-muted">This is a help text</small>
+                                                    <input type="text" id="text-input" name="text-input" placeholder="Enter Id" class="form-control">
+                                                    <small class="form-text text-muted">ex: Innov001, Innov002</small>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Email Input</label>
+                                                    <label for="text-input" class=" form-control-label">Judul</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control">
-                                                    <small class="help-block form-text">Please enter your email</small>
+                                                    <input type="email" id="email-input" name="email-input" placeholder="Enter Title" class="form-control">
+                                                    <small class="help-block form-text">Please enter your title</small>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="password-input" class=" form-control-label">Password</label>
+                                                    <label for="text-input" class=" form-control-label">YouTube Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control">
-                                                    <small class="help-block form-text">Please enter a complex password</small>
+                                                    <input type="email" id="email-input" name="email-input" placeholder="Enter YouTube Link" class="form-control">
+                                                    <small class="help-block form-text">Please enter your YouTube link</small>
                                                 </div>
-                                            </div>
-                                            <div class="row form-group">
+                                            </div>                                                           
+                                            <!-- <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="disabled-input" class=" form-control-label">Disabled Input</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="textarea-input" class=" form-control-label">Textarea</label>
+                                                    <label for="textarea-input" class=" form-control-label">Soal</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
@@ -110,49 +110,8 @@
                                                         <option value="3">Option #3</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="selectLg" class=" form-control-label">Select Large</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="selectLg" id="selectLg" class="form-control-lg form-control">
-                                                        <option value="0">Please select</option>
-                                                        <option value="1">Option #1</option>
-                                                        <option value="2">Option #2</option>
-                                                        <option value="3">Option #3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="selectSm" class=" form-control-label">Select Small</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="selectSm" id="SelectLm" class="form-control-sm form-control">
-                                                        <option value="0">Please select</option>
-                                                        <option value="1">Option #1</option>
-                                                        <option value="2">Option #2</option>
-                                                        <option value="3">Option #3</option>
-                                                        <option value="4">Option #4</option>
-                                                        <option value="5">Option #5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="disabledSelect" class=" form-control-label">Disabled Select</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="disabledSelect" id="disabledSelect" disabled="" class="form-control">
-                                                        <option value="0">Please select</option>
-                                                        <option value="1">Option #1</option>
-                                                        <option value="2">Option #2</option>
-                                                        <option value="3">Option #3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
+                                            </div>                                            
+                                            <!-- <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="multiple-select" class=" form-control-label">Multiple select</label>
                                                 </div>
@@ -170,7 +129,7 @@
                                                         <option value="10">Option #10</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label class=" form-control-label">Radios</label>
@@ -263,14 +222,6 @@
                                                     <input type="file" id="file-input" name="file-input" class="form-control-file">
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="file-multiple-input" class=" form-control-label">Multiple File input</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file">
-                                                </div>
-                                            </div>
                                         </form>
                                     </div>
                                     <div class="card-footer">
@@ -286,7 +237,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © 2018 Corporate Cultural Management, PT.Garuda Indonesia Persero (Tbk).</p>
                                 </div>
                             </div>
                         </div>
