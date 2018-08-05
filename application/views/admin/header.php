@@ -99,7 +99,7 @@
                                                 </div>
                                             </div> -->
                                             <div class="account-dropdown__footer">
-                                                <a href="<?php echo base_url()?>admin/logout">
+                                                <a href="<?php echo base_url()?>admin/home/logout">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>

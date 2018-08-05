@@ -114,7 +114,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="title-4">Innovation Award Campaign
+                            <h1 class="title-4" ><?php echo $judul; ?>
                             </h1>
                             <hr class="line-seprate">
                         </div>
@@ -135,7 +135,7 @@
                                 </h3>
                                 <div class="chart-wrap">
                                     <video width="100%" height="100%" controls>
-                                        <source src="<?php echo base_url()?>videos/materi-inovasi.mp4" type="video/mp4">
+                                        <source src="<?php echo $link_video; ?>" type="video/mp4">
                                     </video>
                                 </div>
                             <!--<div class="statistic-chart-1-note">
@@ -154,7 +154,7 @@
                 </div>
             </section>
             <!-- END COURSE-->
-
+        
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">

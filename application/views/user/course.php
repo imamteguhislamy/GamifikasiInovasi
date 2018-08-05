@@ -123,71 +123,34 @@
             <!-- TITLE-->
 
             <!-- COURSES MENU-->
+            
             <section class="statistic-chart">
                 <div class="container">
+                   
                     <div class="row">
+                        <?php foreach ($materi as $m){ ?>
                         <div class="col-md-6 col-lg-4">
                             <!-- Innovation Award-->
                             <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
+                                <h3 class="title-3 m-b-20"><?php echo $m->judul; ?></h3>
                                 <div class="chart-wrap">
                                     <img src="<?php echo base_url()?>images/materi-inovasi.png">
                                 </div>
-                            <!--<div class="statistic-chart-1-note">
-                                    <span class="big">10,368</span>
-                                    <span>/ 16220 items sold</span>
-                                </div> -->
                                 <div align="right">
-                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi_inovasi'?>'">
-                                    <i class="fa fa-play"></i>&nbsp; Start Course
-                                </button>
-                            </div>
-                            </div>
-                            <!-- END Innovation Award-->
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <!-- Innovation Award-->
-                            <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
-                                <div class="chart-wrap">
-                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
+                                    <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/show_materi/'.$m->id ?>'">
+                                        <i class="fa fa-play"></i>&nbsp; Start Course
+                                    </button>
                                 </div>
-                            <!--<div class="statistic-chart-1-note">
-                                    <span class="big">10,368</span>
-                                    <span>/ 16220 items sold</span>
-                                </div> -->
-                                <div align="right">
-                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi_inovasi'?>'">
-                                    <i class="fa fa-play"></i>&nbsp; Start Course
-                                </button>
                             </div>
-                            </div>
+                            
                             <!-- END Innovation Award-->
                         </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <!-- Innovation Award-->
-                            <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
-                                <div class="chart-wrap">
-                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
-                                </div>
-                            <!--<div class="statistic-chart-1-note">
-                                    <span class="big">10,368</span>
-                                    <span>/ 16220 items sold</span>
-                                </div> -->
-                                <div align="right">
-                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi_inovasi'?>'">
-                                    <i class="fa fa-play"></i>&nbsp; Start Course
-                                </button>
-                            </div>
-                            </div>
-                            <!-- END Innovation Award-->
-                        </div>
+                        <?php } ?>
                     </div>
+                    
                 </div>
             </section>
+
             <!-- END COURSES MENU-->
 
             <!-- COPYRIGHT-->

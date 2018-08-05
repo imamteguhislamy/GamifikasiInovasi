@@ -36,7 +36,7 @@
                                 <div class="card">
                                     <div class="card-header">Edit Data Pegawai</div>
                                     <div class="card-body card-block">                                        
-                                        <form action="<?php echo base_url(). 'admin/update'; ?>" method="post" class="">
+                                        <form action="<?php echo base_url(). 'admin/home/update'; ?>" method="post" class="">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Nomer Pegawai</div>
@@ -89,9 +89,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-actions form-group">
-                                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-                                            </div>
+                                            <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
                                         </form>
                                     </div>
                                 </div>

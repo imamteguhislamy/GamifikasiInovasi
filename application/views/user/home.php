@@ -223,7 +223,6 @@
                             </div>
                         </div>
                         <!-- END LEADERBOARD -->
-
                     </div>
                 </div>
             </section>

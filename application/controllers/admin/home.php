@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin extends CI_Controller {
+class home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('model_user');
@@ -27,7 +27,7 @@ class admin extends CI_Controller {
 		
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/tables', $data);
+		$this->load->view('admin/edit', $data);
 	}
 
 	public function update() {
@@ -45,7 +45,7 @@ class admin extends CI_Controller {
         $where = array('nopeg'=>$nopeg);
         $upd = $this->model_user->edit_data('user', $data_update, $where);
         if($upd>=1) {
-            redirect("admin/index");
+            redirect("admin/home");
         }
     }
 
@@ -53,17 +53,24 @@ class admin extends CI_Controller {
     	$where = array('nopeg' => $nopeg);
     	$del = $this->model_user->delete('user', $where);
     	if ($del>=1) {
-    		redirect("admin/index"); 	
+    		redirect("admin/home"); 	
     	}
     }
 
     public function quiz() {
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/formquiz');
+		$this->load->view('admin/materi');
+    }
+
+    public function addquiz() {
+    	$this->load->view('admin/header');
+    	$this->load->view('admin/sidebar');
+    	$this->load->view('admin/formquiz');
     }
 
     public function logout() {
+    	session_start();
     	session_destroy();
     	redirect("admin");
     }

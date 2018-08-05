@@ -31,44 +31,71 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row m-t-30">
+                    <div class="container-fluid">                       
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3 class="title-5 m-b-35">Tambah Materi</h3>
+                                <div class="card">
+                                    <form action="<?php echo base_url().'admin/materi/tambah'?>" method="post" class="form-horizontal">
+                                        <div class="card-body card-block">
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="judul" class=" form-control-label">Judul Materi</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" name="judul" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">Link Video</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="link_video" name="link_video" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer" align="right">
+                                            <button type="submit" class="btn btn-primary btn-md">
+                                                <i class="fa fa-dot-circle-o"></i> Submit
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
-                                <h3 class="title-5 m-b-35">data pegawai</h3>
+                                <h3 class="title-5 m-b-35">Daftar Materi</h3>
                                 <div class="table-responsive m-b-40">
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>NOPEG</th>
-                                                <th>Nama</th>
-                                                <th>Unit</th>
-                                                <th>Skor</th>
-                                                <th>Rank</th>
+                                                <th>Judul Materi</th>
+                                                <th>Link Video</th>
                                                 <th>Edit/Delete</th>
                                                 <!-- <th class="text-right">Delete</th> -->
                                             </tr>
                                         </thead>
-                                        <?php foreach ($user as $a){ ?>
+                                        <?php foreach ($materi as $m){ ?>
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $a->nopeg; ?></td>
-                                                <td><?php echo $a->nama_lengkap; ?></td>
-                                                <td><?php echo $a->unit; ?></td>
-                                                <td><?php echo $a->skor; ?></td>
-                                                <td class="process"><?php echo $a->rank; ?></td>
+                                                <td><?php echo $m->judul; ?></td>
+                                                <td><a href="<?php echo $m->link_video; ?>" target="_blank"><?php echo $m->link_video; ?></a></td>
                                                 <td>
-                                                <div class="table-data-feature">
-                                                    <a href="<?php echo base_url()."admin/home/edit/".$a->nopeg; ?>">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                    <i class="zmdi zmdi-edit"></i>
-                                                    </button></a>
-                                                    &nbsp;
-                                                    <a href="<?php echo base_url()."admin/home/delete/".$a->nopeg; ?>"
-                                                    <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                    <i class="zmdi zmdi-delete"></i>
-                                                    </button></a>
-                                                </div>
+                                                    <div class="table-data-feature">
+                                                        <a href="<?php echo base_url()."admin/materi/edit/".$m->id; ?>">
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                        </a>
+                                                        <a href="<?php echo base_url()."admin/materi/hapus/".$m->id; ?>">
+                                                            <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                        </a>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         <?php }?>
@@ -76,15 +103,11 @@
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE-->
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-    </div>
 
     <script>
         function myFunction() {

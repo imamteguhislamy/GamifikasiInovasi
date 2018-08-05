@@ -30,22 +30,6 @@
 <style>
 #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
 </style>
-<script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-
-}
-</script>
 </head>
 <body class="animsition">
     <?php foreach ($user as $u){ ?>
@@ -138,8 +122,7 @@ function drop(ev) {
                     </div>
                 </div>
             </section>
-            <!-- END WELCOME-->
-           
+            <!-- END WELCOME-->           
             <!-- COURSE-->
             <section class="statistic-chart">
                 <div class="container">
@@ -150,23 +133,16 @@ function drop(ev) {
                                 <h3 class="title-3 m-b-20">
                                     <i class="fa fa-video-camera"></i>Quiz
                                 </h3>
-                                <div class="chart-wrap">
-                                    <p>Drag the W3Schools image into the rectangle:</p>
-
-                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                    <br>
-                                    <div id="drag1" draggable="true" ondragstart="drag(event)">abc</div>
-                                    <br>
-
-
-
+                                <div class="container">
+                                    <p>1. Berikut merupakan values dari Sincerity, kecuali...</p>
+                                    <div class="col-md-4 col-lg-4">
+                                        <button class="btn btn-danger btn-lg btn-block">HONESTY</button>
+                                    <!-- <div class="col-md-6 col-lg-6"> -->
+                                        <button class="btn btn-primary btn-lg btn-block">SAFETY</button>
+                                        <button class="btn btn-warning btn-lg btn-block">SYNERGY</button>
+                                        <button class="btn btn-success btn-lg btn-block">AGILITY</button>
+                                    </div>
                                 </div>
-
-                                <!-- <div align="right">
-                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'course/quiz_inovasi'?>'">
-                                        <i class="fa fa-play"></i>&nbsp; Start Quiz
-                                    </button>
-                                </div> -->
                             </div>
                         </div>
                     </div>
