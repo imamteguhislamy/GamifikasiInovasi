@@ -27,7 +27,7 @@ class home extends CI_Controller {
 		
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/tables', $data);
+		$this->load->view('admin/edit', $data);
 	}
 
 	public function update() {
@@ -45,7 +45,7 @@ class home extends CI_Controller {
         $where = array('nopeg'=>$nopeg);
         $upd = $this->model_user->edit_data('user', $data_update, $where);
         if($upd>=1) {
-            redirect("admin/index");
+            redirect("admin/home/index");
         }
     }
 
@@ -53,7 +53,7 @@ class home extends CI_Controller {
     	$where = array('nopeg' => $nopeg);
     	$del = $this->model_user->delete('user', $where);
     	if ($del>=1) {
-    		redirect("admin/index"); 	
+    		redirect("admin/home/index"); 	
     	}
     }
 
@@ -70,6 +70,7 @@ class home extends CI_Controller {
     }
 
     public function logout() {
+    	session_start();
     	session_destroy();
     	redirect("admin");
     }

@@ -36,12 +36,25 @@ class login extends CI_Controller {
 				);
  
 			$this->session->set_userdata($data_session);
- 			redirect('user/home');
+			$this->home();
+ 			// redirect('user/home');
  
 		}else{
 			$data['err_message'] = "Nomor Pegawai atau Password Salah";
 			$this->load->view('login', $data);
 		}
+	}
+
+	public function home() {
+		$nopeg = $this->session->userdata('nopeg');
+		$where = array(
+                'nopeg' => $nopeg
+                );
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$data['leaderboard'] = $this->model_user->tampil_data_leaderboard()->result();
+		$data['rank'] = $this->model_user->rank()->result();				
+		$this->load->view('user/header', $data);
+		$this->load->view('user/home',  $data);
 	}
 
 	//REGIS USER
@@ -131,12 +144,19 @@ class login extends CI_Controller {
  				'status' => 'login'
  				);
  			$this->session->set_userdata($data_session);
-			redirect('admin/home');
+ 			$this->homeadmin();
 		}
 		else{
 			$data['err_message'] = "Username atau Password Salah";
 			$this->load->view('admin/login', $data);
 		}
+	}
+
+	public function homeadmin() {
+		$data['user'] = $this->model_user->tampil_data();
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/tables', $data);
 	}
 
 	public function logout() {

@@ -59,12 +59,12 @@
                                                 <td class="process"><?php echo $a->rank; ?></td>
                                                 <td>
                                                 <div class="table-data-feature">
-                                                    <a href="<?php echo base_url()."admin/edit/".$a->nopeg; ?>">
+                                                    <a href="<?php echo base_url()."admin/home/edit/".$a->nopeg; ?>">
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                     <i class="zmdi zmdi-edit"></i>
                                                     </button></a>
                                                     &nbsp;
-                                                    <a href="<?php echo base_url()."admin/delete/".$a->nopeg; ?>"
+                                                    <a href="<?php echo base_url()."admin/home/delete/".$a->nopeg; ?>"
                                                     <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                     <i class="zmdi zmdi-delete"></i>
                                                     </button></a>
