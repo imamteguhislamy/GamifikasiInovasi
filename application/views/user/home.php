@@ -74,7 +74,7 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                                    <a href="<?php echo base_url()."user/home/personalize/".$u->nopeg; ?>">
                                                         <i class="zmdi zmdi-account"></i>Personalize</a>
                                                 </div>
                                             </div>
@@ -99,7 +99,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url()?>course/index">
+                                <a href="<?php echo base_url()?>user/course">
                                     <i class="fas fa-book"></i>Courses
                                 </a>
                             </li>
@@ -216,7 +216,7 @@
                                                 <td><?php echo $l->nama_lengkap ?> (<?php echo $l->unit ?>)</td>
                                                 <td><?php echo $l->skor ?></td>
                                             </tr>
-                                            
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -227,7 +227,6 @@
                     </div>
                 </div>
             </section>
-
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">
@@ -243,7 +242,6 @@
             <!-- END COPYRIGHT-->
         </div>
     </div>
-    <?php } ?>
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo base_url()?>main-bootstrap/vendor/bootstrap-4.1/popper.min.js"></script>

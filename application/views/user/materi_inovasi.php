@@ -31,15 +31,15 @@
 </head>
 
 <body class="animsition">
+    <?php foreach($user as $u){ ?> 
     <div class="page-wrapper">
-        <div class="page-content--bgf7">
-
+        <div class="page-content--bgf7"> 
+            
             <!-- HEADER MOBILE-->
             <header class="header-mobile header-mobile-2 d-block d-lg-none">
                 <div class="header-mobile__bar">
                     <div class="container-fluid">
-                        <div class="header-mobile-inner">
-                            
+                        <div class="header-mobile-inner">                            
                             <button class="hamburger hamburger--slider" type="button">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
@@ -52,7 +52,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item account-item--style2 clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn"></a>
@@ -60,34 +60,26 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="#">
-                                                        <img src="<?php echo base_url()?>main-bootstrap/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    <a>
+                                                        <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Narendra</a>
+                                                        <a><?php echo $u->nama_lengkap ?></a>
                                                     </h5>
-                                                    <span class="email">JKTDIC</span>
-                                                    <span class="email">123456</span>
+                                                    <span class="email"><?php echo $u->unit ?></span>
+                                                    <span class="email"><?php echo $u->nopeg ?></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                    <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                                        <i class="zmdi zmdi-account"></i>Personalize</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="<?php echo base_url()?>user/logout">
                                                     <i class="zmdi zmdi-power"></i>Logout
                                                 </a>
                                             </div>
@@ -107,7 +99,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url()?>course/index">
+                                <a href="<?php echo base_url()?>user/course">
                                     <i class="fas fa-book"></i>Courses
                                 </a>
                             </li>
@@ -116,47 +108,52 @@
                 </nav>
             </header>
             <!-- END HEADER MOBILE-->
-
+            
             <!-- TITLE-->
-            <section class="welcome">
+            <section class="welcome p-t-30">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12 m-t-30">
-                            <h1 class="title-4">Courses</h1>
+                        <div class="col-md-12">
+                            <h1 class="title-4">Innovation Award Campaign
+                            </h1>
                             <hr class="line-seprate">
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- TITLE-->
-
-            <!-- COURSES MENU-->
+            <!-- END TITLE-->
+           
+            <!-- COURSE-->
             <section class="statistic-chart">
                 <div class="container">
+                    <!-- Innovation Award-->
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
-                            <!-- Innovation Award-->
                             <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
+                                <h3 class="title-3 m-b-20">
+                                    <i class="fa fa-video-camera"></i>Video
+                                </h3>
                                 <div class="chart-wrap">
-                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
+                                    <video width="100%" height="100%" controls>
+                                        <source src="<?php echo base_url()?>videos/materi-inovasi.mp4" type="video/mp4">
+                                    </video>
                                 </div>
                             <!--<div class="statistic-chart-1-note">
                                     <span class="big">10,368</span>
                                     <span>/ 16220 items sold</span>
                                 </div> -->
                                 <div align="right">
-                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'course/materi_inovasi'?>'">
-                                    <i class="fa fa-play"></i>&nbsp; Start Course
-                                </button>
+                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz_inovasi'?>'">
+                                        <i class="fa fa-play"></i>&nbsp; Start Quiz
+                                    </button>
+                                </div>
                             </div>
-                            </div>
-                            <!-- END Innovation Award-->
                         </div>
                     </div>
+                    <!-- END Innovation Award-->
                 </div>
             </section>
-            <!-- END COURSES MENU-->
+            <!-- END COURSE-->
 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
@@ -173,6 +170,7 @@
             <!-- END COPYRIGHT-->
         </div>
     </div>
+    <?php } ?>
 
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->

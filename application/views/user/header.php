@@ -45,13 +45,13 @@
                     <div class="header__navbar">
                         <ul class="list-unstyled">
                             <li class="has-sub">
-                                <a href="<?php echo base_url()?>home/user">
+                                <a href="<?php echo base_url()?>user/home">
                                     <i class="fas fa-home"></i>Home
                                     <span class="bot-line"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url()?>course/index">
+                                <a href="<?php echo base_url()?>user/course">
                                     <i class="fas fa-book"></i>
                                     <span class="bot-line"></span>Courses
                                 </a>
@@ -85,12 +85,12 @@
                                     </div>
                                     <div class="account-dropdown__body">
                                         <div class="account-dropdown__item">
-                                            <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                            <a href="<?php echo base_url()."user/home/personalize/".$u->nopeg; ?>">
                                                 <i class="zmdi zmdi-account"></i>Personalize</a>
                                         </div>
                                     </div>
                                     <div class="account-dropdown__footer">
-                                        <a href="<?php echo base_url()?>user/logout">
+                                        <a href="<?php echo base_url()?>login/logout">
                                             <i class="zmdi zmdi-power"></i>Logout</a>
                                     </div>
                                 <?php } ?>

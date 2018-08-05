@@ -7,7 +7,7 @@ class home extends CI_Controller {
 		$this->load->model('model_user');
 	}
 	
-	public function user(){
+	public function index(){
 		$nopeg = $this->session->userdata('nopeg');
 		$where = array(
                 'nopeg' => $nopeg
@@ -15,8 +15,8 @@ class home extends CI_Controller {
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$data['leaderboard'] = $this->model_user->tampil_data_leaderboard()->result();
 		$data['rank'] = $this->model_user->rank()->result();				
-		$this->load->view('header', $data);
-		$this->load->view('home',  $data);
+		$this->load->view('user/header', $data);
+		$this->load->view('user/home',  $data);
 	}
 
 	public function personalize() {
@@ -25,7 +25,7 @@ class home extends CI_Controller {
                 'nopeg' => $nopeg
                 );
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
-		$this->load->view('header', $data);
-		$this->load->view('form',  $data);
+		$this->load->view('user/header', $data);
+		$this->load->view('user/personalize',  $data);
 	}
 }

@@ -10,9 +10,9 @@ class admin extends CI_Controller {
 	public function index()
 	{
 		$data['user'] = $this->model_user->tampil_data();
-		$this->load->view('headeradmin');
-		$this->load->view('sideadmin/sidebaradmindata');
-		$this->load->view('tables', $data);
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/tables', $data);
 	}
 
 	public function edit($nopeg){
@@ -25,9 +25,9 @@ class admin extends CI_Controller {
 			"password"=>$krywn[0]['password']
 		);
 		
-		$this->load->view('headeradmin');
-		$this->load->view('sideadmin/sidebaradmindata');
-		$this->load->view('edit',$data);
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/tables', $data);
 	}
 
 	public function update() {
@@ -58,9 +58,9 @@ class admin extends CI_Controller {
     }
 
     public function quiz() {
-    	$this->load->view('headeradmin');
-		$this->load->view('sideadmin/sidebaradminadd');
-		$this->load->view('formquiz');
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/formquiz');
     }
 
     public function logout() {

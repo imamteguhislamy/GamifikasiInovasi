@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class user extends CI_Controller {
+class login extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		 $this->load->helper(array('form'));
@@ -36,7 +36,7 @@ class user extends CI_Controller {
 				);
  
 			$this->session->set_userdata($data_session);
- 			redirect('home/user');
+ 			redirect('user/home');
  
 		}else{
 			$data['err_message'] = "Nomor Pegawai atau Password Salah";
@@ -80,7 +80,7 @@ class user extends CI_Controller {
 			$where = array('nopeg'=>$nopeg);
         	$upd = $this->model_user->edit_data('user', $data_update, $where);
 	        if($upd>=1) {
-	            redirect("home/user");
+	            redirect("user/home");
 	        }
         }       
 	}
@@ -131,7 +131,7 @@ class user extends CI_Controller {
  				'status' => 'login'
  				);
  			$this->session->set_userdata($data_session);
-			redirect('admin/index');
+			redirect('admin/home');
 		}
 		else{
 			$data['err_message'] = "Username atau Password Salah";
@@ -141,7 +141,7 @@ class user extends CI_Controller {
 
 	public function logout() {
 		session_destroy();
-		redirect("user/index");
+		redirect("login");
 	}
 }
 

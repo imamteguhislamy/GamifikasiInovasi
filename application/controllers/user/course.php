@@ -14,8 +14,8 @@ class course extends CI_Controller {
                 'nopeg' => $nopeg
                 );
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
-		$this->load->view('header', $data);
-		$this->load->view('course');
+		$this->load->view('user/header', $data);
+		$this->load->view('user/course');
 	}
 
 	public function materi_inovasi() {
@@ -24,8 +24,8 @@ class course extends CI_Controller {
                 'nopeg' => $nopeg
                 );
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
-		$this->load->view('header', $data);
-		$this->load->view('materi_inovasi');
+		$this->load->view('user/header', $data);
+		$this->load->view('user/materi_inovasi');
 	}
 
 	public function quiz_inovasi() {
@@ -34,8 +34,8 @@ class course extends CI_Controller {
                 'nopeg' => $nopeg
                 );
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
-		$this->load->view('header', $data);
-		$this->load->view('quiz_inovasi');
+		$this->load->view('user/header', $data);
+		$this->load->view('user/quiz_inovasi');
 	}
 
 	

@@ -33,8 +33,8 @@
 <body class="animsition">
     <?php foreach($user as $u){ ?> 
     <div class="page-wrapper">
-        <div class="page-content--bgf7"> 
-            
+        <div class="page-content--bgf7">
+
             <!-- HEADER MOBILE-->
             <header class="header-mobile header-mobile-2 d-block d-lg-none">
                 <div class="header-mobile__bar">
@@ -74,12 +74,12 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="<?php echo base_url()."home/personalize/".$u->nopeg; ?>">
+                                                    <a href="<?php echo base_url()."user/home/personalize/".$u->nopeg; ?>">
                                                         <i class="zmdi zmdi-account"></i>Personalize</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="<?php echo base_url()?>user/logout">
+                                                <a href="<?php echo base_url()?>login/logout">
                                                     <i class="zmdi zmdi-power"></i>Logout
                                                 </a>
                                             </div>
@@ -108,52 +108,87 @@
                 </nav>
             </header>
             <!-- END HEADER MOBILE-->
-            
+
             <!-- TITLE-->
-            <section class="welcome p-t-30">
+            <section class="welcome">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="title-4">Innovation Award Campaign
-                            </h1>
+                        <div class="col-md-12 m-t-30">
+                            <h1 class="title-4">Courses</h1>
                             <hr class="line-seprate">
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- END TITLE-->
-           
-            <!-- COURSE-->
+            <!-- TITLE-->
+
+            <!-- COURSES MENU-->
             <section class="statistic-chart">
                 <div class="container">
-                    <!-- Innovation Award-->
                     <div class="row">
-                        <div class="col-md-12 col-lg-12">
+                        <div class="col-md-6 col-lg-4">
+                            <!-- Innovation Award-->
                             <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">
-                                    <i class="fa fa-video-camera"></i>Video
-                                </h3>
+                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
                                 <div class="chart-wrap">
-                                    <video width="100%" height="100%" controls>
-                                        <source src="<?php echo base_url()?>videos/materi-inovasi.mp4" type="video/mp4">
-                                    </video>
+                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
                                 </div>
                             <!--<div class="statistic-chart-1-note">
                                     <span class="big">10,368</span>
                                     <span>/ 16220 items sold</span>
                                 </div> -->
                                 <div align="right">
-                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'course/quiz_inovasi'?>'">
-                                        <i class="fa fa-play"></i>&nbsp; Start Quiz
-                                    </button>
-                                </div>
+                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi_inovasi'?>'">
+                                    <i class="fa fa-play"></i>&nbsp; Start Course
+                                </button>
                             </div>
+                            </div>
+                            <!-- END Innovation Award-->
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <!-- Innovation Award-->
+                            <div class="statistic-chart-1">
+                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
+                                <div class="chart-wrap">
+                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
+                                </div>
+                            <!--<div class="statistic-chart-1-note">
+                                    <span class="big">10,368</span>
+                                    <span>/ 16220 items sold</span>
+                                </div> -->
+                                <div align="right">
+                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi_inovasi'?>'">
+                                    <i class="fa fa-play"></i>&nbsp; Start Course
+                                </button>
+                            </div>
+                            </div>
+                            <!-- END Innovation Award-->
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <!-- Innovation Award-->
+                            <div class="statistic-chart-1">
+                                <h3 class="title-3 m-b-20">Innovation Award Campaign</h3>
+                                <div class="chart-wrap">
+                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
+                                </div>
+                            <!--<div class="statistic-chart-1-note">
+                                    <span class="big">10,368</span>
+                                    <span>/ 16220 items sold</span>
+                                </div> -->
+                                <div align="right">
+                                <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi_inovasi'?>'">
+                                    <i class="fa fa-play"></i>&nbsp; Start Course
+                                </button>
+                            </div>
+                            </div>
+                            <!-- END Innovation Award-->
                         </div>
                     </div>
-                    <!-- END Innovation Award-->
                 </div>
             </section>
-            <!-- END COURSE-->
+            <!-- END COURSES MENU-->
 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
@@ -171,7 +206,6 @@
         </div>
     </div>
     <?php } ?>
-
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo base_url()?>main-bootstrap/vendor/bootstrap-4.1/popper.min.js"></script>
