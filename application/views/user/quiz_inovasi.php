@@ -27,9 +27,21 @@
 
     <!-- Main CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/theme.css" rel="stylesheet" media="all">
-<style>
-#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
-</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
 </head>
 <body class="animsition">
     <?php foreach ($user as $u){ ?>
@@ -128,26 +140,59 @@
                 <div class="container">
                     <!-- Innovation Award-->
                     <div class="row">
-                        <div class="col-md-12 col-lg-12">
+                        <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-20">
                                     <i class="fa fa-video-camera"></i>Quiz
                                 </h3>
                                 <div class="container">
                                     <p>1. Berikut merupakan values dari Sincerity, kecuali...</p>
-                                    <div class="col-md-4 col-lg-4">
-                                        <button class="btn btn-danger btn-lg btn-block">HONESTY</button>
+                                    <div class="col-md-12 col-lg-12">
+                                        <button draggable="true" ondragstart="drag(event)" class="btn btn-danger btn-lg btn-block">HONESTY</button>
                                     <!-- <div class="col-md-6 col-lg-6"> -->
-                                        <button class="btn btn-primary btn-lg btn-block">SAFETY</button>
-                                        <button class="btn btn-warning btn-lg btn-block">SYNERGY</button>
-                                        <button class="btn btn-success btn-lg btn-block">AGILITY</button>
+                                        <button class="btn btn-primary btn-lg btn-block" draggable="true" ondragstart="drag(event)">SAFETY</button>
+                                        <button class="btn btn-warning btn-lg btn-block" draggable="true" ondragstart="drag(event)">SYNERGY</button>
+                                        <button class="btn btn-success btn-lg btn-block" draggable="true" ondragstart="drag(event)">AGILITY</button>
+                                    </div>
+                                    <div class="container">
+                                        <p>Drop Here..</p>
+                                        <div class="col-md-12 col-lg-12" style="border: 1px solid black; height: 217px">
+                                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">                                           
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="statistic-chart-1">
+                                <h3 class="title-3 m-b-20">
+                                    <i></i>
+                                </h3>
+                                <div class="container">
+                                    <p>1. Berikut merupakan values dari Sincerity, kecuali...</p>
+                                    <div class="col-md-12 col-lg-12">
+                                        <button draggable="true" ondragstart="drag(event)" class="btn btn-danger btn-lg btn-block">HONESTY</button>
+                                    <!-- <div class="col-md-6 col-lg-6"> -->
+                                        <button class="btn btn-primary btn-lg btn-block" draggable="true" ondragstart="drag(event)">SAFETY</button>
+                                        <button class="btn btn-warning btn-lg btn-block" draggable="true" ondragstart="drag(event)">SYNERGY</button>
+                                        <button class="btn btn-success btn-lg btn-block" draggable="true" ondragstart="drag(event)">AGILITY</button>
+                                    </div>
+                                    <div class="container">
+                                        <p>Drop Here..</p>
+                                        <div class="col-md-12 col-lg-12" style="border: 1px solid black; height: 217px">
+                                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">                                           
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
                         </div>
                     </div>
+
                     <!-- END Innovation Award-->
                 </div>
+
             </section>
             <!-- END COURSE-->
 

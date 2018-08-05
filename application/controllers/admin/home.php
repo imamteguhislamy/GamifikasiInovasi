@@ -4,7 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
+		 $this->load->helper(array('form'));
 		$this->load->model('model_user');
+		$this->load->library('upload');
+        $this->load->helper("file");		
 	}
 	
 	public function index()
@@ -68,6 +71,29 @@ class home extends CI_Controller {
     	$this->load->view('admin/sidebar');
     	$this->load->view('admin/formquiz');
     }
+
+    public function addQ(){
+		$id = $_POST['id'];
+		$soal = $_POST['soal'];
+		$jwba = $_POST['jwba'];
+		$jwbb = $_POST['jwbb'];
+		$jwbc = $_POST['jwbc'];
+		$jwbd = $_POST['jwbd'];
+		$add = array(
+			'id' => $id,
+			'soal' => $soal,
+			'jwba' => $jwba,
+			'jwbb' => $jwbb,
+			'jwbc' => $jwbc,
+			'jwbd' => $jwbd
+		);
+           	$ins = $this->model_user->addQuiz('quiz', $add);
+			if ($ins >= 1) {
+				redirect('admin/home');
+			} else {
+				echo "Gagal";
+			}
+        }
 
     public function logout() {
     	session_start();

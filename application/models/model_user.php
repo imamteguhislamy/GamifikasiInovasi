@@ -81,4 +81,9 @@ class model_user extends CI_Model {
 		return $del;
 	}
 
+	public function addQuiz($tblname, $data){
+		$ins = $this->db->insert($tblname, $data);
+		return $ins;
+	}
+
 }

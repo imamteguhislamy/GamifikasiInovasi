@@ -46,7 +46,7 @@
                                         <strong>Form</strong> Quiz
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                        <form action="<?php echo base_url(). 'admin/home/addQ'; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label class=" form-control-label">Materi</label>
@@ -60,34 +60,34 @@
                                                     <label for="text-input" class=" form-control-label">Id Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="Enter Id" class="form-control" required>
+                                                    <input type="text" id="id" name="id" placeholder="Enter Id" class="form-control" required>
                                                     <small class="form-text text-muted">ex: Innov001, Innov002</small>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
+                                            <!-- <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="text-input" class=" form-control-label">Judul</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="email-input" name="email-input" placeholder="Enter Title" class="form-control" required>
+                                                    <input type="text" id="judul" name="judul" placeholder="Enter Title" class="form-control" required>
                                                     <small class="help-block form-text">Please enter your title</small>
                                                 </div>
-                                            </div>
-                                            <div class="row form-group">
+                                            </div> -->
+                                            <!-- <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="text-input" class=" form-control-label">YouTube Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="link" id="email-input" name="email-input" placeholder="Enter YouTube Link" class="form-control" required>
+                                                    <input type="link" id="link" name="link" placeholder="Enter YouTube Link" class="form-control" required>
                                                     <small class="help-block form-text">Please enter your YouTube link</small>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="textarea-input" class=" form-control-label">Soal</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control" required></textarea>
+                                                    <textarea name="soal" id="soal" rows="9" placeholder="Content..." class="form-control" required></textarea>
                                                 </div>
                                             </div>
 
@@ -96,7 +96,7 @@
                                                     <label for="text-input" class=" form-control-label">Jawaban</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="A" class="form-control" required>
+                                                    <input type="text" id="jwba" name="jwba" placeholder="A" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -104,7 +104,7 @@
                                                     <label for="text-input" class=" form-control-label"></label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="B" class="form-control" required>
+                                                    <input type="text" id="jwbb" name="jwbb" placeholder="B" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -112,7 +112,7 @@
                                                     <label for="text-input" class=" form-control-label"></label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="C" class="form-control" required>
+                                                    <input type="text" id="jwbc" name="jwbc" placeholder="C" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -120,17 +120,17 @@
                                                     <label for="text-input" class=" form-control-label"></label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="D" class="form-control" required>
+                                                    <input type="text" id="jwbd" name="jwbd" placeholder="D" class="form-control" required>
                                                 </div>
                                             </div>                 
-                                            <div class="row form-group">
+                                            <!-- <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="file-input" class=" form-control-label">Gambar Soal</label>
                                                 </div>
                                                 <div class="col-10 col-md-6">
-                                                    <input type="file" id="file-input" name="file-input" class="form-control-file">
+                                                    <input type="file" id="gambar" name="gambar" class="form-control-file">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
