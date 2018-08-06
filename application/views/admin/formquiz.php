@@ -71,7 +71,7 @@
                                                 <td><?php echo $q['jwbd']; ?></td>                                                
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="<?php echo base_url()."admin/materi/edit/".$q['id_quiz']; ?>">
+                                                        <a href="<?php echo base_url()."admin/home/editQ/".$q['id_quiz']; ?>">
                                                             <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
@@ -103,10 +103,8 @@
                                                 <div class="col col-md-3">
                                                     <label class=" form-control-label">Materi</label>
                                                 </div>
-                                                <div class="col-12 col-md-9">
-                                                    <?php foreach ($quiz as $q){ ?>
-                                                    <input readonly type="text" id="text-input" name="id_materi" class="form-control" value="<?php echo $q['id']; ?>" required>
-                                                <?php }?>
+                                                <div class="col-12 col-md-9">                                                   
+                                                    <input readonly type="text" id="text-input" name="id_materi" class="form-control" value="<?php echo $q['id']; ?>" required>                                                
                                                 </div>
                                             </div>
                                             <div class="row form-group">

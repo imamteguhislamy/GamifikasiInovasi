@@ -39,6 +39,11 @@ class model_admin extends CI_Model {
 		return $upd;
 	}
 
+	public function edit_quiz($table,$data,$where){		
+		$upd = $this->db->update($table,$data,$where);
+		return $upd;
+	}
+
 	public function show_materi($where="") {
 		$data = $this->db->query('select * from materi '. $where);
 		return $data->result_array();

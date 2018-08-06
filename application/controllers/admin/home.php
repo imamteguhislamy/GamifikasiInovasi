@@ -60,6 +60,16 @@ class home extends CI_Controller {
     		redirect("admin/home"); 	
     	}
     }
+    
+    public function logout() {
+    	session_start();
+    	session_destroy();
+    	redirect("admin");
+    }
+
+    // ====================================================================================================================
+    // =====================================================QUIZ & MATERI==================================================
+    // ====================================================================================================================
 
     public function quiz() {
     	$data['materi'] = $this->model_admin->data_materi();
@@ -110,10 +120,44 @@ class home extends CI_Controller {
 			}
         }
 
-    public function logout() {
-    	session_start();
-    	session_destroy();
-    	redirect("admin");
+        public function editQ($id_quiz){
+        $edt = $this->model_admin->data_quiz("where id_quiz = '$id_quiz'");
+		$data = array(			
+			"id_quiz"=>$edt[0]['id_quiz'],
+			"id_materi"=>$edt[0]['id_materi'],
+			"soal"=>$edt[0]['soal'],
+			"jwba"=>$edt[0]['jwba'],
+			"jwbb"=>$edt[0]['jwbb'],
+			"jwbc"=>$edt[0]['jwbc'],
+			"jwbd"=>$edt[0]['jwbd']
+		);
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/editquiz', $data);
+        }
+
+        public function updQ() {
+        $id_materi = $_POST['id_materi'];
+        $id_quiz = $_POST['id_quiz'];
+        $soal = $_POST['soal'];
+        $jwba = $_POST['jwbb'];
+        $jwbb = $_POST['jwbb'];
+        $jwbc = $_POST['jwbc'];
+        $jwbd = $_POST['jwbd'];
+        $edtQ = array(
+            'id_quiz' => $id_quiz,
+            'soal' => $soal,
+			'jwba' => $jwba,
+			'jwbb' => $jwbb,
+			'jwbc' => $jwbc,
+			'jwbd' => $jwbd
+        );
+        $where = array('id_quiz'=>$id_quiz);
+        $upd = $this->model_admin->edit_quiz('quiz', $edtQ, $where);
+        if($upd>=1) {
+            redirect("admin/home/addquiz/".$id_materi);
+        }
     }
 
 }
