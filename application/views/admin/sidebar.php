@@ -51,12 +51,8 @@
                             <i class="fas fa-chart-bar"></i>Materi</a>
                         </li>
                         <li>
-                            <a href="#">
-                            <i class="fas fa-desktop"></i>Quiz</a>
-                        </li>
-                        <li>
                             <a href="<?php echo base_url()?>admin/home/quiz">
-                            <i class="far fa-check-square"></i>Add Quiz</a>
+                            <i class="far fa-check-square"></i>Quiz</a>
                         </li>
                     </ul>
                 </nav>

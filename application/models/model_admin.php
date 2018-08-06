@@ -11,6 +11,16 @@ class model_admin extends CI_Model {
 		return $data->result();
 	}
 
+	public function data_quiz($where="") {
+		$data = $this->db->query('SELECT * FROM quiz '. $where);
+		return $data->result_array();
+	}
+
+	public function quiz($where="") {
+		$data = $this->db->query('SELECT * FROM quiz '. $where);
+		return $data->result_array();
+	}
+
 	public function tampil_materi($table, $where) {
 		return $this->db->get_where($table,$where);
 	}
