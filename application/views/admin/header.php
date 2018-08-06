@@ -34,74 +34,59 @@
 
 </head>
 <body class="animsition">
-  <div class="page-container">
-            <!-- HEADER DESKTOP-->
-            <header class="header-desktop">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                            <div class="header-button">
-                                <div class="noti-wrap">
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <form class="form-header" action="" method="POST">
+                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                            <button class="au-btn--submit" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                        <div class="header-button">
+                            <div class="noti-wrap">
+                                <div>
+                                    <i></i>
+                                </div>
+                                <div>
+                                    <i></i>
                                     <div>
-                                        <i></i>
-                                    </div>
-                                    <div>
-                                        <i></i>
                                         <div>
-                                            <div>
-                                            </div>                                           
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <i></i>
+                                        </div>                                           
                                     </div>
                                 </div>
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="<?php echo base_url()?>assets/gi.ico">
-                                        </div>
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#"><?php echo $this->session->userdata('nama'); ?></a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="<?php echo base_url()?>assets/gi.ico" width=65 length=65>
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#"><?php echo $this->session->userdata('nama'); ?></a>
-                                                    </h5>
-                                                    <span class="email">GIA Admin</span>
-                                                </div>
+                                <div>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="<?php echo base_url()?>assets/gi.ico">
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#"><?php echo $this->session->userdata('nama'); ?></a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="<?php echo base_url()?>assets/gi.ico" width=65 length=65>
+                                                </a>
                                             </div>
-<!--                                             <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div> -->
-                                            <div class="account-dropdown__footer">
-                                                <a href="<?php echo base_url()?>admin/home/logout">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#"><?php echo $this->session->userdata('nama'); ?></a>
+                                                </h5>
+                                                <span class="email">GIA Admin</span>
                                             </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="<?php echo base_url()?>admin/home/logout">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +94,8 @@
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
     <!-- Jquery JS-->
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->

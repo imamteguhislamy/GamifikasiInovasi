@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('<?php echo base_url()?>assets/bg2.jpg');">
 			<div class="wrap-login100 p-b-30">
-				<form class="login100-form validate-form" method="post"  enctype="multipart/form-data" action="<?php echo base_url().'user/register'?>">
+				<form class="login100-form validate-form" method="post"  enctype="multipart/form-data" action="<?php echo base_url().'login/register'?>">
 					<div align="center">
 						<img src="<?php echo base_url()?>assets/logo.png" alt="AVATAR" height="250px" weight="250px">
 					</div>

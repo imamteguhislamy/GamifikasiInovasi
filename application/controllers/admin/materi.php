@@ -5,6 +5,9 @@ class materi extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('model_admin');
+		$this->load->library('upload');
+        $this->load->helper("file");
+        $this->load->helper(array('form'));
 	}
 	
 	public function index() {
@@ -14,13 +17,41 @@ class materi extends CI_Controller {
 		$this->load->view('admin/materi/tabel', $data);
 	}
 
+
 	public function tambah() {
-		$data = array(
-			'judul' => $this->input->post('judul'),
-			'link_video' => $this->input->post('link_video')
+		if(basename($_FILES["gambar"]["name"])==NULL){
+			$picture = 'no-image.png';
+			$data = array(
+				'judul' => $this->input->post('judul'),
+				'link_video' => $this->input->post('link_video'),
+				'gambar' => $picture
 			);
-		$this->model_admin->tambah_materi($data);
-		$this->index();
+			$this->model_admin->tambah_materi($data);
+			$this->index();
+		} else {
+			$picture =  basename($_FILES["gambar"]["name"]);
+			$data = array(
+				'judul' => $this->input->post('judul'),
+				'link_video' => $this->input->post('link_video'),
+				'gambar' => $picture
+			);
+			$config['upload_path']          = './images/materi/';
+			$config['allowed_types']        = 'jpg|png';
+			$config['max_size']             = 100000;
+	 
+			// load library upload
+			$this->upload->initialize($config);
+	        if (!$this->upload->do_upload('gambar')) {
+	            $error = $this->upload->display_errors();
+	            // menampilkan pesan error
+	            print_r($error);
+	        } else {
+	           	$this->model_admin->tambah_materi($data);
+				$this->index();
+	        }
+		}
+
+		
 	}
 
 	public function edit($id){
@@ -29,7 +60,7 @@ class materi extends CI_Controller {
 			"id"=>$materi[0]['id'],
 			"judul"=>$materi[0]['judul'],
 			"link_video"=>$materi[0]['link_video'],
-			//"gambar"=>$materi[0]['gambar']
+			"gambar"=>$materi[0]['gambar']
 		);
 		
 		$this->load->view('admin/header');
@@ -41,13 +72,21 @@ class materi extends CI_Controller {
         $id = $_POST['id'];
         $judul = $_POST['judul'];
         $link_video = $_POST['link_video'];
-        //$gambar = $_POST['gambar'];
-        
-        $data_update = array(
-            'judul' => $judul,
-            'link_video' => $link_video
-			//'gambar' => $gambar,
-        );
+        $gambar = $_POST['gambar'];
+
+        if($gambar == NULL) {
+        	$data_update = array(
+	            'judul' => $judul,
+	            'link_video' => $link_video
+        	);
+        } else { 
+        	$data_update = array(
+	            'judul' => $judul,
+	            'link_video' => $link_video,
+				'gambar' => $gambar
+	        );
+        }
+       
         $where = array('id'=>$id);
         $upd = $this->model_admin->edit_materi('materi', $data_update, $where);
         if($upd>=1) {

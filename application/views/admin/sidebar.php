@@ -43,6 +43,10 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
+                            <a href="<?php echo base_url()?>admin/dashboard">
+                            <i class="fas fa-table"></i>Dashboard</a>                            
+                        </li>
+                        <li>
                             <a href="<?php echo base_url()?>admin/home">
                             <i class="fas fa-table"></i>Data Pegawai</a>                            
                         </li>

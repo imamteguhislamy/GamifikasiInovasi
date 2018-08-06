@@ -27,63 +27,60 @@
     <link href="<?php echo base_url()?>css/theme.css" rel="stylesheet" media="all">
 
 </head>
-        
-            <!-- MAIN CONTENT-->
-            <div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row m-t-30">
-                            <div class="col-md-12">
-                                <!-- DATA TABLE-->
-                                <h3 class="title-5 m-b-35">data pegawai</h3>
-                                <div class="table-responsive m-b-40">
-                                    <table class="table table-borderless table-data3">
-                                        <thead>
-                                            <tr>
-                                                <th>NOPEG</th>
-                                                <th>Nama</th>
-                                                <th>Unit</th>
-                                                <th>Skor</th>
-                                                <th>Rank</th>
-                                                <th>Edit/Delete</th>
-                                                <!-- <th class="text-right">Delete</th> -->
-                                            </tr>
-                                        </thead>
-                                        <?php foreach ($user as $a){ ?>
-                                        <tbody>
-                                            <tr>
-                                                <td><?php echo $a->nopeg; ?></td>
-                                                <td><?php echo $a->nama_lengkap; ?></td>
-                                                <td><?php echo $a->unit; ?></td>
-                                                <td><?php echo $a->skor; ?></td>
-                                                <td class="process"><?php echo $a->rank; ?></td>
-                                                <td>
-                                                <div class="table-data-feature">
-                                                    <a href="<?php echo base_url()."admin/home/edit/".$a->nopeg; ?>">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                    <i class="zmdi zmdi-edit"></i>
-                                                    </button></a>
-                                                    &nbsp;
-                                                    <a href="<?php echo base_url()."admin/home/delete/".$a->nopeg; ?>"
-                                                    <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                    <i class="zmdi zmdi-delete"></i>
-                                                    </button></a>
-                                                </div>
-                                                </td>
-                                            </tr>
-                                        <?php }?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- END DATA TABLE-->
-
-                            </div>
+<body>       
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row m-t-30">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE-->
+                        <h3 class="title-5 m-b-35">data pegawai</h3>
+                        <div class="table-responsive m-b-40">
+                            <table class="table table-borderless table-data3">
+                                <thead>
+                                    <tr>
+                                        <th>NOPEG</th>
+                                        <th>Nama</th>
+                                        <th>Unit</th>
+                                        <th>Skor</th>
+                                        <th>Rank</th>
+                                        <th>Edit/Delete</th>
+                                        <!-- <th class="text-right">Delete</th> -->
+                                    </tr>
+                                </thead>
+                                <?php foreach ($user as $a){ ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $a->nopeg; ?></td>
+                                        <td><?php echo $a->nama_lengkap; ?></td>
+                                        <td><?php echo $a->unit; ?></td>
+                                        <td><?php echo $a->skor; ?></td>
+                                        <td class="process"><?php echo $a->rank; ?></td>
+                                        <td>
+                                        <div class="table-data-feature">
+                                            <a href="<?php echo base_url()."admin/home/edit/".$a->nopeg; ?>">
+                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                            </button></a>
+                                            &nbsp;
+                                            <a href="<?php echo base_url()."admin/home/delete/".$a->nopeg; ?>"
+                                            <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                            </button></a>
+                                        </div>
+                                        </td>
+                                    </tr>
+                                <?php }?>
+                                </tbody>
+                            </table>
                         </div>
+                        <!-- END DATA TABLE-->
+
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <script>

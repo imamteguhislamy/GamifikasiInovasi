@@ -36,7 +36,7 @@
                             <div class="col-lg-12">
                                 <h3 class="title-5 m-b-35">Tambah Materi</h3>
                                 <div class="card">
-                                    <form action="<?php echo base_url().'admin/materi/tambah'?>" method="post" class="form-horizontal">
+                                    <form action="<?php echo base_url().'admin/materi/tambah'?>" method="post" class="form-horizontal" enctype="multipart/form-data">
                                         <div class="card-body card-block">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
@@ -51,7 +51,15 @@
                                                     <label for="link_video" class=" form-control-label">Link Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="link_video" name="link_video" class="form-control">
+                                                    <input type="text" id="link_video" name="link_video" placeholder="Masukkan link sumber video disini (ex : https://www.youtube.com/videoanda)" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">File Foto Latar</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="File" id="gambar" name="gambar" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -74,6 +82,7 @@
                                             <tr>
                                                 <th>Judul Materi</th>
                                                 <th>Link Video</th>
+                                                <th>Foto Latar</th>
                                                 <th>Edit/Delete</th>
                                                 <!-- <th class="text-right">Delete</th> -->
                                             </tr>
@@ -83,6 +92,7 @@
                                             <tr>
                                                 <td><?php echo $m->judul; ?></td>
                                                 <td><a href="<?php echo $m->link_video; ?>" target="_blank"><?php echo $m->link_video; ?></a></td>
+                                                <td><a href="<?php echo base_url()."images/materi/".$m->gambar; ?>" target="_blank"><?php echo $m->gambar; ?></a></td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <a href="<?php echo base_url()."admin/materi/edit/".$m->id; ?>">

@@ -52,7 +52,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item account-item--style2 clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                            <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn"></a>
@@ -61,7 +61,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a>
-                                                        <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                                        <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -174,7 +174,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                            <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-lg-6">
