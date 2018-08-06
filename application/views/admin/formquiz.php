@@ -104,7 +104,9 @@
                                                     <label class=" form-control-label">Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input readonly type="text" id="text-input" name="id_materi" class="form-control" value="<?php echo $id_materi; ?>" required>
+                                                    <?php foreach ($quiz as $q){ ?>
+                                                    <input readonly type="text" id="text-input" name="id_materi" class="form-control" value="<?php echo $q['id']; ?>" required>
+                                                <?php }?>
                                                 </div>
                                             </div>
                                             <div class="row form-group">

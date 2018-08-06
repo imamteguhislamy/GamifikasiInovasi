@@ -69,7 +69,7 @@ class home extends CI_Controller {
     }
 
     public function addquiz($id) {
-    	$quiz = $this->model_admin->data_quiz("where id_materi = $id");
+    	$quiz = $this->model_admin->quiz("where materi.id = $id");
     	$data = array(
     		"id_quiz"=>$quiz[0]['id_quiz'],
     		"id_materi"=>$quiz[0]['id_materi'],
@@ -79,7 +79,7 @@ class home extends CI_Controller {
 			"jwbc"=>$quiz[0]['jwbc'],
 			"jwbd"=>$quiz[0]['jwbd']
 		);
-		$data['quiz'] = $this->model_admin->quiz("where id_materi = $id");
+		$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
 		$this->load->view('admin/header');
     	$this->load->view('admin/sidebar');
     	$this->load->view('admin/formquiz', $data);
