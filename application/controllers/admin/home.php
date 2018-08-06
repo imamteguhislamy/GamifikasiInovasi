@@ -7,7 +7,8 @@ class home extends CI_Controller {
 		 $this->load->helper(array('form'));
 		$this->load->model('model_user');
 		$this->load->library('upload');
-        $this->load->helper("file");		
+        $this->load->helper("file");
+        $this->load->model('model_admin');		
 	}
 	
 	public function index()
@@ -59,28 +60,52 @@ class home extends CI_Controller {
     		redirect("admin/home"); 	
     	}
     }
-
-    public function quiz() {
-		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
-		$this->load->view('admin/materi');
+    
+    public function logout() {
+    	session_start();
+    	session_destroy();
+    	redirect("admin");
     }
 
-    public function addquiz() {
-    	$this->load->view('admin/header');
+    // ====================================================================================================================
+    // =====================================================QUIZ & MATERI==================================================
+    // ====================================================================================================================
+
+    public function quiz() {
+    	$data['materi'] = $this->model_admin->data_materi();
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/materi', $data);
+    }
+
+    public function addquiz($id) {
+    	$quiz = $this->model_admin->quiz("where materi.id = $id");
+    	$data = array(
+    		"id_quiz"=>$quiz[0]['id_quiz'],
+    		"id_materi"=>$quiz[0]['id_materi'],
+			"soal"=>$quiz[0]['soal'],
+			"jwba"=>$quiz[0]['jwba'],
+			"jwbb"=>$quiz[0]['jwbb'],
+			"jwbc"=>$quiz[0]['jwbc'],
+			"jwbd"=>$quiz[0]['jwbd']
+		);
+		$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
+		$this->load->view('admin/header');
     	$this->load->view('admin/sidebar');
-    	$this->load->view('admin/formquiz');
+    	$this->load->view('admin/formquiz', $data);
     }
 
     public function addQ(){
-		$id = $_POST['id'];
+    	$id_quiz = $_POST['id_quiz'];
+		$id_materi = $_POST['id_materi'];
 		$soal = $_POST['soal'];
 		$jwba = $_POST['jwba'];
 		$jwbb = $_POST['jwbb'];
 		$jwbc = $_POST['jwbc'];
 		$jwbd = $_POST['jwbd'];
 		$add = array(
-			'id' => $id,
+			'id_quiz' => $id_quiz,
+			'id_materi' => $id_materi,
 			'soal' => $soal,
 			'jwba' => $jwba,
 			'jwbb' => $jwbb,
@@ -89,16 +114,50 @@ class home extends CI_Controller {
 		);
            	$ins = $this->model_user->addQuiz('quiz', $add);
 			if ($ins >= 1) {
-				redirect('admin/home');
+				redirect('admin/home/addquiz/'.$id_materi);
 			} else {
 				echo "Gagal";
 			}
         }
 
-    public function logout() {
-    	session_start();
-    	session_destroy();
-    	redirect("admin");
+        public function editQ($id_quiz){
+        $edt = $this->model_admin->data_quiz("where id_quiz = '$id_quiz'");
+		$data = array(			
+			"id_quiz"=>$edt[0]['id_quiz'],
+			"id_materi"=>$edt[0]['id_materi'],
+			"soal"=>$edt[0]['soal'],
+			"jwba"=>$edt[0]['jwba'],
+			"jwbb"=>$edt[0]['jwbb'],
+			"jwbc"=>$edt[0]['jwbc'],
+			"jwbd"=>$edt[0]['jwbd']
+		);
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/editquiz', $data);
+        }
+
+        public function updQ() {
+        $id_materi = $_POST['id_materi'];
+        $id_quiz = $_POST['id_quiz'];
+        $soal = $_POST['soal'];
+        $jwba = $_POST['jwbb'];
+        $jwbb = $_POST['jwbb'];
+        $jwbc = $_POST['jwbc'];
+        $jwbd = $_POST['jwbd'];
+        $edtQ = array(
+            'id_quiz' => $id_quiz,
+            'soal' => $soal,
+			'jwba' => $jwba,
+			'jwbb' => $jwbb,
+			'jwbc' => $jwbc,
+			'jwbd' => $jwbd
+        );
+        $where = array('id_quiz'=>$id_quiz);
+        $upd = $this->model_admin->edit_quiz('quiz', $edtQ, $where);
+        if($upd>=1) {
+            redirect("admin/home/addquiz/".$id_materi);
+        }
     }
 
 }

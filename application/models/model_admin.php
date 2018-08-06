@@ -11,6 +11,16 @@ class model_admin extends CI_Model {
 		return $data->result();
 	}
 
+	public function data_quiz($where="") {
+		$data = $this->db->query('SELECT * FROM quiz '. $where);
+		return $data->result_array();
+	}
+
+	public function quiz($where="") {
+		$data = $this->db->query('SELECT * FROM quiz RIGHT JOIN materi ON quiz.id_materi = materi.id '. $where);
+		return $data->result_array();
+	}
+
 	public function tampil_materi($table, $where) {
 		return $this->db->get_where($table,$where);
 	}
@@ -25,6 +35,11 @@ class model_admin extends CI_Model {
 	}
 
 	public function edit_materi($table,$data,$where){		
+		$upd = $this->db->update($table,$data,$where);
+		return $upd;
+	}
+
+	public function edit_quiz($table,$data,$where){		
 		$upd = $this->db->update($table,$data,$where);
 		return $upd;
 	}
