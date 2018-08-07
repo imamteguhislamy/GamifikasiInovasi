@@ -52,7 +52,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item account-item--style2 clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                            <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn"></a>
@@ -61,7 +61,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a>
-                                                        <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                                        <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -134,7 +134,7 @@
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-20"><?php echo $m->judul; ?></h3>
                                 <div class="chart-wrap">
-                                    <img src="<?php echo base_url()?>images/materi-inovasi.png">
+                                    <img src="<?php echo base_url()?>images/materi/<?php echo $m->gambar?>" style="height: 400px width:600px">
                                 </div>
                                 <div align="right">
                                     <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/show_materi/'.$m->id ?>'">

@@ -52,7 +52,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item account-item--style2 clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                            <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn"></a>
@@ -61,7 +61,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a>
-                                                        <img src="<?php echo base_url()?>images/<?php echo $u->picture ?>">
+                                                        <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -130,7 +130,7 @@
                             <!-- FORM-->
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-30">Edit Profile</h3>
-                                <form action="<?php echo base_url().'user/update_profile'?>" method="post" class="form-horizontal"  enctype="multipart/form-data">
+                                <form action="<?php echo base_url().'login/update_profile'?>" method="post" class="form-horizontal"  enctype="multipart/form-data">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="hf-email" class=" form-control-label">Nomor Pegawai</label>
@@ -188,11 +188,8 @@
                                     </div>
                                     <?php }?>
                                     <div class="m-t-25" align="right">
-                                        <button type="submit" class="btn btn-primary btn-sm m-r-5">
+                                        <button type="submit" class="btn btn-primary btn-md m-r-5">
                                             <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
                                         </button>
                                     </div>
                                 </form>

@@ -62,6 +62,23 @@
                                                     <input type="text" name="link_video" value="<?php echo $link_video ?>" class="form-control">
                                                 </div>
                                             </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">Foto Latar Baru</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" name="gambar" value="<?php echo $gambar ?>" class="form-control">
+                                                    <span>*Kosongkan jika tidak ada perubahan</span>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">Foto Latar Lama</label>
+                                                </div>
+                                                <div class="col col-md-4">
+                                                    <img src="<?php echo base_url()?>images/materi/<?php echo $gambar ?> ">
+                                                </div>
+                                            </div>
                                             <!-- <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="link_video" class=" form-control-label">Gambar</label>

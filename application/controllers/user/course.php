@@ -27,7 +27,7 @@ class course extends CI_Controller {
                 );
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$this->load->view('user/header', $data);
-		$this->load->view('user/quiz_inovasi');
+		$this->load->view('user/quiz');
 	}
 
 	public function show_materi($id) {
@@ -44,7 +44,7 @@ class course extends CI_Controller {
 			"judul"=>$materi[0]['judul'],
 			"link_video"=>$materi[0]['link_video']
 		);
-		$this->load->view('user/materi_inovasi', $data);
+		$this->load->view('user/materi', $data);
 	}
 
 	
