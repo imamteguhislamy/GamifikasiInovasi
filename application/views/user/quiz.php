@@ -115,7 +115,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 m-t-20">
-                            <h1 class="title-4">QUIZ
+                            <h1 class="title-4"><i class="fas fa-book"></i>
+                                &nbsp;QUIZ
                             </h1>
                             <hr class="line-seprate">
                         </div>
@@ -133,9 +134,32 @@
                             <div class="statistic-chart-1">
                                 <div class="container">
                                     <p><?php echo $q['soal']; ?></p>
+                                    <!-- <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <div class="radio">
+                                                            <label for="radio1" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwba']; ?>" name="<?php echo $q['jwba']; ?>" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="radio2" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwbb']; ?>" name="<?php echo $q['jwbb']; ?>" value="<?php echo $q['jwbb']; ?>" class="form-check-input"><?php echo $q['jwbb']; ?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="radio3" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwbc']; ?>" name="<?php echo $q['jwbc']; ?>" value="<?php echo $q['jwbc']; ?>" class="form-check-input"><?php echo $q['jwbc']; ?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="radio4" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwbd']; ?>" name="<?php echo $q['jwbd']; ?>" value="<?php echo $q['jwbd']; ?>" class="form-check-input"><?php echo $q['jwbd']; ?>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
                                     <div class="col-md-12 col-lg-12">
                                         <button class="btn btn-danger btn-lg btn-block"><?php echo $q['jwba']; ?></button>
-                                    <!-- <div class="col-md-6 col-lg-6"> -->
                                         <button class="btn btn-primary btn-lg btn-block"><?php echo $q['jwbb']; ?></button>
                                         <button class="btn btn-warning btn-lg btn-block"><?php echo $q['jwbc']; ?></button>
                                         <button class="btn btn-success btn-lg btn-block"><?php echo $q['jwbd']; ?></button>
