@@ -103,4 +103,12 @@ class materi extends CI_Controller {
     		redirect("admin/materi"); 	
     	}
     }
+
+    public function hapusQ($id) {
+    	$where = array('id_quiz' => $id);
+    	$del = $this->model_admin->hapus_soal('quiz', $where);
+    	if ($del>=1) {
+    		redirect("admin/home/quiz");
+    	}
+    }
 }

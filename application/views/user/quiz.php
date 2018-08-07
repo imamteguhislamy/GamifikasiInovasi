@@ -115,7 +115,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 m-t-20">
-                            <h1 class="title-4">Innovation Award Campaign
+                            <h1 class="title-4">QUIZ
                             </h1>
                             <hr class="line-seprate">
                         </div>
@@ -127,24 +127,23 @@
             <section class="statistic-chart">
                 <div class="container">
                     <!-- Innovation Award-->
-                    <div class="row">
+                    <div class="row">                        
+                        <?php foreach ($quiz as $q){ ?>
                         <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">
-                                    <i class="fa fa-video-camera"></i>Quiz
-                                </h3>
                                 <div class="container">
-                                    <p>1. Berikut merupakan values dari Sincerity, kecuali...</p>
+                                    <p><?php echo $q['soal']; ?></p>
                                     <div class="col-md-12 col-lg-12">
-                                        <button class="btn btn-danger btn-lg btn-block">HONESTY</button>
+                                        <button class="btn btn-danger btn-lg btn-block"><?php echo $q['jwba']; ?></button>
                                     <!-- <div class="col-md-6 col-lg-6"> -->
-                                        <button class="btn btn-primary btn-lg btn-block">SAFETY</button>
-                                        <button class="btn btn-warning btn-lg btn-block">SYNERGY</button>
-                                        <button class="btn btn-success btn-lg btn-block">AGILITY</button>
+                                        <button class="btn btn-primary btn-lg btn-block"><?php echo $q['jwbb']; ?></button>
+                                        <button class="btn btn-warning btn-lg btn-block"><?php echo $q['jwbc']; ?></button>
+                                        <button class="btn btn-success btn-lg btn-block"><?php echo $q['jwbd']; ?></button>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
+                        <?php }?>
                     </div>
                     <!-- END Innovation Award-->
                 </div>
