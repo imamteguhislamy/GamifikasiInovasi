@@ -41,14 +41,18 @@
                         <div class="statistic-chart-1">
                             <h3 class="title-3 m-b-20">JKTDZ</h3>
                             <div class="table-responsive">
+                                
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTDZ as $DZ) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $DZ->nama_lengkap; ?> (<?php echo $DZ->nopeg; ?>)</td>
+                                            <td><?php echo $DZ->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
+                                
                             </div>
                         </div>                            
                     </div>
@@ -64,15 +68,17 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="statistic-chart-1">
                             <h3 class="title-3 m-b-20">JKTID</h3>
-                            <div class="table-responsive">
+                            <div class="table-responsive">   
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTID as $ID) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $ID->nama_lengkap; ?> (<?php echo $ID->nopeg; ?>)</td>
+                                            <td><?php echo $ID->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
-                                </table>
+                                </table>  
                             </div>
                         </div>                                 
                     </div>
@@ -85,12 +91,14 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTIB as $IB) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $IB->nama_lengkap; ?> (<?php echo $IB->nopeg; ?>)</td>
+                                            <td><?php echo $IB->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
-                                </table>
+                                </table> 
                             </div>
                         </div>                            
                     </div>
@@ -103,10 +111,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTVZ as $VZ) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $VZ->nama_lengkap; ?> (<?php echo $VZ->nopeg; ?>)</td>
+                                            <td><?php echo $VZ->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -118,13 +128,15 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="statistic-chart-1">
                             <h3 class="title-3 m-b-20">JKTIG</h3>
-                            <div class="table-responsive">
+                            <div class="table-responsive">    
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTIG as $IG) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $IG->nama_lengkap; ?> (<?php echo $IG->nopeg; ?>)</td>
+                                            <td><?php echo $IG->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -136,13 +148,15 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="statistic-chart-1">
                             <h3 class="title-3 m-b-20">JKTPG</h3>
-                            <div class="table-responsive">
+                            <div class="table-responsive">   
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTPG as $PG) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $PG->nama_lengkap; ?> (<?php echo $PG->nopeg; ?>)</td>
+                                            <td><?php echo $PG->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -164,10 +178,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTWL as $WL) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $WL->nama_lengkap; ?> (<?php echo $WL->nopeg; ?>)</td>
+                                            <td><?php echo $WL->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -182,10 +198,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTWF as $WF) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $WF->nama_lengkap; ?> (<?php echo $WF->nopeg; ?>)</td>
+                                            <td><?php echo $WF->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -200,10 +218,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTWA as $WA) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $WA->nama_lengkap; ?> (<?php echo $WA->nopeg; ?>)</td>
+                                            <td><?php echo $WA->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -218,10 +238,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTWR as $WR) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $WR->nama_lengkap; ?> (<?php echo $WR->nopeg; ?>)</td>
+                                            <td><?php echo $WR->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -243,10 +265,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKML as $ML) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $ML->nama_lengkap; ?> (<?php echo $ML->nopeg; ?>)</td>
+                                            <td><?php echo $ML->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -261,10 +285,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKMQ as $OS) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $OS->nama_lengkap; ?> (<?php echo $OS->nopeg; ?>)</td>
+                                            <td><?php echo $OS->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -286,10 +312,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTOF as $OF) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $OF->nama_lengkap; ?> (<?php echo $OF->nopeg; ?>)</td>
+                                            <td><?php echo $OF->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -304,10 +332,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTOS as $OS) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $OS->nama_lengkap; ?> (<?php echo $OS->nopeg; ?>)</td>
+                                            <td><?php echo $OS->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -322,10 +352,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTPN as $PN) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $PN->nama_lengkap; ?> (<?php echo $PN->nopeg; ?>)</td>
+                                            <td><?php echo $PN->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -347,10 +379,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTCG as $CG) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $CG->nama_lengkap; ?> (<?php echo $CG->nopeg; ?>)</td>
+                                            <td><?php echo $CG->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -365,10 +399,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTCI as $CI) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $CI->nama_lengkap; ?> (<?php echo $CI->nopeg; ?>)</td>
+                                            <td><?php echo $CI->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -383,10 +419,12 @@
                             <div class="table-responsive">
                                 <table class="table table-top-campaign">
                                     <tbody>
+                                        <?php foreach ($JKTCC as $CC) { ?>
                                         <tr>
-                                            <td>Imam Teguh</td>
-                                            <td>100</td>
+                                            <td><?php echo $CC->nama_lengkap; ?> (<?php echo $CC->nopeg; ?>)</td>
+                                            <td><?php echo $CC->skor; ?></td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -934,7 +972,43 @@
                             </div>
                         </div>                            
                     </div>
-                    <!-- END JKTCD -->                    
+                    <!-- END JKTCD -->
+
+                    <!-- MESDM -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="statistic-chart-1">
+                            <h3 class="title-3 m-b-20">MESDM</h3>
+                            <div class="table-responsive">
+                                <table class="table table-top-campaign">
+                                    <tbody>
+                                        <tr>
+                                            <td>Imam Teguh</td>
+                                            <td>100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                            
+                    </div>
+                    <!-- END MESDM -->
+
+                    <!-- BTJDM -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="statistic-chart-1">
+                            <h3 class="title-3 m-b-20">BTJDM</h3>
+                            <div class="table-responsive">
+                                <table class="table table-top-campaign">
+                                    <tbody>
+                                        <tr>
+                                            <td>Imam Teguh</td>
+                                            <td>100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                            
+                    </div>
+                    <!-- END BTJDM -->
 
                 </div>
                 <!-- END JKTDN -->                
