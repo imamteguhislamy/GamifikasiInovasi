@@ -128,14 +128,14 @@
                 <div class="container">
                     <!-- Innovation Award-->
                     <div class="row">
-                        <div class="col-md-12 col-lg-12">
+                        <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-20">
                                     <i class="fa fa-video-camera"></i>Quiz
                                 </h3>
                                 <div class="container">
                                     <p>1. Berikut merupakan values dari Sincerity, kecuali...</p>
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-12 col-lg-12">
                                         <button class="btn btn-danger btn-lg btn-block">HONESTY</button>
                                     <!-- <div class="col-md-6 col-lg-6"> -->
                                         <button class="btn btn-primary btn-lg btn-block">SAFETY</button>

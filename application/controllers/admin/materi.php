@@ -57,7 +57,9 @@ class materi extends CI_Controller {
 
 	public function hapus($id) {
     	$where = array('id' => $id);
+    	$whereS = array('id_materi' => $id);
     	$del = $this->model_admin->hapus_materi('materi', $where);
+    	$delSoal = $this->model_admin->hapus_soal('quiz', $whereS);
     	if ($del>=1) {
     		redirect("admin/materi"); 	
     	}

@@ -34,6 +34,11 @@ class model_admin extends CI_Model {
 		return $del;
 	}
 
+	public function hapus_soal($table, $where) {
+		$delSoal = $this->db->delete($table, $where);
+		return $delSoal;
+	}
+
 	public function edit_materi($table,$data,$where){		
 		$upd = $this->db->update($table,$data,$where);
 		return $upd;
@@ -46,6 +51,11 @@ class model_admin extends CI_Model {
 
 	public function show_materi($where="") {
 		$data = $this->db->query('select * from materi '. $where);
+		return $data->result_array();
+	}
+
+	public function show_quiz($where="") {
+		$data = $this->db->query('SELECT * FROM quiz '. $where);
 		return $data->result_array();
 	}
     	
