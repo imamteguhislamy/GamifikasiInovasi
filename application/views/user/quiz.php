@@ -115,7 +115,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 m-t-20">
-                            <h1 class="title-4">Innovation Award Campaign
+                            <h1 class="title-4"><i class="fas fa-book"></i>
+                                &nbsp;QUIZ
                             </h1>
                             <hr class="line-seprate">
                         </div>
@@ -127,24 +128,46 @@
             <section class="statistic-chart">
                 <div class="container">
                     <!-- Innovation Award-->
-                    <div class="row">
-                        <div class="col-md-12 col-lg-12">
+                    <div class="row">                        
+                        <?php foreach ($quiz as $q){ ?>
+                        <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-20">
-                                    <i class="fa fa-video-camera"></i>Quiz
-                                </h3>
                                 <div class="container">
-                                    <p>1. Berikut merupakan values dari Sincerity, kecuali...</p>
-                                    <div class="col-md-4 col-lg-4">
-                                        <button class="btn btn-danger btn-lg btn-block">HONESTY</button>
-                                    <!-- <div class="col-md-6 col-lg-6"> -->
-                                        <button class="btn btn-primary btn-lg btn-block">SAFETY</button>
-                                        <button class="btn btn-warning btn-lg btn-block">SYNERGY</button>
-                                        <button class="btn btn-success btn-lg btn-block">AGILITY</button>
+                                    <p><?php echo $q['soal']; ?></p>
+                                    <!-- <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <div class="radio">
+                                                            <label for="radio1" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwba']; ?>" name="<?php echo $q['jwba']; ?>" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="radio2" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwbb']; ?>" name="<?php echo $q['jwbb']; ?>" value="<?php echo $q['jwbb']; ?>" class="form-check-input"><?php echo $q['jwbb']; ?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="radio3" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwbc']; ?>" name="<?php echo $q['jwbc']; ?>" value="<?php echo $q['jwbc']; ?>" class="form-check-input"><?php echo $q['jwbc']; ?>
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label for="radio4" class="form-check-label ">
+                                                                <input type="radio" id="<?php echo $q['jwbd']; ?>" name="<?php echo $q['jwbd']; ?>" value="<?php echo $q['jwbd']; ?>" class="form-check-input"><?php echo $q['jwbd']; ?>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                    <div class="col-md-12 col-lg-12">
+                                        <button class="btn btn-danger btn-lg btn-block"><?php echo $q['jwba']; ?></button>
+                                        <button class="btn btn-primary btn-lg btn-block"><?php echo $q['jwbb']; ?></button>
+                                        <button class="btn btn-warning btn-lg btn-block"><?php echo $q['jwbc']; ?></button>
+                                        <button class="btn btn-success btn-lg btn-block"><?php echo $q['jwbd']; ?></button>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
+                        <?php }?>
                     </div>
                     <!-- END Innovation Award-->
                 </div>

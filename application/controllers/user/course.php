@@ -20,14 +20,15 @@ class course extends CI_Controller {
 		$this->load->view('user/course', $data);
 	}
 
-	public function quiz_inovasi() {
+	public function quiz_inovasi($id) {
 		$nopeg = $this->session->userdata('nopeg');
 		$where = array(
                 'nopeg' => $nopeg
                 );
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$datas['quiz'] = $this->model_admin->quiz("where materi.id = $id");
 		$this->load->view('user/header', $data);
-		$this->load->view('user/quiz');
+		$this->load->view('user/quiz', $datas);
 	}
 
 	public function show_materi($id) {

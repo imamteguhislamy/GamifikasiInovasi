@@ -143,7 +143,7 @@
                                     <span>/ 16220 items sold</span>
                                 </div> -->
                                 <div align="right">
-                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz_inovasi'?>'">
+                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz_inovasi/'.$id ?>'">
                                         <i class="fa fa-play"></i>&nbsp; Start Quiz
                                     </button>
                                 </div>

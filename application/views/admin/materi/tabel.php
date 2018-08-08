@@ -100,6 +100,7 @@
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
                                                         </a>
+                                                    &nbsp;
                                                         <a href="<?php echo base_url()."admin/materi/hapus/".$m->id; ?>">
                                                             <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
