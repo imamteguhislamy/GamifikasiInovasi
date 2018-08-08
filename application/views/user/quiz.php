@@ -132,6 +132,7 @@
                         <?php foreach ($quiz as $q){ ?>
                         <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
+<<<<<<< HEAD
                                 <h4><?php echo $q['soal']; ?></h4>
                                 <br>
                                 <div class="container">   

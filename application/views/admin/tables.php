@@ -35,7 +35,7 @@
                 <div class="row m-t-30">
                     <div class="col-md-12">
                         <!-- DATA TABLE-->
-                        <h3 class="title-5 m-b-35">data pegawai</h3>
+                        <h3 class="title-5 m-b-35"><i class="fas fa-table"></i> &nbsp; data pegawai</h3>
                         <div class="table-responsive m-b-40">
                             <table class="table table-borderless table-data3">
                                 <thead>
