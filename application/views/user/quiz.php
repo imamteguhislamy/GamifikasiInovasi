@@ -132,47 +132,123 @@
                         <?php foreach ($quiz as $q){ ?>
                         <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
-                                <div class="container">
-                                    <p><?php echo $q['soal']; ?></p>
-                                    <!-- <div class="col col-md-9">
-                                                    <div class="form-check">
-                                                        <div class="radio">
-                                                            <label for="radio1" class="form-check-label ">
-                                                                <input type="radio" id="<?php echo $q['jwba']; ?>" name="<?php echo $q['jwba']; ?>" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label for="radio2" class="form-check-label ">
-                                                                <input type="radio" id="<?php echo $q['jwbb']; ?>" name="<?php echo $q['jwbb']; ?>" value="<?php echo $q['jwbb']; ?>" class="form-check-input"><?php echo $q['jwbb']; ?>
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label for="radio3" class="form-check-label ">
-                                                                <input type="radio" id="<?php echo $q['jwbc']; ?>" name="<?php echo $q['jwbc']; ?>" value="<?php echo $q['jwbc']; ?>" class="form-check-input"><?php echo $q['jwbc']; ?>
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label for="radio4" class="form-check-label ">
-                                                                <input type="radio" id="<?php echo $q['jwbd']; ?>" name="<?php echo $q['jwbd']; ?>" value="<?php echo $q['jwbd']; ?>" class="form-check-input"><?php echo $q['jwbd']; ?>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                    <div class="col-md-12 col-lg-12">
-                                        <button class="btn btn-danger btn-lg btn-block"><?php echo $q['jwba']; ?></button>
-                                        <button class="btn btn-primary btn-lg btn-block"><?php echo $q['jwbb']; ?></button>
-                                        <button class="btn btn-warning btn-lg btn-block"><?php echo $q['jwbc']; ?></button>
-                                        <button class="btn btn-success btn-lg btn-block"><?php echo $q['jwbd']; ?></button>
+                                <h4><?php echo $q['soal']; ?></h4>
+                                <br>
+                                <div class="container">   
+                                    <div class="row form-group">
+                                        <div class="form-check">
+                                            <form action="<?php if(isset($_POST['enter'])) { echo $_POST['radios']; } ?>" method="post">
+                                            <div class="radio">
+                                                <label for="radio1" class="form-check-label ">
+                                                    <input type="radio" id="radio1" name="radios" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="radio2" class="form-check-label ">
+                                                    <input type="radio" id="radio2" name="radios" value="<?php echo $q['jwbb']; ?>" class="form-check-input"><?php echo $q['jwbb']; ?>
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="radio3" class="form-check-label ">
+                                                    <input type="radio" id="radio3" name="radios" value="<?php echo $q['jwbc']; ?>" class="form-check-input"><?php echo $q['jwbc']; ?>
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="radio4" class="form-check-label ">
+                                                    <input type="radio" id="radio4" name="radios" value="<?php echo $q['jwbd']; ?>" class="form-check-input"><?php echo $q['jwbd']; ?>
+                                                </label>
+                                            </div>
+                                            <input type="submit" name="enter" value="Enter">  
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>                                
+                                </div>
+
                             </div>
                         </div>
-                        <?php }?>
+                    <?php } ?>
                     </div>
                     <!-- END Innovation Award-->
                 </div>
             </section>
             <!-- END COURSE-->
+
+            <section>
+                <?php  
+
+// $s1 = soal 1
+// $j1 = jawaban 1
+// $k1 = kunci 1
+
+error_reporting(E_ALL ^ E_NOTICE);
+
+if(isset($_POST['submit'])) {
+    // nilai awal
+    $poin = 0;
+    $nilai = 10; //nilai +/- setiap jawaban benar/salah
+
+    // buat variabel u. nampung kunci jawaban 
+    $k1 = "sk"; // SEKOLAH KODING
+    $k2 = "kh"; // KANG HILMAN
+
+    /************** SOAL 1 ***************/
+
+    // cek apakah user memilih jawaban 
+    if(isset($_POST['s1'])) {
+
+        //mengubah array menjadi string
+        $j1 = implode($_POST['s1'] ,"");
+        if($j1 == $k1) {
+            $poin += $nilai;
+        }else{
+            $poin -= $nilai;
+        }
+    }else{
+        // user tidak memilih (golput hehe)
+        // mau diapain.. :D
+    }
+
+    /************** SOAL 2 ***************/
+
+    if(isset($_POST['s2'])) {
+        $j2 = implode($_POST['s2'] ,"");
+        if($j2 == $k2) {
+            $poin += $nilai;
+        }else{
+            $poin -= $nilai;
+        }
+    }else{
+
+    }
+
+    echo "Total Poin anda " . $poin;        
+
+}
+
+?>
+
+
+<form action="" method="post">
+    <br>
+    1.Website Favorit <br><br>
+    <!-- attribute name harus sama dan dikasih[] artinya array karena dari ketiga akan kita ambil 1-->
+    <input type="radio" name="s1[]" value="sl"> Sekolah lain
+    <input type="radio" name="s1[]" value="sb"> Sekolah Biasa
+    <input type="radio" name="s1[]" value="sk">Sekolah Koding
+    <br>
+    <br>
+    2.Inspirasi Kita <br><br>
+    <input type="radio" name="s2[]" value="kk">Kang kung
+    <input type="radio" name="s2[]" value="kh">Kang Hilman
+    <input type="radio" name="s2[]" value="kg">Kang Guru
+    <br>
+    <br>
+    <input type="submit" name="submit">
+</form
+            </section>
+
+
+            
 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
