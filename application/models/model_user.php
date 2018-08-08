@@ -11,6 +11,10 @@ class model_user extends CI_Model {
 		$this->db->insert('user', $data);
 	}
 
+	public function addC($nopeg) {
+		$this->db->query("ALTER TABLE `materi` ADD `". $nopeg . "` INT NOT NULL AFTER `gambar`");
+	}
+
 	public function tampil_data_leaderboard() {
 		return $this->db->query('select nama_lengkap, unit, skor from user order by skor desc');
 	}

@@ -44,19 +44,19 @@
                     <ul class="list-unstyled navbar__list">
                         <li>
                             <a href="<?php echo base_url()?>admin/dashboard">
-                            <i class="fas fa-table"></i>Dashboard</a>                            
+                            <i class="fas fa-home"></i>Dashboard</a>                            
                         </li>
                         <li>
                             <a href="<?php echo base_url()?>admin/home">
-                            <i class="fas fa-table"></i>Data Pegawai</a>                            
+                            <i class="fas fa-user"></i>Data Pegawai</a>                            
                         </li>
                         <li>
                             <a href="<?php echo base_url()?>admin/materi">
-                            <i class="fas fa-chart-bar"></i>Materi</a>
+                            <i class="fas fa-archive"></i>Materi</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url()?>admin/home/quiz">
-                            <i class="far fa-check-square"></i>Quiz</a>
+                            <i class="fas fa-gamepad"></i>Quiz</a>
                         </li>
                     </ul>
                 </nav>

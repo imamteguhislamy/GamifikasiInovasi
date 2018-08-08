@@ -124,7 +124,10 @@ class login extends CI_Controller {
 			'skor' => '0',
 			'rank' => '1'
 			);
+
+		$nopeg = $this->input->post('nopeg');
 		$this->model_user->addData($data);
+		$this->model_user->addC($nopeg);
 		$this->index();
 	}
 
