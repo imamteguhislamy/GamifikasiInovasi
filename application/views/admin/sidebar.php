@@ -33,7 +33,7 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <aside class="menu-sidebar d-none d-lg-block">
+        <aside class="menu-sidebar2 d-none d-lg-block">
             <div class="logo">
                 <a href="#">
                     <img src="<?php echo base_url()?>assets/logo-white.png">
