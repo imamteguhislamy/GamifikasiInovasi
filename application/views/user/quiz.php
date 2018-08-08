@@ -132,8 +132,9 @@
                         <?php foreach ($quiz as $q){ ?>
                         <div class="col-md-6 col-lg-6">
                             <div class="statistic-chart-1">
-                                <div class="container">
-                                    <p><?php echo $q['soal']; ?></p>
+                                <div class="container">  
+                                <p><?php echo $user['0']->nopeg; ?></p>                                  
+                                    <p><?php echo $q['id_quiz']; ?> &nbsp; <?php echo $q['soal']; ?></p>
                                     <!-- <div class="col col-md-9">
                                                     <div class="form-check">
                                                         <div class="radio">
