@@ -48,5 +48,17 @@ class course extends CI_Controller {
 		$this->load->view('user/materi', $data);
 	}
 
+	public function cek_quiz() {
+		$answer = $_POST['radios'];
+		$jawaban = $_POST['jwbn'];
+		if ($answer == $jawaban) {          
+		    echo 'Correct'; 
+
+		}
+		else {
+		    echo 'Incorrect';
+		}        
+	}
+
 	
 }

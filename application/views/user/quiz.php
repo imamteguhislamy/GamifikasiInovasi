@@ -127,18 +127,20 @@
             <!-- COURSE-->
             <section class="statistic-chart">
                 <div class="container">
+                    <div id='timer'></div>
                     <!-- Innovation Award-->
-                    <div class="row">                        
+                    <div class="row">   
+
                         <?php foreach ($quiz as $q){ ?>
                         <div class="col-md-6 col-lg-6">
+                            
                             <div class="statistic-chart-1">
-<<<<<<< HEAD
                                 <h4><?php echo $q['soal']; ?></h4>
                                 <br>
                                 <div class="container">   
                                     <div class="row form-group">
                                         <div class="form-check">
-                                            <form action="<?php if(isset($_POST['enter'])) { echo $_POST['radios']; } ?>" method="post">
+                                            <form action="<?php echo base_url()?>user/course/cek_quiz" method="post">
                                             <div class="radio">
                                                 <label for="radio1" class="form-check-label ">
                                                     <input type="radio" id="radio1" name="radios" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>
@@ -159,6 +161,9 @@
                                                     <input type="radio" id="radio4" name="radios" value="<?php echo $q['jwbd']; ?>" class="form-check-input"><?php echo $q['jwbd']; ?>
                                                 </label>
                                             </div>
+                                            <div>
+                                                <input type="text" id="jwbn" name="jwbn" hidden value="<?php echo $q['jwbBenar']; ?>">
+                                            </div>
                                             <input type="submit" name="enter" value="Enter">  
                                             </form>
                                         </div>
@@ -175,80 +180,76 @@
             <!-- END COURSE-->
 
             <section>
-                <?php  
-
-// $s1 = soal 1
-// $j1 = jawaban 1
-// $k1 = kunci 1
-
-error_reporting(E_ALL ^ E_NOTICE);
-
-if(isset($_POST['submit'])) {
-    // nilai awal
-    $poin = 0;
-    $nilai = 10; //nilai +/- setiap jawaban benar/salah
-
-    // buat variabel u. nampung kunci jawaban 
-    $k1 = "sk"; // SEKOLAH KODING
-    $k2 = "kh"; // KANG HILMAN
-
-    /************** SOAL 1 ***************/
-
-    // cek apakah user memilih jawaban 
-    if(isset($_POST['s1'])) {
-
-        //mengubah array menjadi string
-        $j1 = implode($_POST['s1'] ,"");
-        if($j1 == $k1) {
-            $poin += $nilai;
-        }else{
-            $poin -= $nilai;
-        }
-    }else{
-        // user tidak memilih (golput hehe)
-        // mau diapain.. :D
-    }
-
-    /************** SOAL 2 ***************/
-
-    if(isset($_POST['s2'])) {
-        $j2 = implode($_POST['s2'] ,"");
-        if($j2 == $k2) {
-            $poin += $nilai;
-        }else{
-            $poin -= $nilai;
-        }
-    }else{
-
-    }
-
-    echo "Total Poin anda " . $poin;        
-
-}
-
-?>
-
-
-<form action="" method="post">
-    <br>
-    1.Website Favorit <br><br>
-    <!-- attribute name harus sama dan dikasih[] artinya array karena dari ketiga akan kita ambil 1-->
-    <input type="radio" name="s1[]" value="sl"> Sekolah lain
-    <input type="radio" name="s1[]" value="sb"> Sekolah Biasa
-    <input type="radio" name="s1[]" value="sk">Sekolah Koding
-    <br>
-    <br>
-    2.Inspirasi Kita <br><br>
-    <input type="radio" name="s2[]" value="kk">Kang kung
-    <input type="radio" name="s2[]" value="kh">Kang Hilman
-    <input type="radio" name="s2[]" value="kg">Kang Guru
-    <br>
-    <br>
-    <input type="submit" name="submit">
-</form
+               
             </section>
 
-
+<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+ 
+  <!-- Script Timer -->
+     <script type="text/javascript">
+        $(document).ready(function() {
+              /** Membuat Waktu Mulai Hitung Mundur Dengan 
+                * var detik = 0,
+                * var menit = 1,
+                * var jam = 1
+              */
+              var detik = 10;
+              var menit = 0;
+              var jam   = 0;
+              
+             /**
+               * Membuat function hitung() sebagai Penghitungan Waktu
+             */
+            function hitung() {
+                /** setTimout(hitung, 1000) digunakan untuk 
+                    * mengulang atau merefresh halaman selama 1000 (1 detik) 
+                */
+                setTimeout(hitung,1000);
+  
+               /** Jika waktu kurang dari 10 menit maka Timer akan berubah menjadi warna merah */
+               if(detik < 6 && detik != 0){
+                     var peringatan = 'style="color:red"';
+               } else if (detik == 0) {
+                <?php echo "Selesai" ?>
+               }
+ 
+               /** Menampilkan Waktu Timer pada Tag #Timer di HTML yang tersedia */
+               $('#timer').html(
+                      '<h1 align="center"'+peringatan+'>Sisa waktu anda <br />' + detik + ' detik</h1><hr>'
+                );
+  
+                /** Melakukan Hitung Mundur dengan Mengurangi variabel detik - 1 */
+                detik --;
+ 
+                /** Jika var detik < 0
+                    * var detik akan dikembalikan ke 59
+                    * Menit akan Berkurang 1
+                */
+                if(detik == 0) {
+                   <?php echo "Selesai"?>
+ 
+                    /** Jika menit < 0
+                        * Maka menit akan dikembali ke 59
+                        * Jam akan Berkurang 1
+                    */
+                    if(menit < 0) {
+                        menit = 59;
+                        jam --;
+ 
+                        /** Jika var jam < 0
+                            * clearInterval() Memberhentikan Interval dan submit secara otomatis
+                        */
+                        if(jam < 0) {                                                                 
+                            clearInterval();  
+                        } 
+                    } 
+                } 
+            }           
+            /** Menjalankan Function Hitung Waktu Mundur */
+            hitung();
+      }); 
+      // ]]>
+    </script>
             
 
             <!-- COPYRIGHT-->

@@ -17,7 +17,7 @@ class model_admin extends CI_Model {
 	}
 
 	public function quiz($where="") {
-		$data = $this->db->query('SELECT * FROM quiz RIGHT JOIN materi ON quiz.id_materi = materi.id '. $where);
+		$data = $this->db->query('SELECT * FROM quiz RIGHT JOIN materi ON quiz.id_materi = materi.id'. $where);
 		return $data->result_array();
 	}
 
@@ -59,6 +59,8 @@ class model_admin extends CI_Model {
 		$data = $this->db->query('SELECT * FROM quiz '. $where);
 		return $data->result_array();
 	}
+
+
     	
 	// DASHBOARD
 
