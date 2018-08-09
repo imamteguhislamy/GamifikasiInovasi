@@ -78,6 +78,10 @@ class model_user extends CI_Model {
 	public function edit_data($table,$data,$where){		
 		$upd = $this->db->update($table,$data,$where);
 		return $upd;
+	}
+
+	public function editskor($skor, $where=""){
+		$upd = $this->db->query("UPDATE `user` SET `skor` = "."'".$skor."'"." ".$where);
 	}	
 
 	public function delete($table, $where) {
@@ -91,3 +95,4 @@ class model_user extends CI_Model {
 	}
 
 }
+// UPDATE `user` SET `skor` = '10' WHERE `user`.`nopeg` = '14';
