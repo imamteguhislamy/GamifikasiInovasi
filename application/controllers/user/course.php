@@ -20,19 +20,19 @@ class course extends CI_Controller {
 		$this->load->view('user/course', $data);
 	}
 
-	public function quiz_inovasi($id) {
+	public function quiz($id) {
 		$nopeg = $this->session->userdata('nopeg');
 		$where = array(
                 'nopeg' => $nopeg
                 );
 		$i = 1;
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
-		$datas['quiz'] = $this->model_admin->quiz("where materi.id = $id and id_quiz = ".$i);
+		$datas['quiz'] = $this->model_admin->quiz("where materi.judul = '$id' and id_quiz = ".$i);
 		$this->load->view('user/header', $data);
 		$this->load->view('user/quiz', $datas, $i);
 	}
 
-	public function show_materi($id) {
+	public function materi($id) {
 		$nopeg = $this->session->userdata('nopeg');
 		$where = array(
                 'nopeg' => $nopeg
@@ -40,7 +40,7 @@ class course extends CI_Controller {
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$this->load->view('user/header', $data);
 		
-		$materi = $this->model_admin->show_materi("where id = '$id'");
+		$materi = $this->model_admin->show_materi("where judul = '$id'");
 		$data = array(
 			"id"=>$materi[0]['id'],
 			"judul"=>$materi[0]['judul'],
@@ -51,11 +51,19 @@ class course extends CI_Controller {
 		$this->load->view('user/materi', $data);
 	}
 
-	public function cek_quiz($i) {
+	public function quizz($id, $i) {
 		$answer = $_POST['radios'];
 		$jawaban = $_POST['jwbn'];
-		if ($answer == $jawaban) {          
-		    echo 'Correct'; 
+		if ($answer == $jawaban) {
+		    $i += 1;
+		    $nopeg = $this->session->userdata('nopeg');
+			$where = array(
+                'nopeg' => $nopeg
+                );		
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
+		$this->load->view('user/header', $data);
+		$this->load->view('user/quiz', $datas, $i);
 		}
 		else {
 		    echo 'Incorrect';

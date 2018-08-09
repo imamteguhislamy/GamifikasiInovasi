@@ -87,7 +87,8 @@ class home extends CI_Controller {
 			"jwba"=>$quiz[0]['jwba'],
 			"jwbb"=>$quiz[0]['jwbb'],
 			"jwbc"=>$quiz[0]['jwbc'],
-			"jwbd"=>$quiz[0]['jwbd']
+			"jwbd"=>$quiz[0]['jwbd'],
+			"jwbBenar"=>$quiz[0]['jwbBenar']
 		);
 		$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
 		$this->load->view('admin/header');
@@ -103,6 +104,7 @@ class home extends CI_Controller {
 		$jwbb = $_POST['jwbb'];
 		$jwbc = $_POST['jwbc'];
 		$jwbd = $_POST['jwbd'];
+		$jwbBenar = $_POST['jwbBenar'];
 		$add = array(
 			'id_quiz' => $id_quiz,
 			'id_materi' => $id_materi,
@@ -110,7 +112,8 @@ class home extends CI_Controller {
 			'jwba' => $jwba,
 			'jwbb' => $jwbb,
 			'jwbc' => $jwbc,
-			'jwbd' => $jwbd
+			'jwbd' => $jwbd,
+			"JwbBenar" => $jwbBenar
 		);
            	$ins = $this->model_user->addQuiz('quiz', $add);
 			if ($ins >= 1) {
@@ -129,7 +132,8 @@ class home extends CI_Controller {
 			"jwba"=>$edt[0]['jwba'],
 			"jwbb"=>$edt[0]['jwbb'],
 			"jwbc"=>$edt[0]['jwbc'],
-			"jwbd"=>$edt[0]['jwbd']
+			"jwbd"=>$edt[0]['jwbd'],
+			"jwbBenar"=>$edt[0]['jwbBenar']
 		);
 		
 		$this->load->view('admin/header');
@@ -141,17 +145,19 @@ class home extends CI_Controller {
         $id_materi = $_POST['id_materi'];
         $id_quiz = $_POST['id_quiz'];
         $soal = $_POST['soal'];
-        $jwba = $_POST['jwbb'];
+        $jwba = $_POST['jwba'];
         $jwbb = $_POST['jwbb'];
         $jwbc = $_POST['jwbc'];
         $jwbd = $_POST['jwbd'];
+        $jwbBenar = $_POST['jwbBenar'];
         $edtQ = array(
             'id_quiz' => $id_quiz,
             'soal' => $soal,
 			'jwba' => $jwba,
 			'jwbb' => $jwbb,
 			'jwbc' => $jwbc,
-			'jwbd' => $jwbd
+			'jwbd' => $jwbd,
+			'jwbBenar' => $jwbBenar
         );
         $where = array('id_quiz'=>$id_quiz);
         $upd = $this->model_admin->edit_quiz('quiz', $edtQ, $where);

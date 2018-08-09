@@ -137,7 +137,7 @@
                                     <img src="<?php echo base_url()?>images/materi/<?php echo $m->gambar?>" style="height: 400px width:600px">
                                 </div>
                                 <div align="right">
-                                    <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/show_materi/'.$m->id ?>'">
+                                    <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi/'.$m->judul ?>'">
                                         <i class="fa fa-play"></i>&nbsp; Start Course
                                     </button>
                                 </div>

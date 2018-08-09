@@ -21,6 +21,11 @@ class model_admin extends CI_Model {
 		return $data->result_array();
 	}
 
+	// public function quiz2($where="") {
+	// 	$data = $this->db->query('SELECT * FROM quiz JOIN materi ON quiz.id_materi = materi.id '. $where);
+	// 	return $data->result_array();
+	// }
+
 	public function tampil_materi($table, $where) {
 		return $this->db->get_where($table,$where);
 	}

@@ -155,7 +155,7 @@
                                 }
                                 ?>
                                 <div align="right">
-                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz_inovasi/'.$id ?>'">
+                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz/'.$judul ?>'">
                                         <i class="fa fa-play"></i>&nbsp; Start Quiz
                                     </button>
                                 </div>

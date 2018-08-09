@@ -50,12 +50,13 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th>id</th>
                                                 <th>Soal</th>
                                                 <th>A</th>
                                                 <th>B</th>
                                                 <th>C</th>
                                                 <th>D</th>
+                                                <th>Jawaban</th>
                                                 <th>Edit/Delete</th>
                                                 <!-- <th class="text-right">Delete</th> -->
                                             </tr>
@@ -68,7 +69,8 @@
                                                 <td><?php echo $q['jwba']; ?></td>
                                                 <td><?php echo $q['jwbb']; ?></td>
                                                 <td><?php echo $q['jwbc']; ?></td>
-                                                <td><?php echo $q['jwbd']; ?></td>                                                
+                                                <td><?php echo $q['jwbd']; ?></td>
+                                                <td><?php echo $q['jwbBenar']; ?></td>                                                
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <a href="<?php echo base_url()."admin/home/editQ/".$q['id_quiz']; ?>">
@@ -116,7 +118,7 @@
                                                     <input type="text" id="text-input" name="id_quiz" placeholder="Enter Id" class="form-control" required>
                                                     <small class="form-text text-muted">ex: Innov001, Innov002</small>
                                                 </div>
-                                            </div>                                            
+                                            </div>                                                                                   
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="textarea-input" class=" form-control-label">Soal</label>
@@ -125,10 +127,9 @@
                                                     <textarea name="soal" id="textarea-input" rows="9" placeholder="Content..." class="form-control" required></textarea>
                                                 </div>
                                             </div>
-
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Jawaban</label>
+                                                    <label for="text-input" class=" form-control-label">Pilihan Jawaban</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="text-input" name="jwba" placeholder="A" class="form-control" required>
@@ -158,6 +159,15 @@
                                                     <input type="text" id="text-input" name="jwbd" placeholder="D" class="form-control" required>
                                                 </div>
                                             </div> 
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Jawaban</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="jwbBenar" placeholder="Answer of the Question" class="form-control" required>
+                                                    <small class="form-text text-muted">*Pilihan dengan Jawaban harus sama</small>
+                                                </div>
+                                            </div>
                                             <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit

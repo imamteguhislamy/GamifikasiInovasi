@@ -64,7 +64,7 @@
                                                         <div class="col-12 col-md-9">
                                                             <input readonly type="text" id="text-input" name="id_quiz" placeholder="Enter Id" class="form-control" value="<?php echo $id_quiz ?>" required>
                                                         </div>
-                                                    </div>                                            
+                                                    </div>                                    
                                                     <div class="row form-group">
                                                         <div class="col col-md-3">
                                                             <label for="textarea-input" class=" form-control-label">Soal</label>
@@ -76,7 +76,7 @@
 
                                                     <div class="row form-group">
                                                         <div class="col col-md-3">
-                                                            <label for="text-input" class=" form-control-label">Jawaban</label>
+                                                            <label for="text-input" class=" form-control-label">Pilihan Jawaban</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <input type="text" id="text-input" name="jwba" placeholder="A" class="form-control" value="<?php echo $jwba ?>" required>
@@ -106,6 +106,14 @@
                                                             <input type="text" id="text-input" name="jwbd" value="<?php echo $jwbd ?>" placeholder="D" class="form-control" required>
                                                         </div>
                                                     </div> 
+                                                    <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="text-input" class=" form-control-label">Jawaban</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="text-input" name="jwbBenar" placeholder="Answer of the Question" class="form-control" value="<?php echo $jwbBenar ?>" required>
+                                                        </div>
+                                                    </div>
                                                     <div class="card-footer">
                                                 <button type="submit" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-dot-circle-o"></i> Submit
