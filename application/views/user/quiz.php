@@ -139,7 +139,7 @@
                                 <div class="container">   
                                     <div class="row form-group">
                                         <div class="form-check">
-                                            <form action="<?php echo base_url()?>user/course/quizz/<?php echo $q['judul']; ?>/<?php echo $q['id_quiz']; ?>" method="post">
+                                            <form action="<?php echo base_url()?>user/course/quizz/<?php echo $q['judul']; ?>/<?php echo $q['id_quiz']; ?>" method="post" id="myForm">
                                             <div class="radio">
                                                 <label for="radio1" class="form-check-label ">
                                                     <input type="radio" id="radio1" name="radios" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>
@@ -209,7 +209,9 @@
                if(detik < 6 && detik != 0){
                      var peringatan = 'style="color:red"';
                } else if (detik == 0) {
-                <?php echo "Selesai" ?>
+                document.getElementById("myForm").submit();
+                // $(location).attr('href', '<?php echo base_url()?>user/course/quizz/<?php echo $q['judul']; ?>./.<?php echo $q['id_quiz']; ?>')
+                
                }
  
                /** Menampilkan Waktu Timer pada Tag #Timer di HTML yang tersedia */
@@ -225,7 +227,7 @@
                     * Menit akan Berkurang 1
                 */
                 if(detik == 0) {
-                   <?php echo "Selesai"?>
+                   
  
                     /** Jika menit < 0
                         * Maka menit akan dikembali ke 59

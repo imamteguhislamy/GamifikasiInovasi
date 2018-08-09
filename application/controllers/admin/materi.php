@@ -229,7 +229,7 @@ class materi extends CI_Controller {
     	$where = array('id_quiz' => $id);
     	$del = $this->model_admin->hapus_soal('quiz', $where);
     	if ($del>=1) {
-    		redirect("admin/home/quiz");
+    		redirect("admin/home/quiz/");
     	}
     }
 }

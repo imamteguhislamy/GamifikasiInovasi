@@ -52,21 +52,23 @@ class course extends CI_Controller {
 	}
 
 	public function quizz($id, $i) {
-		$answer = $_POST['radios'];
+		$nopeg = $this->session->userdata('nopeg');
+			$where = array(
+                	'nopeg' => $nopeg
+             		);		
+		$answer = isset($_POST['radios']);
 		$jawaban = $_POST['jwbn'];
 		if ($answer == $jawaban) {
-		    $i += 1;
-		    $nopeg = $this->session->userdata('nopeg');
-			$where = array(
-                'nopeg' => $nopeg
-                );		
+		    $i += 1;		    
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
 		$this->load->view('user/header', $data);
 		$this->load->view('user/quiz', $datas, $i);
 		}
 		else {
-		    echo 'Incorrect';
+			// $skor +=0;
+		    // echo 'Incorrect, skor'+$skor;
+		    echo "SALAH";
 		}        
 	}
 }
