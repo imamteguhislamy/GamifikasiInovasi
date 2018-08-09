@@ -135,7 +135,7 @@
                                 </h3>
                                 <div class="chart-wrap">
                                     <video width="100%" height="100%" controls>
-                                        <source src="<?php echo $link_video; ?>" type="video/mp4">
+                                        <source src="<?php echo $link_video; ?>" type="<?php echo $tipe; ?>">
                                     </video>
                                 </div>
                             <!--<div class="statistic-chart-1-note">

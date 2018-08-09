@@ -26,6 +26,25 @@
     <!-- Main CSS-->
     <link href="<?php echo base_url()?>css/theme.css" rel="stylesheet" media="all">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type='text/javascript'>
+    $(window).load(function(){
+    $("#tipe").change(function() {
+                console.log($("#tipe option:selected").val());
+                if ($("#tipe option:selected").val() == '0') {
+                    $('#pdf').prop('hidden', true);
+                    $('#link').prop('hidden', true);
+                } else if ($("#tipe option:selected").val() == 'application/pdf'){
+                    $('#pdf').prop('hidden', false);
+                    $('#link').prop('hidden', true);
+                } else {
+                    $('#pdf').prop('hidden', true);
+                    $('#link').prop('hidden', false);
+                }
+            });
+    });
+    </script>
+
 </head>
        
             <!-- MAIN CONTENT-->
@@ -36,7 +55,7 @@
                             <div class="col-lg-12">
                                 <h3 class="title-5 m-b-35">Edit Materi</h3>
                                 <div class="card">
-                                    <form action="<?php echo base_url().'admin/materi/update'?>" method="post" class="form-horizontal">
+                                    <form action="<?php echo base_url().'admin/materi/update'?>" method="post" class="form-horizontal" enctype="multipart/form-data">
                                         <div class="card-body card-block">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
@@ -56,10 +75,43 @@
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
+                                                    <label for="select" class=" form-control-label">Tipe Materi</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <select name="tipe" id="tipe" class="form-control" required>
+                                                        <option value="0">Please select</option>
+                                                        <option value="video/mp4">Video</option>
+                                                        <option value="application/pdf">PDF</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group" id="link" hidden>
+                                                <div class="col col-md-3">
                                                     <label for="link_video" class=" form-control-label">Link Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" name="link_video" value="<?php echo $link_video ?>" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group" id="pdf" hidden>
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">File PDF Baru</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" name="pdf" value="<?php echo $pdf ?>" class="form-control">
+                                                    <span style="font-size: 12px">*Kosongkan jika tidak ada perubahan</span>
+                                                </div>
+
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">File PDF Lama</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p><?php if ($pdf == NULL) {
+                                                        echo "Tidak ada file PDF di Database";
+                                                    } else {
+                                                        echo $pdf;
+                                                    } ?>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -68,7 +120,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="file" name="gambar" value="<?php echo $gambar ?>" class="form-control">
-                                                    <span>*Kosongkan jika tidak ada perubahan</span>
+                                                    <span style="font-size: 12px">*Kosongkan jika tidak ada perubahan</span>
                                                 </div>
                                             </div>
                                             <div class="row form-group">

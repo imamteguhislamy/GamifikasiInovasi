@@ -25,7 +25,24 @@
 
     <!-- Main CSS-->
     <link href="<?php echo base_url()?>css/theme.css" rel="stylesheet" media="all">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type='text/javascript'>
+$(window).load(function(){
+$("#tipe").change(function() {
+            console.log($("#tipe option:selected").val());
+            if ($("#tipe option:selected").val() == '0') {
+                $('#pdf').prop('hidden', true);
+                $('#link').prop('hidden', true);
+            } else if ($("#tipe option:selected").val() == 'application/pdf'){
+                $('#pdf').prop('hidden', false);
+                $('#link').prop('hidden', true);
+            } else {
+                $('#pdf').prop('hidden', true);
+                $('#link').prop('hidden', false);
+            }
+        });
+});
+</script>
 </head>
         
             <!-- MAIN CONTENT-->
@@ -43,15 +60,35 @@
                                                     <label for="judul" class=" form-control-label">Judul Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" name="judul" class="form-control">
+                                                    <input type="text" name="judul" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="select" class=" form-control-label">Tipe Materi</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <select name="tipe" id="tipe" class="form-control" required>
+                                                        <option value="0">Please select</option>
+                                                        <option value="video/mp4">Video</option>
+                                                        <option value="application/pdf">PDF</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group" id="link" hidden>
                                                 <div class="col col-md-3">
                                                     <label for="link_video" class=" form-control-label">Link Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="link_video" name="link_video" placeholder="Masukkan link sumber video disini (ex : https://www.youtube.com/videoanda)" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group" id="pdf" hidden>
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">File PDF</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="File" id="pdf" name="pdf" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -60,6 +97,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="File" id="gambar" name="gambar" class="form-control">
+                                                    <span><i>*File upload tanpa spasi</i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -82,6 +120,7 @@
                                             <tr>
                                                 <th>Judul Materi</th>
                                                 <th>Link Video</th>
+                                                <th>File PDF</th>
                                                 <th>Foto Latar</th>
                                                 <th>Edit/Delete</th>
                                                 <!-- <th class="text-right">Delete</th> -->
@@ -92,6 +131,7 @@
                                             <tr>
                                                 <td><?php echo $m->judul; ?></td>
                                                 <td><a href="<?php echo $m->link_video; ?>" target="_blank"><?php echo $m->link_video; ?></a></td>
+                                                <td><a href="<?php echo base_url()."images/materi/pdf/".$m->pdf; ?>" target="_blank"><?php echo $m->pdf; ?></td>
                                                 <td><a href="<?php echo base_url()."images/materi/".$m->gambar; ?>" target="_blank"><?php echo $m->gambar; ?></a></td>
                                                 <td>
                                                     <div class="table-data-feature">
