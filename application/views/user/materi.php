@@ -133,15 +133,23 @@
                                 <h3 class="title-3 m-b-20">
                                     <i class="fa fa-video-camera"></i>Video
                                 </h3>
-                                <div class="chart-wrap">
-                                    <video width="100%" height="100%" controls>
-                                        <source src="<?php echo $link_video; ?>" type="<?php echo $tipe; ?>">
-                                    </video>
-                                </div>
-                            <!--<div class="statistic-chart-1-note">
-                                    <span class="big">10,368</span>
-                                    <span>/ 16220 items sold</span>
-                                </div> -->
+                                <?php 
+                                if($tipe == "application/pdf"){
+                                ?>
+                                    <div class="chart-wrap">
+                                        <embed src="<?php echo base_url().'/course-source/pdf/'. $pdf; ?>" type="<?php echo $tipe; ?>" width="100%" height="1000px"> </embed>  
+                                    </div>
+                                <?php
+                                } else if ($tipe == "video/mp4"){
+                                ?>
+                                    <div class="chart-wrap" align="center">
+                                        <video width="90%" height="90%" controls>
+                                            <source src="<?php echo $link_video; ?>" type="<?php echo $tipe; ?>">
+                                        </video> 
+                                    </div>
+                                <?php    
+                                }
+                                ?>
                                 <div align="right">
                                     <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz_inovasi/'.$id ?>'">
                                         <i class="fa fa-play"></i>&nbsp; Start Quiz

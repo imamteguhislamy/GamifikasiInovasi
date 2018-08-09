@@ -123,7 +123,7 @@ class materi extends CI_Controller {
 	            'link_video' => $link_video,
 	            'pdf' => $pdf
         	);
-        	$config['upload_path']          = './images/materi/pdf';
+        	$config['upload_path']          = './course-source/documents';
 			$config['allowed_types']        = 'pdf';
 			$config['max_size']             = 10000000000;
 	 

@@ -43,7 +43,9 @@ class course extends CI_Controller {
 		$data = array(
 			"id"=>$materi[0]['id'],
 			"judul"=>$materi[0]['judul'],
-			"link_video"=>$materi[0]['link_video']
+			"link_video"=>$materi[0]['link_video'],
+			"pdf"=>$materi[0]['pdf'],
+			"tipe"=>$materi[0]['tipe']
 		);
 		$this->load->view('user/materi', $data);
 	}
@@ -53,12 +55,9 @@ class course extends CI_Controller {
 		$jawaban = $_POST['jwbn'];
 		if ($answer == $jawaban) {          
 		    echo 'Correct'; 
-
 		}
 		else {
 		    echo 'Incorrect';
 		}        
 	}
-
-	
 }
