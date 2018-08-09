@@ -145,7 +145,7 @@
                                     <div class="chart-wrap" align="center">
                                         <video width="90%" height="90%" controls>
                                             <source src="<?php echo $link_video; ?>" type="<?php echo $tipe; ?>">
-                                        </video> 
+                                        </video>
                                     </div>
                                 <?php    
                                 }

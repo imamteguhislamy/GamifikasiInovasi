@@ -80,7 +80,7 @@ $("#tipe").change(function() {
                                                     <label for="link_video" class=" form-control-label">Link Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="link_video" name="link_video" placeholder="Masukkan link sumber video disini (ex : https://www.youtube.com/videoanda)" class="form-control">
+                                                    <input type="text" id="link_video" name="link_video" placeholder="Masukkan link sumber video disini" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row form-group" id="pdf" hidden>
