@@ -135,12 +135,12 @@
                         <div class="col-md-6 col-lg-6">
                             
                             <div class="statistic-chart-1">
-                                <h4><?php echo $q['soal']; ?></h4>
+                                <h4><?php echo $q['id_quiz'].". "; ?><?php echo $q['soal']; ?></h4>
                                 <br>
                                 <div class="container">   
                                     <div class="row form-group">
                                         <div class="form-check">
-                                            <form action="<?php echo base_url()?>user/course/cek_quiz" method="post">
+                                            <form action="<?php echo base_url()?>user/course/cek_quiz/<?php echo $q['id_quiz']; ?>" method="post">
                                             <div class="radio">
                                                 <label for="radio1" class="form-check-label ">
                                                     <input type="radio" id="radio1" name="radios" value="<?php echo $q['jwba']; ?>" class="form-check-input"><?php echo $q['jwba']; ?>

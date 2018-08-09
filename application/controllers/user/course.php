@@ -25,10 +25,11 @@ class course extends CI_Controller {
 		$where = array(
                 'nopeg' => $nopeg
                 );
+		$i = 1;
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
-		$datas['quiz'] = $this->model_admin->quiz("where materi.id = $id");
+		$datas['quiz'] = $this->model_admin->quiz("where materi.id = $id and id_quiz = ".$i);
 		$this->load->view('user/header', $data);
-		$this->load->view('user/quiz', $datas);
+		$this->load->view('user/quiz', $datas, $i);
 	}
 
 	public function show_materi($id) {
@@ -50,7 +51,7 @@ class course extends CI_Controller {
 		$this->load->view('user/materi', $data);
 	}
 
-	public function cek_quiz() {
+	public function cek_quiz($i) {
 		$answer = $_POST['radios'];
 		$jawaban = $_POST['jwbn'];
 		if ($answer == $jawaban) {          
