@@ -50,7 +50,7 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>id</th>
+                                                <th>No</th>
                                                 <th>Soal</th>
                                                 <th>A</th>
                                                 <th>B</th>
@@ -112,11 +112,11 @@
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Id Quiz</label>
+                                                    <label for="text-input" class=" form-control-label">No Soal</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="text-input" name="id_quiz" placeholder="Enter Id" class="form-control" required>
-                                                    <small class="form-text text-muted">ex: Innov001, Innov002</small>
+                                                    <small class="form-text text-muted">*Maks soal 5 per Materi</small>
                                                 </div>
                                             </div>                                                                                   
                                             <div class="row form-group">
