@@ -131,20 +131,24 @@
                         <div class="col-md-12 col-lg-12">
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-20">
-                                    <i class="fa fa-video-camera"></i>Video
+                                    <?php if($tipe == "video/mp4"){
+                                    ?><i class="fa fa-toggle-right"></i>Video
+                                    <?php } else {
+                                    ?><i class="fa fa-book"></i>Documents
+                                    <?php }?>
                                 </h3>
                                 <?php 
                                 if($tipe == "application/pdf"){
                                 ?>
                                     <div class="chart-wrap">
-                                        <embed src="<?php echo base_url().'/course-source/pdf/'. $pdf; ?>" type="<?php echo $tipe; ?>" width="100%" height="1000px"> </embed>  
+                                        <embed src="<?php echo base_url().'/course-source/documents/'. $pdf; ?>" type="application/pdf" width="100%" height="1000px"> </embed>  
                                     </div>
                                 <?php
                                 } else if ($tipe == "video/mp4"){
                                 ?>
                                     <div class="chart-wrap" align="center">
                                         <video width="90%" height="90%" controls>
-                                            <source src="<?php echo $link_video; ?>" type="<?php echo $tipe; ?>">
+                                            <embed src="<?php echo $link_video; ?>" type="video/mp4"></embed>
                                         </video> 
                                     </div>
                                 <?php    

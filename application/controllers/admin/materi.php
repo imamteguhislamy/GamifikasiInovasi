@@ -19,7 +19,17 @@ class materi extends CI_Controller {
 
 
 	public function tambah() {
-		if(basename($_FILES["gambar"]["name"])==NULL){
+		if(basename($_FILES["gambar"]["name"]) == NULL && basename($_FILES["pdf"]["name"]) == NULL){
+			$picture = 'no-image.png';
+			$data = array(
+				'judul' => $this->input->post('judul'),
+				'tipe' => $this->input->post('tipe'),
+				'link_video' => $this->input->post('link_video'),				
+				'gambar' => $picture
+			);
+	           	$this->model_admin->tambah_materi($data);
+				$this->index();
+		} else if(basename($_FILES["gambar"]["name"])==NULL){
 			$picture = 'no-image.png';
 			$pdf = basename($_FILES["pdf"]["name"]);
 			$data = array(
@@ -29,7 +39,7 @@ class materi extends CI_Controller {
 				'pdf' => $pdf,
 				'gambar' => $picture
 			);
-			$config['upload_path']          = './images/materi/pdf';
+			$config['upload_path']          = './course-source/documents/';
 			$config['allowed_types']        = 'pdf';
 			$config['max_size']             = 10000000000;
 	 
@@ -65,7 +75,7 @@ class materi extends CI_Controller {
 	            print_r($error);
 	        } else {
 	        	unset($config);
-	        	$config['upload_path']          = './images/materi/pdf';
+	        	$config['upload_path']          = './course-source/documents/';
 				$config['allowed_types']        = 'pdf';
 				$config['max_size']             = 10000000;
 				$this->upload->initialize($config);
@@ -123,7 +133,7 @@ class materi extends CI_Controller {
 	            'link_video' => $link_video,
 	            'pdf' => $pdf
         	);
-        	$config['upload_path']          = './course-source/documents';
+        	$config['upload_path']          = './course-source/documents/';
 			$config['allowed_types']        = 'pdf';
 			$config['max_size']             = 10000000000;
 	 
@@ -147,7 +157,7 @@ class materi extends CI_Controller {
 	            'link_video' => $link_video,
 	            'gambar' => $gambar
         	);
-        	$config['upload_path']          = './images/materi';
+        	$config['upload_path']          = './images/materi/';
 			$config['allowed_types']        = 'jpg|png';
 			$config['max_size']             = 10000000000;
 	 
@@ -184,7 +194,7 @@ class materi extends CI_Controller {
 	            print_r($error);
 	        } else {
 	        	unset($config);
-	        	$config['upload_path']          = './images/materi/pdf';
+	        	$config['upload_path']          = './course-source/documents/';
 				$config['allowed_types']        = 'pdf';
 				$config['max_size']             = 10000000;
 				$this->upload->initialize($config);
