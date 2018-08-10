@@ -84,6 +84,14 @@ class model_user extends CI_Model {
 		$upd = $this->db->query("UPDATE `user` SET `skor` = "."'".$skor."'"." ".$where);
 	}	
 
+	public function editskorawal($skorawal, $where=""){
+		$upd = $this->db->query("UPDATE `user` SET `skorawal` = "."'".$skorawal."'"." ".$where);
+	}
+
+	public function skorawalnol($where=""){
+		$update = $this->db->query("UPDATE `user` SET `skorawal` = 0 " . $where);
+	}
+
 	public function delete($table, $where) {
 		$del = $this->db->delete($table, $where);
 		return $del;

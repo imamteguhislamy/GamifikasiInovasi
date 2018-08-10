@@ -173,6 +173,11 @@
                                                 <?php foreach ($user as $u){ ?>
                                                     <?php echo $u->skor; } ?>" >
                                             </div>
+                                            <div>
+                                                <input type="text" id="skorawal" name="skorawal" hidden value="
+                                                <?php foreach ($user as $u){ ?>
+                                                    <?php echo $u->skorawal; } ?>" >
+                                            </div>
                                             <input type="submit" name="enter" value="Enter">  
                                             </form>
                                         </div>

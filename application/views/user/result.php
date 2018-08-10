@@ -108,121 +108,78 @@
                 </nav>
             </header>
             <!-- END HEADER MOBILE-->
+            
 
-            <!-- TITLE-->
-            <section class="welcome">
-                <div class="container">
-                    <div class="row">                      
-                        <div class="col-md-12 m-t-30">
-                            <h1 class="title-4">Welcome back <span><?php echo $u->nama_panggilan ?>!</span></h1>
-                            <hr class="line-seprate">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- TITLE-->
             <section class="statistic-chart">
                 <div class="container">
                     <div class="row">
+                        
+                    </div>
+                    <div class="row">
                         <!-- PROFILE -->
-                        <div class="col-md-12 col-lg-8">
-                            <!-- CHART-->
-                            <div class="statistic-chart-1">
-                                <h3 class="title-3 m-b-30">Profile</h3>
-                                <div class="chart-wrap">
-                                    <!-- PANEL -->
-                                    <div class="row">
-
-                                        <!-- SKOR -->
-                                        <div class="col-md-6 col-lg-6">
-                                            <div class="statistic__item statistic__item--blue">
-                                                <h2 class="number" style="color: white"><?php echo $u->skor ?></h2>
-                                                <span class="desc" style="color: white">Skor</span>
-                                                <div class="icon">
-                                                    <i class="zmdi zmdi-calendar-note"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- END SKOR -->
-
-                                        <!-- RANK -->
-                                        <div class="col-md-6 col-lg-6">
-                                            <div class="statistic__item statistic__item--red">
-                                                <h2 class="number" style="color: white">
-                                                    <?php 
-                                                        if($u->skor < 100){
-                                                            echo "Rookie";
-                                                        } else if($u->skor < 200){
-                                                            echo "Master";
-                                                        } else if($u->skor < 300){
-                                                            echo "Legend";
-                                                        }
-                                                    ?>         
-                                                </h2>
-                                                <span class="desc" style="color: white">Rank</span>
-                                                <div class="icon">
-                                                    <i class="zmdi zmdi-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- END RANK -->
-                                    </div>
-                                    <!-- END PANEL -->
+                        <div class="col-md-6 offset-md-3">
+                            <div class="card">
+                                <div class="card-header" align="center">
+                                    <strong class="card-title pl-2">Result</strong>
                                 </div>
-                                
-                                <!-- DATA PEGAWAI -->                                
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="image">
-                                            <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
+                                <div class="card-body">
+                                    <div class="mx-auto d-block">
+                                        <?php
+                                        if($u->skorawal <=0) {
+                                        ?>
+                                        <!-- <img src="<?php echo base_url()?>assets/bintang1.png" alt="Card image cap" size="85%"> -->
+                                        <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
                                         </div>
+                                    <hr>
+                                    <div class="card-text text-sm-center">
+                                        <p>Keep Learning</p>
                                     </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="statistic-chart-1-note">
-                                            <p class="big">Nama Lengkap</p>
-                                            <p><?php echo $u->nama_lengkap ?></p>
+                                        <?php
+                                        } else if($u->skorawal <=20) {
+                                        ?>
+                                        <img src="<?php echo base_url()?>assets/bintang1.png" alt="Card image cap" size="85%">
+                                        <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
                                         </div>
-                                        <div class="statistic-chart-1-note">
-                                            <p class="big">Nama Panggilan</p>
-                                            <p><?php echo $u->nama_panggilan ?></p>
-                                        </div>
-                                        <div class="statistic-chart-1-note">
-                                            <p class="big">Nomor Pegawai</p>
-                                            <p><?php echo $u->nopeg ?></p>
-                                        </div>                                
-                                        <div class="statistic-chart-1-note">
-                                            <p class="big">Unit Kerja</p>
-                                            <p><?php echo $u->unit ?></p>
-                                        </div>
+                                    <hr>
+                                    <div class="card-text text-sm-center">
+                                        <p>Keep Spirit !!!</p>
                                     </div>
-                                </div>
-                                <?php } ?>
-                                <!-- END DATA PEGAWAI -->                              
-                            
-                            </div>
-                            <!-- END CHART-->
-                        </div>
-                        <!-- END PROFILE -->
-
-                        <!-- LEADERBOARD -->
-                        <div class="col-md-12 col-lg-4">
-                            <div class="top-campaign">
-                                <h3 class="title-3 m-b-30">Leaderboard</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-top-campaign">
-                                        <tbody>
-                                            <?php foreach($leaderboard as $l){ ?>
-                                            <tr>
-                                                <td><?php echo $l->nama_lengkap ?> (<?php echo $l->unit ?>)</td>
-                                                <td><?php echo $l->skor ?></td>
-                                            </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
+                                        <?php
+                                        } else if($u->skorawal <= 40) {
+                                        ?>
+                                        <img src="<?php echo base_url()?>assets/bintang2.png" alt="Card image cap" size="85%">
+                                        <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
+                                        </div>
+                                    <hr>
+                                    <div class="card-text text-sm-center">
+                                        <p>Well Done !!!</p>
+                                    </div>   
+                                        <?php    
+                                        } else {
+                                        ?>
+                                        <img src="<?php echo base_url()?>assets/bintang3.png" alt="Card image cap" size="85%">
+                                        <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
+                                        </div>
+                                    <hr>
+                                    <div class="card-text text-sm-center">
+                                        <p>Amazing !!!</p>
+                                    </div>
+                                        <?php
+                                        }
+                                        ?>    
                                 </div>
                             </div>
                         </div>
-                        <!-- END LEADERBOARD -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <button type="button" class="btn btn-outline-success btn-lg btn-block" onclick="window.location='<?php echo base_url()?>user/course'">Back to Course</button>
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="window.location='<?php echo base_url()?>user/home'">Back to Home</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -241,6 +198,7 @@
             <!-- END COPYRIGHT-->
         </div>
     </div>
+    <?php } ?>
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo base_url()?>main-bootstrap/vendor/bootstrap-4.1/popper.min.js"></script>

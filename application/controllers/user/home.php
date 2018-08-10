@@ -12,6 +12,7 @@ class home extends CI_Controller {
 		$where = array(
                 'nopeg' => $nopeg
                 );
+		$update = $this->model_user->skorawalnol("WHERE `user`.`nopeg` = '$nopeg'");
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$data['leaderboard'] = $this->model_user->tampil_data_leaderboard()->result();
 		$data['rank'] = $this->model_user->rank()->result();				
