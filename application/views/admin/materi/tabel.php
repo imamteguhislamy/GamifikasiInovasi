@@ -65,6 +65,14 @@ $("#tipe").change(function() {
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
+                                                    <label for="judul" class=" form-control-label">Jumlah Soal</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" name="jmlSoal" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
                                                     <label for="select" class=" form-control-label">Tipe Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
@@ -119,6 +127,7 @@ $("#tipe").change(function() {
                                         <thead>
                                             <tr>
                                                 <th>Judul Materi</th>
+                                                <th>Jumlah Soal</th>
                                                 <th>Link Video</th>
                                                 <th>File PDF</th>
                                                 <th>Foto Latar</th>
@@ -130,6 +139,7 @@ $("#tipe").change(function() {
                                         <tbody>
                                             <tr>
                                                 <td><?php echo $m->judul; ?></td>
+                                                <td><?php echo $m->jmlSoal; ?></td>
                                                 <td><a href="<?php echo $m->link_video; ?>" target="_blank"><?php echo $m->link_video; ?></a></td>
                                                 <td><a href="<?php echo base_url()."images/materi/pdf/".$m->pdf; ?>" target="_blank"><?php echo $m->pdf; ?></td>
                                                 <td><a href="<?php echo base_url()."images/materi/".$m->gambar; ?>" target="_blank"><?php echo $m->gambar; ?></a></td>

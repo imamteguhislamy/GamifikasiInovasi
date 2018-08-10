@@ -165,13 +165,18 @@
                                             </div>
                                             <div class="radio" hidden>
                                                 <label for="radio3" class="form-check-label ">
-                                                    <input type="radio" id="radios" name="radios" value="salah" class="form-check-input">salah
+                                                    <input type="radio" id="radios" name="radios" value="salah" class="form-check-input" checked="true">salah
                                                 </label>
                                             </div>
                                             <div>
                                                 <input type="text" id="skor" name="skor" hidden value="
                                                 <?php foreach ($user as $u){ ?>
                                                     <?php echo $u->skor; } ?>" >
+                                            </div>
+                                            <div>
+                                                <input type="text" id="jmlSoal" name="jmlSoal" hidden value="
+                                                <?php foreach ($materi as $m){ ?>
+                                                    <?php echo $m->jmlSoal; } ?>" >
                                             </div>
                                             <div>
                                                 <input type="text" id="skorawal" name="skorawal" hidden value="

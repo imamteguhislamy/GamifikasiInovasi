@@ -147,9 +147,10 @@
                                 } else if ($tipe == "video/mp4"){
                                 ?>
                                     <div class="chart-wrap" align="center">
-                                        <video width="90%" height="90%" controls>
-                                            <source src="<?php echo $link_video; ?>" type="<?php echo $tipe; ?>">
-                                        </video>
+                                        <!-- <video width="90%" height="90%" controls>
+                                            <source src="<?php echo $link_video; ?>" type="video/mp4">
+                                        </video> -->
+                                        <iframe width=100% height="700" src="<?php echo $link_video; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
                                 <?php    
                                 }

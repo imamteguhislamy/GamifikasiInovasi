@@ -75,6 +75,14 @@
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
+                                                    <label for="judul" class=" form-control-label">Jumlah Soal</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" name="jmlSoal" value="<?php echo $jmlSoal ?>" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
                                                     <label for="select" class=" form-control-label">Tipe Materi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">

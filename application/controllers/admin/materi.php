@@ -23,6 +23,7 @@ class materi extends CI_Controller {
 			$picture = 'no-image.png';
 			$data = array(
 				'judul' => $this->input->post('judul'),
+				'jmlSoal' => $this->input->post('jmlSoal'),
 				'tipe' => $this->input->post('tipe'),
 				'link_video' => $this->input->post('link_video'),				
 				'gambar' => $picture
@@ -34,6 +35,7 @@ class materi extends CI_Controller {
 			$pdf = basename($_FILES["pdf"]["name"]);
 			$data = array(
 				'judul' => $this->input->post('judul'),
+				'jmlSoal' => $this->input->post('jmlSoal'),
 				'tipe' => $this->input->post('tipe'),
 				'link_video' => $this->input->post('link_video'),
 				'pdf' => $pdf,
@@ -58,6 +60,7 @@ class materi extends CI_Controller {
 			$pdf = basename($_FILES["pdf"]["name"]);
 			$data = array(
 				'judul' => $this->input->post('judul'),
+				'jmlSoal' => $this->input->post('jmlSoal'),
 				'tipe' => $this->input->post('tipe'),
 				'link_video' => $this->input->post('link_video'),
 				'pdf' => $pdf,
@@ -96,6 +99,7 @@ class materi extends CI_Controller {
 		$data = array(
 			"id"=>$materi[0]['id'],
 			"judul"=>$materi[0]['judul'],
+			'jmlSoal' => $materi[0]['jmlSoal'],
 			"tipe"=>$materi[0]['tipe'],
 			"link_video"=>$materi[0]['link_video'],
 			"pdf"=>$materi[0]['pdf'],
@@ -110,6 +114,7 @@ class materi extends CI_Controller {
 	public function update() {
         $id = $_POST['id'];
         $judul = $_POST['judul'];
+        $jmlSoal = $_POST['jmlSoal'];
         $tipe = $_POST['tipe'];
         $link_video = $_POST['link_video'];
         $gambar =  basename($_FILES["gambar"]["name"]);
@@ -118,6 +123,7 @@ class materi extends CI_Controller {
         if($pdf == NULL && $gambar == NULL) {
         	$data_update = array(
 	            'judul' => $judul,
+	            'jmlSoal' => $jmlSoal,
 	            'tipe' => $tipe,
 	            'link_video' => $link_video
         	);
@@ -129,6 +135,7 @@ class materi extends CI_Controller {
 	    } else if($gambar == NULL) {
         	$data_update = array(
 	            'judul' => $judul,
+	            'jmlSoal' => $jmlSoal,
 	            'tipe' => $tipe,
 	            'link_video' => $link_video,
 	            'pdf' => $pdf
@@ -153,6 +160,7 @@ class materi extends CI_Controller {
         } else if($pdf == NULL) {
         	$data_update = array(
 	            'judul' => $judul,
+	            'jmlSoal' => $jmlSoal,
 	            'tipe' => $tipe,
 	            'link_video' => $link_video,
 	            'gambar' => $gambar
@@ -177,6 +185,7 @@ class materi extends CI_Controller {
 	    } else { 
         	$data_update = array(
 	            'judul' => $judul,
+	            'jmlSoal' => $jmlSoal,
 	            'tipe' => $tipe,
 	            'link_video' => $link_video,
 	            'pdf' => $pdf,
@@ -205,9 +214,9 @@ class materi extends CI_Controller {
 	        	} else {
 	           	$where = array('id'=>$id);
         		$upd = $this->model_admin->edit_materi('materi', $data_update, $where);
-        		if($upd>=1) {
-            	redirect("admin/materi");
-        		}
+        			if($upd>=1) {
+            			redirect("admin/materi");
+        			}
 	        	}
 			}
         }

@@ -28,6 +28,7 @@ class course extends CI_Controller {
                 );
 		$i = 1;
 		// $update = $this->model_user->editskorawal($skorawal, "WHERE `user`.`nopeg` = '$nopeg'");
+		$data['materi'] = $this->model_admin->data_materi2("where judul = '$id'");
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$datas['quiz'] = $this->model_admin->quiz("where materi.judul = '$id' and id_quiz = ".$i);
 		$this->load->view('user/header', $data);
@@ -62,26 +63,30 @@ class course extends CI_Controller {
 		$answer = $_POST['radios'];
 		$jawaban = $_POST['jwbBenar'];
 		$skor = $_POST['skor'];
+		$jmlSoal = $_POST['jmlSoal'];
+		$jmlSoal = ($jmlSoal + 1);
 		$i += 1;
 		if ($answer == $jawaban) {	
 			$skorawal += 10;	    
 		    $skor += 10;
 			$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");
-			$update = $this->model_user->editskorawal($skorawal, "WHERE `user`.`nopeg` = '$nopeg'");	    
+			$update = $this->model_user->editskorawal($skorawal, "WHERE `user`.`nopeg` = '$nopeg'");
+			$data['materi'] = $this->model_admin->data_materi2("where judul = '$id'");	    
 			$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 			$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
 			$this->load->view('user/header', $data);
-			$this->load->view('user/quiz', $datas, $i);
+			$this->load->view('user/quiz', $datas, $i, $jmlSoal);
 		} else {
 			$skorawal += 0;
 			$skor += 0;
-			$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");	    
+			$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");
+			$data['materi'] = $this->model_admin->data_materi2("where judul = '$id'");	    
 			$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 			$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
 			$this->load->view('user/header', $data);
-			$this->load->view('user/quiz', $datas, $i);
+			$this->load->view('user/quiz', $datas, $i, $jmlSoal);
 		} 
-		if ($i >= 3 ){
+		if ($i >= $jmlSoal ){
 			redirect('user/course/hasil_quiz');
 			// echo $skorawal;
 			// $skorawal = 0;
