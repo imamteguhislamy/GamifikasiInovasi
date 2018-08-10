@@ -53,9 +53,10 @@ class course extends CI_Controller {
 
 	public function quizz($id, $i) {
 		$nopeg = $this->session->userdata('nopeg');				
-			$where = array(
-                	'nopeg' => $nopeg
-             		);	
+		$where = array(
+            	'nopeg' => $nopeg
+
+         		);		
 		$answer = $_POST['radios'];
 		$jawaban = $_POST['jwbBenar'];
 		$skor = $_POST['skor'];
@@ -87,6 +88,7 @@ class course extends CI_Controller {
 		$this->load->view('user/quiz', $datas, $i);
 		}
 		else {
+
 		    $skor += 0;
 		$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");	    
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
