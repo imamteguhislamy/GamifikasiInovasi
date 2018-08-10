@@ -183,9 +183,17 @@
                                             <label for="hf-password" class=" form-control-label">Password</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="password" id="hf-password" name="password" placeholder="Change Password" class="form-control" value="<?php echo $u->password ?>">                                                
+                                            <input type="password" id="password" name="password" placeholder="Change Password" class="form-control" value="<?php echo $u->password ?>">                                                
                                         </div>
                                     </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="hf-password" class=" form-control-label"></label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="checkbox" onclick="myFunction()"> Show Password                                             
+                                        </div>
+                                    </div>                                    
                                     <?php }?>
                                     <div class="m-t-25" align="right">
                                         <button type="submit" class="btn btn-primary btn-md m-r-5">
@@ -240,6 +248,17 @@
 
     <!-- Main JS-->
     <script src="<?php echo base_url()?>js/main.js"></script>
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+        x.type = "password";
+        }
+    }
+</script>
 
 </body>
 

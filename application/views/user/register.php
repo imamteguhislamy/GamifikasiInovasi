@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<input class="input100" type="text" name="nopeg" placeholder="NOPEG">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-user"></i>
+							<i class="fa fa-location-arrow"></i>
 						</span>
 					</div>
 
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<input class="input100" type="text" name="unit" placeholder="Unit">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-user"></i>
+							<i class="fa fa-users"></i>
 						</span>
 					</div>
 
@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div> -->
 
 					<div class="text-center w-full p-t-25">
-						<a class="txt1" href="<?php echo base_url().'user/index'?>">
+						<a class="txt1" href="<?php echo base_url()?>">
 							Already have account? Login
 							<i class="fa fa-long-arrow-right"></i>						
 						</a>
