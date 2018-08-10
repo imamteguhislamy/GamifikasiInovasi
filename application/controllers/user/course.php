@@ -67,7 +67,7 @@ class course extends CI_Controller {
 		$jmlSoal = ($jmlSoal + 1);
 		$i += 1;
 		if ($answer == $jawaban) {	
-			$skorawal += 10;	    
+			$skorawal += 1;	    
 		    $skor += 10;
 			$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");
 			$update = $this->model_user->editskorawal($skorawal, "WHERE `user`.`nopeg` = '$nopeg'");
@@ -87,7 +87,7 @@ class course extends CI_Controller {
 			$this->load->view('user/quiz', $datas, $i, $jmlSoal);
 		} 
 		if ($i >= $jmlSoal ){
-			redirect('user/course/hasil_quiz');
+			redirect('user/course/hasil_quiz/'. $id);
 			// echo $skorawal;
 			// $skorawal = 0;
 			// $update = $this->model_user->editskorawal($skorawal, "WHERE `user`.`nopeg` = '$nopeg'");
@@ -95,13 +95,14 @@ class course extends CI_Controller {
 		}
 	}
 
-	public function hasil_quiz(){
+	public function hasil_quiz($id){
 		$nopeg = $this->session->userdata('nopeg');
 		$where = array(
                 'nopeg' => $nopeg
                 );
 		// $skorawal = 0;
 		// $update = $this->model_user->editskorawal($skorawal, "WHERE `user`.`nopeg` = '$nopeg'");
+		$data['materi'] = $this->model_admin->data_materi2("where judul = '$id'");
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$data['rank'] = $this->model_user->rank()->result();				
 		$this->load->view('user/header', $data);

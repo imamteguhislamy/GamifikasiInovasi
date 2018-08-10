@@ -124,34 +124,35 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="mx-auto d-block">
+                                        <?php foreach ($materi as $m) {?>
                                         <?php
-                                        if($u->skorawal <=0) {
+                                        if($u->skorawal <= 0 ) {
                                         ?>
                                         <!-- <img src="<?php echo base_url()?>assets/bintang1.png" alt="Card image cap" size="85%"> -->
                                         <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
-                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?>/<?php echo $m->jmlSoal ?></h1>
                                         </div>
                                     <hr>
                                     <div class="card-text text-sm-center">
                                         <p>Keep Learning</p>
                                     </div>
                                         <?php
-                                        } else if($u->skorawal <=20) {
+                                        } else if(($u->skorawal/$m->jmlSoal)*100 <= 50 ) {
                                         ?>
                                         <img src="<?php echo base_url()?>assets/bintang1.png" alt="Card image cap" size="85%">
                                         <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
-                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?>/<?php echo $m->jmlSoal ?></h1>
                                         </div>
                                     <hr>
                                     <div class="card-text text-sm-center">
                                         <p>Keep Spirit !!!</p>
                                     </div>
                                         <?php
-                                        } else if($u->skorawal <= 40) {
+                                        } else if(($u->skorawal/$m->jmlSoal)*100 == 100) {
                                         ?>
-                                        <img src="<?php echo base_url()?>assets/bintang2.png" alt="Card image cap" size="85%">
+                                        <img src="<?php echo base_url()?>assets/bintang3.png" alt="Card image cap" size="85%">
                                         <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
-                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?>/<?php echo $m->jmlSoal ?></h1>
                                         </div>
                                     <hr>
                                     <div class="card-text text-sm-center">
@@ -160,14 +161,15 @@
                                         <?php    
                                         } else {
                                         ?>
-                                        <img src="<?php echo base_url()?>assets/bintang3.png" alt="Card image cap" size="85%">
+                                        <img src="<?php echo base_url()?>assets/bintang2.png" alt="Card image cap" size="85%">
                                         <h2 class="location text-sm-center mt-2 mb-1" style="font-size: 32px">Score</h2>
-                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?></h1>
+                                        <h1 class="location text-sm-center" style="font-size: 72px"><?php echo $u->skorawal ?>/<?php echo $m->jmlSoal ?></h1>
                                         </div>
                                     <hr>
                                     <div class="card-text text-sm-center">
                                         <p>Amazing !!!</p>
-                                    </div>
+                                    </div><?php
+                                            } ?>
                                         <?php
                                         }
                                         ?>    
