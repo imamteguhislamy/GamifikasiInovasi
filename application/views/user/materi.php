@@ -139,9 +139,9 @@
                                 </h3>
                                 <?php 
                                 if($tipe == "application/pdf"){
-                                ?>
+                                ?>                                
                                     <div class="chart-wrap">
-                                        <embed src="<?php echo base_url().'/course-source/documents/'. $pdf; ?>" type="application/pdf" width="100%" height="1000px"> </embed>  
+                                        <embed src="<?php echo base_url().'/course-source/documents/'. $pdf; ?>" type="application/pdf" width="100%" height="1000px"> </embed>        
                                     </div>
                                 <?php
                                 } else if ($tipe == "video/mp4"){
