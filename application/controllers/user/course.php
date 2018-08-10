@@ -59,6 +59,7 @@ class course extends CI_Controller {
 		$answer = isset($_POST['radios']);
 		$jawaban = $_POST['jwbn'];
 		if ($answer == $jawaban) {
+			
 		    $i += 1;		    
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
@@ -66,7 +67,7 @@ class course extends CI_Controller {
 		$this->load->view('user/quiz', $datas, $i);
 		}
 		else {
-			// $skor +=0;
+			
 		    // echo 'Incorrect, skor'+$skor;
 		    echo "SALAH";
 		}        

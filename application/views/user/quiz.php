@@ -132,7 +132,7 @@
                     <div class="row">   
 
                         <?php foreach ($quiz as $q){ ?>
-                        <div class="col-md-6 col-lg-6">                            
+                        <div class="col-md-12 col-lg-12">                            
                             <div class="statistic-chart-1">
                                 <h4><?php echo $q['id_quiz'].". "; ?><?php echo $q['soal']; ?></h4>
                                 <br>
