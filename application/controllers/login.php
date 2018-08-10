@@ -92,7 +92,7 @@ class login extends CI_Controller {
 				'picture' => $picture,
 	            'password' => $password
 	        );
-		    $config['upload_path']          = './images/';
+		    $config['upload_path']          = './images/user-profile/';
 			$config['allowed_types']        = 'jpg|png';
 			$config['max_size']             = 100000;
 

@@ -52,24 +52,49 @@ class course extends CI_Controller {
 	}
 
 	public function quizz($id, $i) {
-		$nopeg = $this->session->userdata('nopeg');
+		$nopeg = $this->session->userdata('nopeg');				
+		$where = array(
+            	'nopeg' => $nopeg
+
+         		);		
+		$answer = $_POST['radios'];
+		$jawaban = $_POST['jwbBenar'];
+		$skor = $_POST['skor'];
+		$i += 1;
+		if ($i >= 6 ){
+			$nopeg = $this->session->userdata('nopeg');
 			$where = array(
-                	'nopeg' => $nopeg
-             		);		
-		$answer = isset($_POST['radios']);
-		$jawaban = $_POST['jwbn'];
-		if ($answer == $jawaban) {
-			
-		    $i += 1;		    
+                'nopeg' => $nopeg
+                );
+			$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+			$this->load->view('user/header', $data);
+		
+			$materi = $this->model_admin->show_materi("where judul = '$id'");
+			$data = array(
+			"id"=>$materi[0]['id'],
+			"judul"=>$materi[0]['judul'],
+			"link_video"=>$materi[0]['link_video'],
+			"pdf"=>$materi[0]['pdf'],
+			"tipe"=>$materi[0]['tipe']
+		);
+		$this->load->view('user/materi', $data);
+		}
+		if ($answer == $jawaban) {		    
+		    $skor += 10;
+		$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");	    
 		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
 		$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
 		$this->load->view('user/header', $data);
 		$this->load->view('user/quiz', $datas, $i);
 		}
 		else {
-			
-		    // echo 'Incorrect, skor'+$skor;
-		    echo "SALAH";
+
+		    $skor += 0;
+		$update = $this->model_user->editskor($skor, "WHERE `user`.`nopeg` = '$nopeg'");	    
+		$data['user'] = $this->model_user->tampil_data2('user',$where)->result();
+		$datas['quiz'] = $this->model_admin->quiz("where judul = '$id' and id_quiz = ".$i);
+		$this->load->view('user/header', $data);
+		$this->load->view('user/quiz', $datas, $i);
 		}        
 	}
 }

@@ -161,7 +161,17 @@
                                                 </label>
                                             </div>
                                             <div>
-                                                <input type="text" id="jwbn" name="jwbn" hidden value="<?php echo $q['jwbBenar']; ?>">
+                                                <input type="text" id="jwbBenar" name="jwbBenar" hidden value="<?php echo $q['jwbBenar']; ?>">
+                                            </div>
+                                            <div class="radio" hidden>
+                                                <label for="radio3" class="form-check-label ">
+                                                    <input type="radio" id="radios" name="radios" value="salah" class="form-check-input">salah
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <input type="text" id="skor" name="skor" hidden value="
+                                                <?php foreach ($user as $u){ ?>
+                                                    <?php echo $u->skor; } ?>" >
                                             </div>
                                             <input type="submit" name="enter" value="Enter">  
                                             </form>
@@ -209,6 +219,8 @@
                if(detik < 6 && detik != 0){
                      var peringatan = 'style="color:red"';
                } else if (detik == 0) {
+                radioBtn = document.getElementById("radios");
+                radioBtn.checked = true;
                 document.getElementById("myForm").submit();
                 // $(location).attr('href', '<?php echo base_url()?>user/course/quizz/<?php echo $q['judul']; ?>./.<?php echo $q['id_quiz']; ?>')
                 
