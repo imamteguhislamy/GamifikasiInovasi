@@ -134,7 +134,7 @@
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-20"><?php echo $m->judul; ?></h3>
                                 <div class="chart-wrap">
-                                    <img src="<?php echo base_url()?>images/materi/<?php echo $m->gambar?>" style="height: 400px width:600px">
+                                    <img width="600" height="400" src="<?php echo base_url()?>images/materi/<?php echo $m->gambar?>" style="height: 400px width:600px">
                                 </div>
                                 <div align="right">
                                     <button type="button" class="btn btn-outline-primary m-t-20" onclick="window.location='<?php echo base_url().'user/course/materi/'.$m->judul ?>'">

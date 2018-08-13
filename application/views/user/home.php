@@ -174,7 +174,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6">
                                         <div class="image">
-                                            <img src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
+                                            <img width="1024" height="1024" src="<?php echo base_url()?>images/user-profile/<?php echo $u->picture ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-lg-6">

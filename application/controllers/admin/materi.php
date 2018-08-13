@@ -55,7 +55,30 @@ class materi extends CI_Controller {
 	           	$this->model_admin->tambah_materi($data);
 				$this->index();
 	        }
-		} else {
+		} else if(basename($_FILES["pdf"]["name"])==NULL){			
+			$picture = basename($_FILES["gambar"]["name"]);
+			$data = array(
+				'judul' => $this->input->post('judul'),
+				'jmlSoal' => $this->input->post('jmlSoal'),
+				'tipe' => $this->input->post('tipe'),
+				'link_video' => $this->input->post('link_video'),
+				'gambar' => $picture
+			);
+			$config['upload_path']          = './images/materi/';
+			$config['allowed_types']        = 'jpg|png';
+			$config['max_size']             = 100000;
+	 
+			// load library upload
+			$this->upload->initialize($config);
+	        if (!$this->upload->do_upload('gambar')) {
+	            $error = $this->upload->display_errors();
+	            // menampilkan pesan error
+	            print_r($error);
+	        } else {
+	           	$this->model_admin->tambah_materi($data);
+				$this->index();
+	        }
+	    } else {
 			$picture =  basename($_FILES["gambar"]["name"]);
 			$pdf = basename($_FILES["pdf"]["name"]);
 			$data = array(

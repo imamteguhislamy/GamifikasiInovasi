@@ -15,7 +15,7 @@
                             <div class="statistic-chart-1">
                                 <h3 class="title-3 m-b-20"><?php echo $m->judul; ?></h3>
                                 <div class="chart-wrap">
-                                    <img src="<?php echo base_url()?>images/materi/<?php echo $m->gambar; ?>">
+                                    <img width="600" height="400" src="<?php echo base_url()?>images/materi/<?php echo $m->gambar; ?>">
                                 </div>
                             <!--<div class="statistic-chart-1-note">
                                     <span class="big">10,368</span>
