@@ -79,24 +79,59 @@ class home extends CI_Controller {
     }
 
     public function addquiz($id) {
-    	$quiz = $this->model_admin->quiz("where materi.id = $id");
-    	$data = array(
-    		"id_quiz"=>$quiz[0]['id_quiz'],
-    		"id_materi"=>$quiz[0]['id_materi'],
-			"soal"=>$quiz[0]['soal'],
-			"jwba"=>$quiz[0]['jwba'],
-			"jwbb"=>$quiz[0]['jwbb'],
-			"jwbc"=>$quiz[0]['jwbc'],
-			"jwbd"=>$quiz[0]['jwbd'],
-			"jwbBenar"=>$quiz[0]['jwbBenar']
-		);
-		$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
-		$this->load->view('admin/header');
-    	$this->load->view('admin/sidebar');
-    	$this->load->view('admin/formquiz', $data);
+    	// if(basename($_FILES["fotoSoal"]["name"]) == NULL){
+    		$quiz = $this->model_admin->quiz("where materi.id = $id");
+	    	$data = array(
+	    		"id_quiz"=>$quiz[0]['id_quiz'],
+	    		"id_materi"=>$quiz[0]['id_materi'],
+				"soal"=>$quiz[0]['soal'],
+				"jwba"=>$quiz[0]['jwba'],
+				"jwbb"=>$quiz[0]['jwbb'],
+				"jwbc"=>$quiz[0]['jwbc'],
+				"jwbd"=>$quiz[0]['jwbd'],
+				"jwbBenar"=>$quiz[0]['jwbBenar'],
+				"fotoSoal"=>$quiz[0]['fotoSoal']
+			);
+			$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
+			$this->load->view('admin/header');
+		    $this->load->view('admin/sidebar');
+		    $this->load->view('admin/formquiz', $data);
+		// } else {
+		// 	$quiz = $this->model_admin->quiz("where materi.id = $id");
+		// 	$fotoSoal = basename($_FILES["fotoSoal"]["name"]);
+		// 	$data = array(
+	 //    		"id_quiz"=>$quiz[0]['id_quiz'],
+	 //    		"id_materi"=>$quiz[0]['id_materi'],
+		// 		"soal"=>$quiz[0]['soal'],
+		// 		"jwba"=>$quiz[0]['jwba'],
+		// 		"jwbb"=>$quiz[0]['jwbb'],
+		// 		"jwbc"=>$quiz[0]['jwbc'],
+		// 		"jwbd"=>$quiz[0]['jwbd'],
+		// 		"jwbBenar"=>$quiz[0]['jwbBenar'],
+		// 		"fotoSoal"=>$fotoSoal
+		// 	);
+
+		// 	$config['upload_path']          = './images/quiz/';
+		// 	$config['allowed_types']        = 'jpg|png';
+		// 	$config['max_size']             = 100000;
+
+		// 	$this->upload->initialize($config);
+	 //        if (!$this->upload->do_upload('fotoSoal')) {
+	 //            $error = $this->upload->display_errors();
+	 //            // menampilkan pesan error
+	 //            print_r($error);
+	 //        } else {
+	 //           	$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
+		// 		$this->load->view('admin/header');
+		//     	$this->load->view('admin/sidebar');
+		//     	$this->load->view('admin/formquiz', $data);
+	 //        }
+		// }
     }
 
     public function addQ(){
+//MENAMBAH QUIZ TANPA FOTO
+    	if(basename($_FILES["fotoSoal"]["name"]) == NULL){
     	$id_quiz = $_POST['id_quiz'];
 		$id_materi = $_POST['id_materi'];
 		$soal = $_POST['soal'];
@@ -121,7 +156,42 @@ class home extends CI_Controller {
 			} else {
 				echo "Gagal";
 			}
-        }
+//MENAMBAH QUIZ DENGAN FOTO
+        }else {
+        $id_quiz = $_POST['id_quiz'];
+		$id_materi = $_POST['id_materi'];
+		$soal = $_POST['soal'];
+		$jwba = $_POST['jwba'];
+		$jwbb = $_POST['jwbb'];
+		$jwbc = $_POST['jwbc'];
+		$jwbd = $_POST['jwbd'];
+		$jwbBenar = $_POST['jwbBenar'];
+		$fotoSoal = $_FILES["fotoSoal"]["name"];
+		$add = array(
+			'id_quiz' => $id_quiz,
+			'id_materi' => $id_materi,
+			'soal' => $soal,
+			'jwba' => $jwba,
+			'jwbb' => $jwbb,
+			'jwbc' => $jwbc,
+			'jwbd' => $jwbd,
+			"JwbBenar" => $jwbBenar,
+			"fotoSoal" => $fotoSoal
+		);
+
+		$config['upload_path']          = './images/quiz/';
+		$config['allowed_types']        = 'jpg|png|gif';
+		$config['max_size']             = 100000;
+		$this->upload->initialize($config);
+		if(!$this->upload->do_upload('fotoSoal')){
+			$error = $this->upload->display_errors();
+			print_r($error);
+		} else {
+        $ins = $this->model_user->addQuiz('quiz', $add);
+		redirect('admin/home/addquiz/'.$id_materi);
+		}
+    }
+}
 
         public function editQ($id_quiz){
         $edt = $this->model_admin->data_quiz("where id_quiz = '$id_quiz'");
@@ -142,28 +212,63 @@ class home extends CI_Controller {
         }
 
         public function updQ() {
-        $id_materi = $_POST['id_materi'];
-        $id_quiz = $_POST['id_quiz'];
-        $soal = $_POST['soal'];
-        $jwba = $_POST['jwba'];
-        $jwbb = $_POST['jwbb'];
-        $jwbc = $_POST['jwbc'];
-        $jwbd = $_POST['jwbd'];
-        $jwbBenar = $_POST['jwbBenar'];
-        $edtQ = array(
-            'id_quiz' => $id_quiz,
-            'soal' => $soal,
-			'jwba' => $jwba,
-			'jwbb' => $jwbb,
-			'jwbc' => $jwbc,
-			'jwbd' => $jwbd,
-			'jwbBenar' => $jwbBenar
-        );
-        $where = array('id_quiz'=>$id_quiz);
-        $upd = $this->model_admin->edit_quiz('quiz', $edtQ, $where);
-        if($upd>=1) {
-            redirect("admin/home/addquiz/".$id_materi);
-        }
+        if(basename($_FILES["fotoSoal"]["name"]) == NULL){
+	        $id_materi = $_POST['id_materi'];
+	        $id_quiz = $_POST['id_quiz'];
+	        $soal = $_POST['soal'];
+	        $jwba = $_POST['jwba'];
+	        $jwbb = $_POST['jwbb'];
+	        $jwbc = $_POST['jwbc'];
+	        $jwbd = $_POST['jwbd'];
+	        $jwbBenar = $_POST['jwbBenar'];
+	        $edtQ = array(
+	            'id_quiz' => $id_quiz,
+	            'soal' => $soal,
+				'jwba' => $jwba,
+				'jwbb' => $jwbb,
+				'jwbc' => $jwbc,
+				'jwbd' => $jwbd,
+				'jwbBenar' => $jwbBenar
+	        );
+	        $where = array('id_quiz'=>$id_quiz);
+	        $upd = $this->model_admin->edit_quiz('quiz', $edtQ, $where);
+	        if($upd>=1) {
+	            redirect("admin/home/addquiz/".$id_materi);
+	        }
+	    } else {
+	    	$id_quiz = $_POST['id_quiz'];
+			$id_materi = $_POST['id_materi'];
+			$soal = $_POST['soal'];
+			$jwba = $_POST['jwba'];
+			$jwbb = $_POST['jwbb'];
+			$jwbc = $_POST['jwbc'];
+			$jwbd = $_POST['jwbd'];
+			$jwbBenar = $_POST['jwbBenar'];
+			$fotoSoal = $_FILES["fotoSoal"]["name"];
+			$edtQ = array(
+				'id_quiz' => $id_quiz,
+				'id_materi' => $id_materi,
+				'soal' => $soal,
+				'jwba' => $jwba,
+				'jwbb' => $jwbb,
+				'jwbc' => $jwbc,
+				'jwbd' => $jwbd,
+				"JwbBenar" => $jwbBenar,
+				"fotoSoal" => $fotoSoal
+			);
+			$where = array('id_quiz'=>$id_quiz);
+			$config['upload_path']          = './images/quiz/';
+			$config['allowed_types']        = 'jpg|png|gif';
+			$config['max_size']             = 100000;
+			$this->upload->initialize($config);
+			if(!$this->upload->do_upload('fotoSoal')){
+			$error = $this->upload->display_errors();
+			print_r($error);
+			} else {
+        	$upd = $this->model_admin->edit_quiz('quiz', $edtQ, $where);
+			redirect("admin/home/addquiz/".$id_materi);
+			}	  
+	    }
     }
 
 }

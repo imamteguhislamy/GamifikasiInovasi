@@ -56,7 +56,7 @@ class materi extends CI_Controller {
 				$this->index();
 	        }
 		} else if(basename($_FILES["pdf"]["name"])==NULL){			
-			$picture = basename($_FILES["gambar"]["name"]);
+			$picture = basename($_FILES["gambar"]["name"]);			
 			$data = array(
 				'judul' => $this->input->post('judul'),
 				'jmlSoal' => $this->input->post('jmlSoal'),

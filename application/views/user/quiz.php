@@ -29,6 +29,49 @@
     <link href="<?php echo base_url()?>main-bootstrap/css/theme.css" rel="stylesheet" media="all">
 <style>
 #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+
+    /*CSS PROGRESS BAR*/
+    #progressBar {
+      width: 90%;
+      margin: 10px auto;
+      height: 22px;
+      background-color: #0a5f44;
+    }
+
+    #progressBar div {
+      height: 100%;
+      text-align: right;
+      padding: 0 10px;
+      line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+      width: 0;
+      background-color: #cbea00;
+      box-sizing: border-box;
+    }
+
+    /* Do not take in account */
+    html {
+      padding-top: 30px;
+    }
+    a.solink {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      background: #f3f5f6;
+      color: #cfd6d9;
+      border: 1px solid #cfd6d9;
+      line-height: 30px;
+      text-decoration: none;
+      transition: all 0.3s;
+      z-index: 999;
+    }
+    a.solink::first-letter {
+      text-transform: capitalize;
+    }
+    a.solink:hover {
+      color: #428bca;
+    }
+
 </style>
 </head>
 <body class="animsition">
@@ -127,7 +170,14 @@
             <!-- COURSE-->
             <section class="statistic-chart">
                 <div class="container">
-                    <div id='timer'></div>
+                    <!-- <div id='timer'></div> -->
+
+                    <!-- PROGRESS BAR -->
+                    <div id="progressBar">
+                      <div class="bar"></div>
+                    </div>
+                    <!-- END PROGRESS BAR -->
+
                     <!-- Innovation Award-->
                     <div class="row">   
 
@@ -135,6 +185,12 @@
                         <div class="col-md-12 col-lg-12">                            
                             <div class="statistic-chart-1">
                                 <h4><?php echo $q['id_quiz'].". "; ?><?php echo $q['soal']; ?></h4>
+                                <br>
+                                <?php if($q['fotoSoal'] != NULL) { ?>
+                                    <div>
+                                        <img src="<?php echo base_url()?>images/quiz/<?php echo $q['fotoSoal'] ?> ">
+                                    </div>
+                                <?php }?>
                                 <br>
                                 <div class="container">   
                                     <div class="row form-group">
@@ -183,7 +239,10 @@
                                                 <?php foreach ($user as $u){ ?>
                                                     <?php echo $u->skorawal; } ?>" >
                                             </div>
-                                            <input type="submit" name="enter" value="Enter">  
+                                            <span></span>
+                                            <div>
+                                            <button type="submit" class="btn btn-primary btn-sm" name="enter" value="Submit">Submit</button>
+                                            </div> 
                                             </form>
                                         </div>
                                     </div>
@@ -205,7 +264,7 @@
 <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
  
   <!-- Script Timer -->
-     <script type="text/javascript">
+     <!-- <script type="text/javascript">
         $(document).ready(function() {
               /** Membuat Waktu Mulai Hitung Mundur Dengan 
                 * var detik = 0,
@@ -272,6 +331,24 @@
             hitung();
       }); 
       // ]]>
+    </script> -->
+
+    <script type="text/javascript">
+        function progress(timeleft, timetotal, $element) {
+            var progressBarWidth = timeleft * $element.width() / timetotal;
+            $element.find('div').animate({ width: progressBarWidth }, 500).html(Math.floor(timeleft/60) + ":"+ timeleft%60);
+            if(timeleft > 0) {
+                setTimeout(function() {
+                    progress(timeleft - 1, timetotal, $element);
+                }, 1000);
+            } else {
+                radioBtn = document.getElementById("radios");
+                radioBtn.checked = true;
+                document.getElementById("myForm").submit();
+            }
+        };
+
+        progress(10, 10, $('#progressBar'));
     </script>
             
 

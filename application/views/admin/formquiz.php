@@ -168,6 +168,15 @@
                                                     <small class="form-text text-muted">*Pilihan dengan Jawaban harus sama</small>
                                                 </div>
                                             </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">Foto Soal</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="File" id="fotoSoal" name="fotoSoal" class="form-control">
+                                                    <span><i>*File upload tanpa spasi</i></span>
+                                                </div>
+                                            </div>
                                             <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit

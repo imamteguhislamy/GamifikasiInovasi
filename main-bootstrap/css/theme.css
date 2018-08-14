@@ -14631,6 +14631,11 @@ section {
     width: 40px;
 }
 
+.img-300 {
+    height: 300px;
+    width: 300px;
+}
+
 .img-120 {
     width: 120px;
     height: 120px;
