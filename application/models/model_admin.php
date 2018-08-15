@@ -22,7 +22,7 @@ class model_admin extends CI_Model {
 	}
 
 	public function quiz($where="") {
-		$data = $this->db->query('SELECT * FROM quiz RIGHT JOIN materi ON quiz.id_materi = materi.id '. $where);
+		$data = $this->db->query('SELECT * FROM quiz RIGHT JOIN materi ON quiz.id_materi = materi.id '. $where . ' ORDER BY quiz.id_quiz ASC');
 		return $data->result_array();
 	}
 
@@ -75,8 +75,24 @@ class model_admin extends CI_Model {
 	// DASHBOARD
 
 	// JKTDZ
-	public function show_unit_JKTDZ($where="") {
-		return $this->db->query('select * from user where unit like "JKTDZ%" order by skor desc');
+	public function show_unit_JKTDH($where="") {
+		return $this->db->query('select * from user where unit like "JKTDH%" order by skor desc');
+	}
+
+	public function show_unit_JKTDV($where="") {
+		return $this->db->query('select * from user where unit like "JKTDV%" order by skor desc');
+	}
+
+	public function show_unit_JKTDS($where="") {
+		return $this->db->query('select * from user where unit like "JKTDS%" order by skor desc');
+	}
+
+	public function show_unit_JKTDK($where="") {
+		return $this->db->query('select * from user where unit like "JKTDK%" order by skor desc');
+	}
+
+	public function show_unit_JKTDA($where="") {
+		return $this->db->query('select * from user where unit like "JKTDA%" order by skor desc');
 	}
 
 	// JKTDI
@@ -94,10 +110,6 @@ class model_admin extends CI_Model {
 
     public function show_unit_JKTIG($where="") {
 		return $this->db->query('select * from user where unit like "JKTIG%" order by skor desc');
-	}
-
-	public function show_unit_JKTPG($where="") {
-		return $this->db->query('select * from user where unit like "JKTPG%" order by skor desc');
 	}		
 
 	// JKTDF
@@ -135,8 +147,8 @@ class model_admin extends CI_Model {
 		return $this->db->query('select * from user where unit like "JKTOS%" order by skor desc');
 	}
 
-	public function show_unit_JKTPN($where="") {
-		return $this->db->query('select * from user where unit like "JKTPN%" order by skor desc');
+	public function show_unit_JKTOG($where="") {
+		return $this->db->query('select * from user where unit like "JKTOG%" order by skor desc');
 	}
 
 	// JKTDC
@@ -233,13 +245,17 @@ class model_admin extends CI_Model {
 		return $this->db->query('select * from user where unit like "MELDM%" order by skor desc');
 	}
 
-	// JKTDR
+	// JKTDQ
 	public function show_unit_JKTRN($where="") {
 		return $this->db->query('select * from user where unit like "JKTRN%" order by skor desc');
 	}
 
-	public function show_unit_JKTRG($where="") {
-		return $this->db->query('select * from user where unit like "JKTRG%" order by skor desc');
+	public function show_unit_JKTDB($where="") {
+		return $this->db->query('select * from user where unit like "JKTDB%" order by skor desc');
+	}
+
+	public function show_unit_JKTMX($where="") {
+		return $this->db->query('select * from user where unit like "JKTMX%" order by skor desc');
 	}
 
 	// JKTDN
@@ -255,8 +271,8 @@ class model_admin extends CI_Model {
 		return $this->db->query('select * from user where unit like "JKTEC%" order by skor desc');
 	}
 
-	public function show_unit_JKTMX($where="") {
-		return $this->db->query('select * from user where unit like "JKTMX%" order by skor desc');
+	public function show_unit_JKTDU($where="") {
+		return $this->db->query('select * from user where unit like "JKTDU%" order by skor desc');
 	}
 
 	public function show_unit_JKTNL($where="") {

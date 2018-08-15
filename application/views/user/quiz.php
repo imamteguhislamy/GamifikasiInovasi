@@ -28,7 +28,6 @@
     <!-- Main CSS-->
     <link href="<?php echo base_url()?>main-bootstrap/css/theme.css" rel="stylesheet" media="all">
 <style>
-#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
 
     /*CSS PROGRESS BAR*/
     #progressBar {
@@ -184,11 +183,11 @@
                         <?php foreach ($quiz as $q){ ?>
                         <div class="col-md-12 col-lg-12">                            
                             <div class="statistic-chart-1">
-                                <h4><?php echo $q['id_quiz'].". "; ?><?php echo $q['soal']; ?></h4>
+                                <h4><?php echo $q['id_quiz'].". "; ?><?php echo $q['soal']; ?></h4><p style="float:right;"><?php echo $q['id_quiz']; ?> / <?php echo $q['jmlSoal']; ?></p>
                                 <br>
                                 <?php if($q['fotoSoal'] != NULL) { ?>
                                     <div>
-                                        <img src="<?php echo base_url()?>images/quiz/<?php echo $q['fotoSoal'] ?> ">
+                                        <img width="300" height="300" src="<?php echo base_url()?>images/quiz/<?php echo $q['fotoSoal'] ?> ">
                                     </div>
                                 <?php }?>
                                 <br>

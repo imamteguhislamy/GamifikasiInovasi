@@ -43,47 +43,47 @@
                                             <nav>
                                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-                                                    <a class="nav-item nav-link active" id="jktdz-tab" data-toggle="tab" href="#jktdz" role="tab" aria-controls="nav-home"
-                                                     aria-selected="true">JKTDZ</a>
-
-                                                    <a class="nav-item nav-link" id="jktdi-tab" data-toggle="tab" href="#jktdi" role="tab" aria-controls="nav-profile"
-                                                     aria-selected="false">JKTDI</a>
-
-                                                    <a class="nav-item nav-link" id="jktdf-tab" data-toggle="tab" href="#jktdf" role="tab" aria-controls="nav-contact"
-                                                     aria-selected="false">JKTDF</a>
+                                                    <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="tab" href="#jktdc" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="false">JKTDC</a>
 
                                                      <a class="nav-item nav-link" id="jktdf-tab" data-toggle="tab" href="#jktde" role="tab" aria-controls="nav-contact"
                                                      aria-selected="false">JKTDE</a>
 
-                                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdo" role="tab" aria-controls="nav-contact"
-                                                     aria-selected="false">JKTDO</a>
+                                                     <a class="nav-item nav-link" id="jktdf-tab" data-toggle="tab" href="#jktdf" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="false">JKTDF</a>
 
-                                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdc" role="tab" aria-controls="nav-contact"
-                                                     aria-selected="false">JKTDC</a>
+                                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdg" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="false">JKTDG</a>                                                    
 
-                                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdg" role="tab" aria-controls="nav-contact"
-                                                     aria-selected="false">JKTDG</a>
+                                                    <a class="nav-item nav-link" id="jktdi-tab" data-toggle="tab" href="#jktdi" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="false">JKTDI</a> 
 
-                                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdr" role="tab" aria-controls="nav-contact"
-                                                     aria-selected="false">JKTDR</a>
-
-                                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdn" role="tab" aria-controls="nav-contact"
+                                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdn" role="tab" aria-controls="nav-contact"
                                                      aria-selected="false">JKTDN</a>
+
+                                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdo" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="false">JKTDO</a>                                                
+
+                                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jktdq" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="false">JKTDQ</a>
+
+                                                    <a class="nav-item nav-link" id="jktdz-tab" data-toggle="tab" href="#jktdz" role="tab" aria-controls="nav-contact"
+                                                     aria-selected="true">JKTDZ</a>
 
                                                 </div>
                                             </nav>
                                             <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="jktdz" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                <div class="tab-pane fade" id="jktdz" role="tabpanel" aria-labelledby="nav-home-tab">
                                                     <!-- JKTDZ -->
                                                     <div class="row">                                                        
                                                         <div class="col-md-6 col-lg-4">
                                                             <div class="statistic-chart-1">
-                                                                <h3 class="title-3 m-b-20">JKTDZ</h3>
+                                                                <h3 class="title-3 m-b-20">JKTDH</h3>
                                                                 <div class="table-responsive">
                                                                     
                                                                     <table class="table table-top-campaign">
                                                                         <tbody>
-                                                                            <?php foreach ($JKTDZ as $a) { ?>
+                                                                            <?php foreach ($JKTDH as $a) { ?>
                                                                             <tr>
                                                                                 <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
                                                                                 <td><?php echo $a->skor; ?></td>
@@ -95,8 +95,85 @@
                                                                 </div>
                                                             </div>                            
                                                         </div>
-                                                    </div>
+                                                    
                                                     <!-- END JKTDZ -->
+                                                    <!-- JKTDV -->
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="statistic-chart-1">
+                                                                <h3 class="title-3 m-b-20">JKTDV</h3>
+                                                                <div class="table-responsive">   
+                                                                    <table class="table table-top-campaign">
+                                                                        <tbody>
+                                                                            <?php foreach ($JKTDV as $a) { ?>
+                                                                            <tr>
+                                                                                <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
+                                                                                <td><?php echo $a->skor; ?></td>
+                                                                            </tr>
+                                                                            <?php } ?>
+                                                                        </tbody>
+                                                                    </table>  
+                                                                </div>
+                                                            </div>                                 
+                                                        </div>
+                                                        <!-- END JKTDV -->
+                                                        <!-- JKTDA -->
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="statistic-chart-1">
+                                                                <h3 class="title-3 m-b-20">JKTDA</h3>
+                                                                <div class="table-responsive">   
+                                                                    <table class="table table-top-campaign">
+                                                                        <tbody>
+                                                                            <?php foreach ($JKTDA as $a) { ?>
+                                                                            <tr>
+                                                                                <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
+                                                                                <td><?php echo $a->skor; ?></td>
+                                                                            </tr>
+                                                                            <?php } ?>
+                                                                        </tbody>
+                                                                    </table>  
+                                                                </div>
+                                                            </div>                                 
+                                                        </div>
+                                                        <!-- END JKTDA -->
+                                                        <!-- JKTDK -->
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="statistic-chart-1">
+                                                                <h3 class="title-3 m-b-20">JKTDK</h3>
+                                                                <div class="table-responsive">   
+                                                                    <table class="table table-top-campaign">
+                                                                        <tbody>
+                                                                            <?php foreach ($JKTDK as $a) { ?>
+                                                                            <tr>
+                                                                                <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
+                                                                                <td><?php echo $a->skor; ?></td>
+                                                                            </tr>
+                                                                            <?php } ?>
+                                                                        </tbody>
+                                                                    </table>  
+                                                                </div>
+                                                            </div>                                 
+                                                        </div>
+                                                        <!-- END JKTDK -->
+                                                        <!-- JKTDS -->
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="statistic-chart-1">
+                                                                <h3 class="title-3 m-b-20">JKTDS</h3>
+                                                                <div class="table-responsive">   
+                                                                    <table class="table table-top-campaign">
+                                                                        <tbody>
+                                                                            <?php foreach ($JKTDS as $a) { ?>
+                                                                            <tr>
+                                                                                <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
+                                                                                <td><?php echo $a->skor; ?></td>
+                                                                            </tr>
+                                                                            <?php } ?>
+                                                                        </tbody>
+                                                                    </table>  
+                                                                </div>
+                                                            </div>                                 
+                                                        </div>
+                                                        <!-- END JKTDS -->
+                                                        </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="jktdi" role="tabpanel" aria-labelledby="nav-profile-tab">
                                                     <!-- JKTDI -->
@@ -179,27 +256,7 @@
                                                                 </div>
                                                             </div>                                 
                                                         </div>
-                                                        <!-- END JKTIG -->
-
-                                                        <!-- JKTPG -->
-                                                        <div class="col-md-6 col-lg-4">
-                                                            <div class="statistic-chart-1">
-                                                                <h3 class="title-3 m-b-20">JKTPG</h3>
-                                                                <div class="table-responsive">   
-                                                                    <table class="table table-top-campaign">
-                                                                        <tbody>
-                                                                            <?php foreach ($JKTPG as $PG) { ?>
-                                                                            <tr>
-                                                                                <td><?php echo $PG->nama_lengkap; ?> (<?php echo $PG->nopeg; ?>)</td>
-                                                                                <td><?php echo $PG->skor; ?></td>
-                                                                            </tr>
-                                                                            <?php } ?>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div>                                 
-                                                        </div>
-                                                        <!-- END JKTPG -->                    
+                                                        <!-- END JKTIG -->                                                                            
                                                     </div>
                                                     <!-- END JKTDI -->
                                                 </div>
@@ -376,14 +433,14 @@
                                                         </div>
                                                         <!-- END JKTOS -->
                                                         
-                                                        <!-- JKTPN -->
+                                                        <!-- JKTOG -->
                                                         <div class="col-md-6 col-lg-4">
                                                             <div class="statistic-chart-1">
-                                                                <h3 class="title-3 m-b-20">JKTPN</h3>
+                                                                <h3 class="title-3 m-b-20">JKTOG</h3>
                                                                 <div class="table-responsive">
                                                                     <table class="table table-top-campaign">
                                                                         <tbody>
-                                                                            <?php foreach ($JKTPN as $PN) { ?>
+                                                                            <?php foreach ($JKTOG as $PN) { ?>
                                                                             <tr>
                                                                                 <td><?php echo $PN->nama_lengkap; ?> (<?php echo $PN->nopeg; ?>)</td>
                                                                                 <td><?php echo $PN->skor; ?></td>
@@ -394,11 +451,11 @@
                                                                 </div>
                                                             </div>                            
                                                         </div>
-                                                        <!-- END JKTPN -->                                                        
+                                                        <!-- END JKTOG -->                                                        
                                                     </div>
                                                     <!-- END JKTDO -->
                                                 </div>
-                                                <div class="tab-pane fade" id="jktdc" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                <div class="tab-pane fade show active" id="jktdc" role="tabpanel" aria-labelledby="nav-profile-tab">
                                                     <!-- JKTDC -->
                                                     <div class="row">
                                                         <!-- JKTCG -->
@@ -868,8 +925,8 @@
                                                     </div>
                                                     <!-- END JKTDG -->
                                                 </div>
-                                                <div class="tab-pane fade" id="jktdr" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                                    <!-- JKTDR -->
+                                                <div class="tab-pane fade" id="jktdq" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <!-- JKTDQ -->
                                                     <div class="row">
                                                         <!-- JKTRN -->
                                                         <div class="col-md-6 col-lg-4">
@@ -891,14 +948,14 @@
                                                         </div>
                                                         <!-- END JKTRN -->
 
-                                                        <!-- JKTRG -->
+                                                        <!-- JKTDB -->
                                                         <div class="col-md-6 col-lg-4">
                                                             <div class="statistic-chart-1">
-                                                                <h3 class="title-3 m-b-20">JKTRG</h3>
+                                                                <h3 class="title-3 m-b-20">JKTDB</h3>
                                                                 <div class="table-responsive">
                                                                     <table class="table table-top-campaign">
                                                                         <tbody>
-                                                                            <?php foreach ($JKTRG as $a) { ?>
+                                                                            <?php foreach ($JKTDB as $a) { ?>
                                                                             <tr>
                                                                                 <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
                                                                                 <td><?php echo $a->skor; ?></td>
@@ -909,7 +966,26 @@
                                                                 </div>
                                                             </div>                            
                                                         </div>
-                                                        <!-- END JKTRG -->                                                                            
+                                                        <!-- END JKTDB -->
+                                                        <!-- JKTMX -->
+                                                        <div class="col-md-6 col-lg-4">
+                                                            <div class="statistic-chart-1">
+                                                                <h3 class="title-3 m-b-20">JKTMX</h3>
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-top-campaign">
+                                                                        <tbody>
+                                                                            <?php foreach ($JKTMX as $a) { ?>
+                                                                            <tr>
+                                                                                <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
+                                                                                <td><?php echo $a->skor; ?></td>
+                                                                            </tr>
+                                                                            <?php } ?>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>                            
+                                                        </div>
+                                                        <!-- END JKTDB -->                                                                                   
                                                     </div>
                                                     <!-- END JKTDR -->
                                                 </div>
@@ -976,14 +1052,14 @@
                                                         </div>
                                                         <!-- END JKTEC -->
 
-                                                        <!-- JKTMX -->
-                                                        <div class="col-md-6 col-lg-4">
+                                                        <!-- JKTDU -->
+                                                        <!-- <div class="col-md-6 col-lg-4">
                                                             <div class="statistic-chart-1">
-                                                                <h3 class="title-3 m-b-20">JKTMX</h3>
+                                                                <h3 class="title-3 m-b-20">JKTDU</h3>
                                                                 <div class="table-responsive">
                                                                     <table class="table table-top-campaign">
                                                                         <tbody>
-                                                                            <?php foreach ($JKTMX as $a) { ?>
+                                                                            <?php foreach ($JKTDU as $a) { ?>
                                                                             <tr>
                                                                                 <td><?php echo $a->nama_lengkap; ?> (<?php echo $a->nopeg; ?>)</td>
                                                                                 <td><?php echo $a->skor; ?></td>
@@ -993,8 +1069,8 @@
                                                                     </table>
                                                                 </div>
                                                             </div>                            
-                                                        </div>
-                                                        <!-- END JKTMX -->
+                                                        </div> -->
+                                                        <!-- END JKTDU -->
 
                                                         <!-- JKTNL -->
                                                         <div class="col-md-6 col-lg-4">

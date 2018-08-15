@@ -13,14 +13,17 @@ class dashboard extends CI_Controller {
 		$data['user'] = $this->model_user->tampil_data();
 		
 		// JKTDZ
-		$data['JKTDZ'] = $this->model_admin->show_unit_JKTDZ()->result();
+		$data['JKTDH'] = $this->model_admin->show_unit_JKTDH()->result();
+		$data['JKTDV'] = $this->model_admin->show_unit_JKTDV()->result();
+		$data['JKTDS'] = $this->model_admin->show_unit_JKTDS()->result();
+		$data['JKTDK'] = $this->model_admin->show_unit_JKTDK()->result();
+		$data['JKTDA'] = $this->model_admin->show_unit_JKTDA()->result();
 
 		// JKTDI
 		$data['JKTID'] = $this->model_admin->show_unit_JKTID()->result();
 		$data['JKTIB'] = $this->model_admin->show_unit_JKTIB()->result();
 		$data['JKTVZ'] = $this->model_admin->show_unit_JKTVZ()->result();
 		$data['JKTIG'] = $this->model_admin->show_unit_JKTIG()->result();
-		$data['JKTPG'] = $this->model_admin->show_unit_JKTPG()->result();
 
 		// JKTDF
 		$data['JKTWL'] = $this->model_admin->show_unit_JKTWL()->result();
@@ -35,7 +38,7 @@ class dashboard extends CI_Controller {
 		// JKTDO
 		$data['JKTOF'] = $this->model_admin->show_unit_JKTOF()->result();
 		$data['JKTOS'] = $this->model_admin->show_unit_JKTOS()->result();
-		$data['JKTPN'] = $this->model_admin->show_unit_JKTPN()->result();
+		$data['JKTOG'] = $this->model_admin->show_unit_JKTOG()->result();
 
 		// JKTDC
 		$data['JKTCG'] = $this->model_admin->show_unit_JKTCG()->result();
@@ -64,15 +67,16 @@ class dashboard extends CI_Controller {
 		$data['MELDM'] = $this->model_admin->show_unit_MELDM()->result();
 		$data['PERDM'] = $this->model_admin->show_unit_PERDM()->result();
 
-		// JKTRN
+		// JKTRQ
 		$data['JKTRN'] = $this->model_admin->show_unit_JKTRN()->result();
-		$data['JKTRG'] = $this->model_admin->show_unit_JKTRG()->result();
+		$data['JKTDB'] = $this->model_admin->show_unit_JKTDB()->result();
+		$data['JKTMX'] = $this->model_admin->show_unit_JKTMX()->result();
 
 		// JKTDN
 		$data['JKTCM'] = $this->model_admin->show_unit_JKTCM()->result();
 		$data['JKTRZ'] = $this->model_admin->show_unit_JKTRZ()->result();
 		$data['JKTEC'] = $this->model_admin->show_unit_JKTRZ()->result();
-		$data['JKTMX'] = $this->model_admin->show_unit_JKTMX()->result();
+		$data['JKTDU'] = $this->model_admin->show_unit_JKTDU()->result();
 		$data['JKTNL'] = $this->model_admin->show_unit_JKTNL()->result();
 		$data['JKTNH'] = $this->model_admin->show_unit_JKTNH()->result();
 		$data['JKTCD'] = $this->model_admin->show_unit_JKTCD()->result();

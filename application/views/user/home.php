@@ -148,18 +148,22 @@
                                         <!-- RANK -->
                                         <div class="col-md-6 col-lg-6">
                                             <div class="statistic__item statistic__item--red">
+                                                <button style="float:right;" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#smallmodal"> <i class="fa fa-exclamation-circle"></i>
+                                                </button>
                                                 <h2 class="number" style="color: white">
                                                     <?php 
-                                                        if($u->skor < 100){
+                                                        if($u->skor < 150){
                                                             echo "Rookie";
-                                                        } else if($u->skor < 200){
-                                                            echo "Master";
                                                         } else if($u->skor < 300){
-                                                            echo "Legend";
+                                                            echo "Intermediate";
+                                                        } else if($u->skor > 300){
+                                                            echo "Master";
                                                         }
                                                     ?>         
                                                 </h2>
                                                 <span class="desc" style="color: white">Rank</span>
+                                                <span> </span>
+                                                
                                                 <div class="icon">
                                                     <i class="zmdi zmdi-star"></i>
                                                 </div>
@@ -241,6 +245,30 @@
             <!-- END COPYRIGHT-->
         </div>
     </div>
+    <!-- modal small -->
+            <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="smallmodalLabel">RANKING SYSTEM</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Rookie: 0-150</br>
+                                Intermediate: 151-300</br>
+                                Master: >301
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end modal small -->
     <script src="<?php echo base_url()?>main-bootstrap/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo base_url()?>main-bootstrap/vendor/bootstrap-4.1/popper.min.js"></script>

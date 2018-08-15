@@ -35,9 +35,11 @@ $("#tipe").change(function() {
                 $('#link').prop('hidden', true);
             } else if ($("#tipe option:selected").val() == 'application/pdf'){
                 $('#pdf').prop('hidden', false);
+                $('#pdf').prop('required', true);
                 $('#link').prop('hidden', true);
             } else {
                 $('#pdf').prop('hidden', true);
+                $('#link').prop('required', true);
                 $('#link').prop('hidden', false);
             }
         });
@@ -85,10 +87,10 @@ $("#tipe").change(function() {
                                             </div>
                                             <div class="row form-group" id="link" hidden>
                                                 <div class="col col-md-3">
-                                                    <label for="link_video" class=" form-control-label">Link Video</label>
+                                                    <label for="link_video" class=" form-control-label">File Video</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="link_video" name="link_video" placeholder="Masukkan link sumber video disini" class="form-control">
+                                                    <input type="file" id="video" name="video" placeholder="Masukkan file video materi disini" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row form-group" id="pdf" hidden>
@@ -128,7 +130,7 @@ $("#tipe").change(function() {
                                             <tr>
                                                 <th>Judul Materi</th>
                                                 <th>Jumlah Soal</th>
-                                                <th>Link Video</th>
+                                                <th>File Video</th>
                                                 <th>File PDF</th>
                                                 <th>Foto Latar</th>
                                                 <th>Edit/Delete</th>

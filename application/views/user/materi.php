@@ -140,23 +140,23 @@
                                 <?php 
                                 if($tipe == "application/pdf"){
                                 ?>                                
-                                    <div class="chart-wrap">
-                                        <embed src="<?php echo base_url().'/course-source/documents/'. $pdf; ?>" type="application/pdf" width="100%" height="1000px"> </embed>        
+                                    <div class="chart-wrap" align="center">
+                                        <embed src="<?php echo base_url().'/course-source/documents/'. $pdf; ?>" type="application/pdf" width="900px" height="600px"> </embed>        
                                     </div>
                                 <?php
                                 } else if ($tipe == "video/mp4"){
                                 ?>
                                     <div class="chart-wrap" align="center">
-                                        <!-- <video width="90%" height="90%" controls>
-                                            <source src="<?php echo $link_video; ?>" type="video/mp4">
-                                        </video> -->
-                                        <iframe width=100% height="700" src="<?php echo $link_video; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        <video width="80%" height="80%" controls>
+                                            <source src="<?php echo base_url().'/videos/'. $link_video; ?>" type="video/mp4">
+                                        </video>
                                     </div>
                                 <?php    
                                 }
                                 ?>
                                 <div align="right">
-                                    <button type="button" class="btn btn-outline-primary m-t-15" onclick="window.location='<?php echo base_url().'user/course/quiz/'.$judul ?>'">
+                                    <button type="button" class="btn btn-outline-primary m-t-15" data-toggle="modal" data-target="#mediumModal">
+                                        <!-- onclick="window.location='<?php echo base_url().'user/course/quiz/'.$judul ?>'" -->
                                         <i class="fa fa-play"></i>&nbsp; Start Quiz
                                     </button>
                                 </div>
@@ -167,6 +167,33 @@
                 </div>
             </section>
             <!-- END COURSE-->
+
+            <!-- modal medium -->
+            <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="mediumModalLabel">How To Play</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Berikut ini adalah <i>guide</i> atau panduan sebelum anda mengerjakan kuis:</br>
+                                1. Setiap soal memiliki waktu 10 detik, jika melewati 10 detik maka jawaban akan dianggap salah dan akan dilanjut ke soal selanjutnya</br>
+                                2. Setiap soal memiliki Nilai 10 Poin yang akan diakumulasikan pada akhir pengerjaan kuis</br>
+                                3. Anda tidak diperbolehkan menekan tombol <i>back</i> / kembali atau anda akan langsung mendapat nilai 0</br>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location='<?php echo base_url().'user/course/quiz/'.$judul ?>'">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end modal medium -->
         
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">

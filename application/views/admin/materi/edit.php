@@ -95,10 +95,22 @@
                                             </div>
                                             <div class="row form-group" id="link" hidden>
                                                 <div class="col col-md-3">
-                                                    <label for="link_video" class=" form-control-label">Link Video</label>
+                                                    <label for="link_video" class=" form-control-label">File Video Baru</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" name="link_video" value="<?php echo $link_video ?>" class="form-control">
+                                                    <input type="file" name="video" value="<?php echo $link_video ?>" class="form-control">
+                                                    <span style="font-size: 12px">*Kosongkan jika tidak ada perubahan</span>
+                                                </div>                                            
+                                                <div class="col col-md-3">
+                                                    <label for="link_video" class=" form-control-label">File Video Lama</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p><?php if ($link_video == NULL) {
+                                                        echo "Tidak ada file Video di Database";
+                                                    } else {
+                                                        echo $link_video;
+                                                    } ?>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="row form-group" id="pdf" hidden>

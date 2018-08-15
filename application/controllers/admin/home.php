@@ -78,8 +78,7 @@ class home extends CI_Controller {
 		$this->load->view('admin/materi', $data);
     }
 
-    public function addquiz($id) {
-    	// if(basename($_FILES["fotoSoal"]["name"]) == NULL){
+    public function addquiz($id) {    	
     		$quiz = $this->model_admin->quiz("where materi.id = $id");
 	    	$data = array(
 	    		"id_quiz"=>$quiz[0]['id_quiz'],
@@ -96,37 +95,6 @@ class home extends CI_Controller {
 			$this->load->view('admin/header');
 		    $this->load->view('admin/sidebar');
 		    $this->load->view('admin/formquiz', $data);
-		// } else {
-		// 	$quiz = $this->model_admin->quiz("where materi.id = $id");
-		// 	$fotoSoal = basename($_FILES["fotoSoal"]["name"]);
-		// 	$data = array(
-	 //    		"id_quiz"=>$quiz[0]['id_quiz'],
-	 //    		"id_materi"=>$quiz[0]['id_materi'],
-		// 		"soal"=>$quiz[0]['soal'],
-		// 		"jwba"=>$quiz[0]['jwba'],
-		// 		"jwbb"=>$quiz[0]['jwbb'],
-		// 		"jwbc"=>$quiz[0]['jwbc'],
-		// 		"jwbd"=>$quiz[0]['jwbd'],
-		// 		"jwbBenar"=>$quiz[0]['jwbBenar'],
-		// 		"fotoSoal"=>$fotoSoal
-		// 	);
-
-		// 	$config['upload_path']          = './images/quiz/';
-		// 	$config['allowed_types']        = 'jpg|png';
-		// 	$config['max_size']             = 100000;
-
-		// 	$this->upload->initialize($config);
-	 //        if (!$this->upload->do_upload('fotoSoal')) {
-	 //            $error = $this->upload->display_errors();
-	 //            // menampilkan pesan error
-	 //            print_r($error);
-	 //        } else {
-	 //           	$data['quiz'] = $this->model_admin->quiz("where materi.id = $id");
-		// 		$this->load->view('admin/header');
-		//     	$this->load->view('admin/sidebar');
-		//     	$this->load->view('admin/formquiz', $data);
-	 //        }
-		// }
     }
 
     public function addQ(){

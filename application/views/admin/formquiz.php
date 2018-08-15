@@ -50,7 +50,7 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                <th>No</th>                            
                                                 <th>Soal</th>
                                                 <th>A</th>
                                                 <th>B</th>
@@ -58,19 +58,18 @@
                                                 <th>D</th>
                                                 <th>Jawaban</th>
                                                 <th>Edit/Delete</th>
-                                                <!-- <th class="text-right">Delete</th> -->
                                             </tr>
                                         </thead>
                                         <?php foreach ($quiz as $q){ ?>
                                         <tbody>
                                             <tr>
                                                 <td><?php echo $q['id_quiz']; ?></td>
-                                                <td><?php echo $q['soal']; ?></td>
+                                                <td><p><?php echo $q['soal']; ?></p></td>
                                                 <td><?php echo $q['jwba']; ?></td>
                                                 <td><?php echo $q['jwbb']; ?></td>
                                                 <td><?php echo $q['jwbc']; ?></td>
                                                 <td><?php echo $q['jwbd']; ?></td>
-                                                <td><?php echo $q['jwbBenar']; ?></td>                                                
+                                                <td><?php echo $q['jwbBenar']; ?></td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <a href="<?php echo base_url()."admin/home/editQ/".$q['id_quiz']; ?>">
@@ -79,7 +78,7 @@
                                                             </button>
                                                         </a>
                                                         &nbsp;
-                                                        <a href="<?php echo base_url()."admin/materi/hapusQ/".$q['id_quiz']; ?>">
+                                                        <a href="<?php echo base_url()."admin/materi/hapusQ/".$q['soal']; ?>">
                                                             <button onclick="myFunction()" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
                                                             </button>
@@ -94,6 +93,15 @@
                                 <!-- END DATA TABLE-->
                             </div>
                         </div>
+
+                        <!-- SCRIPT ALERT -->
+                        <script>
+                            function myFunction() {
+                                alert("Deleted!");
+                            }
+                        </script>
+                        <!-- END SCRIPT ALERT -->
+
                         <div class="row">                              
                             <div class="col-lg-12">
                                 <div class="card">
@@ -116,7 +124,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="text-input" name="id_quiz" placeholder="Enter Id" class="form-control" required>
-                                                    <small class="form-text text-muted">*Maks soal 5 per Materi</small>
+                                                    <small class="form-text text-muted">*Harus sama dengan jumlah Soal</small>
                                                 </div>
                                             </div>                                                                                   
                                             <div class="row form-group">
